@@ -101,13 +101,40 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Trust Section - Logos */}
-      <section className="py-16 border-y border-border glass">
+      {/* Seção de Entendimento Imediato - Os 5 Pilares */}
+      <section className="py-20 border-y border-border bg-card/50">
         <div className="container mx-auto px-4 md:px-8">
-          <p className="text-center text-xs font-bold tracking-[0.3em] uppercase text-muted-foreground mb-10">Marcas que confiam na nossa estrutura</p>
-          <div className="flex flex-wrap justify-center md:justify-between items-center gap-12 opacity-40 grayscale hover:grayscale-0 transition-all duration-700">
-            {["JBN", "DEI SOLUÇÕES", "GF PROD", "CAR DREAMS", "ASTROWEB"].map((brand) => (
-              <span key={brand} className="font-heading font-black text-2xl tracking-tighter">{brand}</span>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">Nossa Entrega Integrada</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Tudo o que sua marca precisa para crescer, estruturado em 5 pilares fundamentais que funcionam em harmonia.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+            {services.map((service, index) => (
+              <motion.div
+                key={service.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="group p-6 glass rounded-2xl text-center hover:border-primary/50 transition-all duration-500"
+              >
+                <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary mx-auto mb-6 group-hover:scale-110 transition-transform">
+                  {service.icon}
+                </div>
+                <h3 className="font-bold text-lg mb-3 leading-tight">{service.title}</h3>
+                <p className="text-xs text-muted-foreground leading-relaxed mb-6">
+                  {service.description}
+                </p>
+                <Link 
+                  to={service.path} 
+                  className="inline-flex items-center gap-1 text-xs font-bold text-primary hover:gap-2 transition-all"
+                >
+                  Saiba mais <ChevronRight size={14} />
+                </Link>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -171,7 +198,7 @@ const Index = () => {
           </div>
           
           <div className="grid grid-cols-1 gap-4">
-            {services.map((s, i) => (
+            {services.slice(0, 3).map((s, i) => (
               <ServiceCard key={i} {...s} index={i} />
             ))}
           </div>
