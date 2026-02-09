@@ -113,17 +113,17 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Audiovisual Partner Highlight */}
+      {/* Audiovisual Highlight */}
       <Section className="bg-primary/5 border-b border-border">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="order-2 lg:order-1">
             <div className="inline-flex items-center gap-2 text-primary font-bold text-sm uppercase tracking-widest mb-4">
-              <Camera size={18} /> Direção Audiovisual
+              <Camera size={18} /> Produção de Elite
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Ed Faria + BauerLab</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">Audiovisual Cinematográfico</h2>
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              Nossa entrega audiovisual não é terceirizada. É parte do nosso DNA. 
-              Sob a direção de Ed Faria, produzimos conteúdo cinematográfico que 
+              Nossa entrega audiovisual é parte fundamental da nossa infraestrutura. 
+              Sob a direção de Ed Faria, produzimos conteúdo de alto impacto que 
               tangibiliza a autoridade da sua marca e acelera o processo de venda.
             </p>
             <Link to="/audiovisual" className="inline-flex items-center gap-2 font-bold text-primary hover:gap-3 transition-all">
@@ -133,7 +133,7 @@ const Index = () => {
           <div className="order-1 lg:order-2 relative aspect-video glass rounded-2xl overflow-hidden flex items-center justify-center">
              <div className="text-center p-8">
                 <Video size={48} className="text-primary mx-auto mb-4 opacity-50" />
-                <p className="font-heading font-bold text-xl">Produção Cinematográfica Integrada</p>
+                <p className="font-heading font-bold text-xl">Produção Integrada</p>
              </div>
           </div>
         </div>
