@@ -8,16 +8,21 @@ import brandingImg from "@/assets/branding.jpg";
 import audiovisualImg from "@/assets/audiovisual.jpg";
 import ativacaoImg from "@/assets/ativacao.jpg";
 import materiaisImg from "@/assets/materiais.jpg";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const projects = [
-  { title: "Sistema de Gestão Interno", category: "Sistemas & Digital", description: "Plataforma web sob medida para controle completo de operações, estoque e equipe. Interface intuitiva, painel administrativo e relatórios automatizados.", image: digitalImg },
-  { title: "Identidade Visual para Marca Premium", category: "Posicionamento & Marca", description: "Branding completo para empresa do setor de luxo. Logo, paleta, tipografia, manual de marca e aplicação em todos os materiais.", image: brandingImg },
-  { title: "Vídeo Institucional Corporativo", category: "Audiovisual", description: "Produção audiovisual completa: roteiro, captação, edição e color grading para apresentação institucional de alto impacto.", image: audiovisualImg },
-  { title: "Ativação de Lançamento de Produto", category: "Ativação de Marca", description: "Experiência presencial com cenografia, fotos instantâneas personalizadas e integração digital. +500 interações em um único dia.", image: ativacaoImg },
-  { title: "Site Institucional de Alta Conversão", category: "Sistemas & Digital", description: "Site responsivo otimizado para SEO e conversão, com design premium, carregamento rápido e painel administrativo.", image: digitalImg },
-  { title: "Kit Completo de Materiais de Marca", category: "Materiais Físicos", description: "Cartões, envelopes, pastas, displays e adesivos, todos alinhados à nova identidade visual com acabamento premium.", image: materiaisImg },
+  { title: "JBN Empreendimentos", category: "Sites", url: "jbnempreendimentos.com.br", image: digitalImg },
+  { title: "JBN Consultoria", category: "Sites", url: "jbnconsultoria.com.br", image: digitalImg },
+  { title: "DEI Soluções", category: "Sites", url: "deisolucoes.com.br", image: digitalImg },
+  { title: "GF Prod", category: "Sites", url: "gfprod.com.br", image: digitalImg },
+  { title: "Car Dreams Pampulha", category: "Sites", url: "cardreamspampulha.com.br", image: digitalImg },
+  { title: "Mister Barbosa", category: "Sites", url: "misterbarbosa.com.br", image: digitalImg },
+  { title: "O Recanto da Floresta", category: "Sites", url: "orecantodafloresta.com.br", image: digitalImg },
+  { title: "Grupo Soul Guetto", category: "Sites", url: "gruposoulguetto.com.br", image: digitalImg },
+  { title: "Espacio Elizete Tavares", category: "Sites", url: "espacioelizetetavares.com", image: digitalImg },
+  { title: "Astroweb Atlas", category: "Sistemas", url: "astrowebatlas.com.br", image: ativacaoImg },
+  { title: "Ed Faria", category: "Audiovisual", url: "edfaria.com.br", image: audiovisualImg },
 ];
 
 const Projetos = () => {
@@ -29,32 +34,42 @@ const Projetos = () => {
         description="Uma seleção de projetos que mostram como a BauerLab resolve — do conceito à entrega final. Cada projeto é uma combinação de estratégia, design e execução com foco em resultado."
       />
       <Section>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              transition={{ duration: 0.5, delay: index * 0.05 }}
               viewport={{ once: true }}
               className="group bg-card border border-border rounded-lg overflow-hidden hover:border-primary/40 transition-all duration-300"
             >
-              <div className="aspect-video overflow-hidden">
+              <div className="aspect-video overflow-hidden relative">
                 <img
                   src={project.image}
                   alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   loading="lazy"
                 />
+                <div className="absolute inset-0 bg-background/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <a 
+                    href={`https://${project.url}`} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="bg-primary text-primary-foreground p-3 rounded-full transform translate-y-4 group-hover:translate-y-0 transition-transform"
+                  >
+                    <ExternalLink size={20} />
+                  </a>
+                </div>
               </div>
-              <div className="p-6 md:p-8">
-                <span className="text-xs font-heading font-semibold tracking-widest uppercase text-primary mb-2 block">
+              <div className="p-6">
+                <span className="text-[10px] font-heading font-semibold tracking-widest uppercase text-primary mb-2 block">
                   {project.category}
                 </span>
-                <h3 className="font-heading font-bold text-lg mb-2 group-hover:text-primary transition-colors">
+                <h3 className="font-heading font-bold text-lg mb-1 group-hover:text-primary transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{project.description}</p>
+                <p className="text-xs text-muted-foreground font-mono">{project.url}</p>
               </div>
             </motion.div>
           ))}

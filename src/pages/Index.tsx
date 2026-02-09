@@ -67,10 +67,10 @@ const processSteps = [
 ];
 
 const showcaseItems = [
-  { title: "Audiovisual", image: audiovisualImg, path: "/audiovisual", description: "Vídeos e fotografias que comunicam com impacto" },
-  { title: "Ativação de Marca", image: ativacaoImg, path: "/ativacao-de-marca", description: "Experiências que conectam pessoas à sua marca" },
-  { title: "Sistemas & Digital", image: digitalImg, path: "/sistemas-digital", description: "Plataformas que fazem seu negócio funcionar" },
-  { title: "Posicionamento & Marca", image: brandingImg, path: "/posicionamento-marca", description: "Marcas fortes, coerentes e memoráveis" },
+  { title: "Astroweb Atlas", image: ativacaoImg, path: "/projetos", description: "Sistemas web sob medida" },
+  { title: "Ed Faria", image: audiovisualImg, path: "/projetos", description: "Produção audiovisual de alto impacto" },
+  { title: "JBN Empreendimentos", image: digitalImg, path: "/projetos", description: "Presença digital estruturada" },
+  { title: "GF Prod", image: brandingImg, path: "/projetos", description: "Sites institucionais modernos" },
 ];
 
 const Index = () => {
