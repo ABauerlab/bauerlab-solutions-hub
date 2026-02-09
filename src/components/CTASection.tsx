@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, MessageCircle } from "lucide-react";
 
 interface CTASectionProps {
   title?: string;
@@ -8,37 +7,40 @@ interface CTASectionProps {
 }
 
 const CTASection = ({
-  title = "Pronto para estruturar sua marca?",
-  description = "Conte para nós o que você precisa. Sem enrolação, sem promessas vazias. Vamos direto ao ponto.",
+  title = "Pronto para parar de amadorismo?",
+  description = "Sua marca merece uma estrutura profissional que converte. Sem enrolação, sem contratos infinitos. Vamos direto ao resultado.",
 }: CTASectionProps) => {
   return (
-    <section className="py-20 md:py-32 border-t border-border">
+    <section className="py-20 md:py-32 border-t border-border bg-gradient-to-b from-background to-card/50">
       <div className="container mx-auto px-4 md:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="max-w-2xl mx-auto text-center"
+          className="max-w-3xl mx-auto text-center"
         >
-          <h2 className="text-2xl md:text-4xl font-bold mb-4">{title}</h2>
-          <p className="text-muted-foreground mb-8">{description}</p>
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">{title}</h2>
+          <p className="text-lg text-muted-foreground mb-10">{description}</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              to="/contato"
-              className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-8 py-3.5 rounded-md font-heading font-semibold hover:bg-primary/90 transition-colors"
+            <a
+              href="https://wa.me/5531998021169"
+              className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-10 py-5 rounded-md font-heading font-bold text-lg hover:bg-primary/90 transition-all hover:scale-105 shadow-xl shadow-primary/20"
             >
-              Falar com a BauerLab <ArrowRight size={16} />
-            </Link>
+              Falar com Especialista <ArrowRight size={20} />
+            </a>
             <a
               href="https://wa.me/5531998021169"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 border border-foreground/30 text-foreground px-8 py-3.5 rounded-md font-heading font-medium hover:border-primary hover:text-primary transition-all duration-300"
+              className="inline-flex items-center justify-center gap-2 border border-[#25D366] text-[#25D366] px-10 py-5 rounded-md font-heading font-bold text-lg hover:bg-[#25D366]/10 transition-all"
             >
-              WhatsApp
+              <MessageCircle size={20} /> WhatsApp
             </a>
           </div>
+          <p className="mt-8 text-sm text-muted-foreground">
+            Resposta em menos de 15 minutos em horário comercial.
+          </p>
         </motion.div>
       </div>
     </section>
