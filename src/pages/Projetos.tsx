@@ -3,74 +3,78 @@ import PageHero from "@/components/PageHero";
 import Section from "@/components/Section";
 import CTASection from "@/components/CTASection";
 import { motion } from "framer-motion";
-import digitalImg from "@/assets/digital.jpg";
-import brandingImg from "@/assets/branding.jpg";
-import audiovisualImg from "@/assets/audiovisual.jpg";
-import ativacaoImg from "@/assets/ativacao.jpg";
-import materiaisImg from "@/assets/materiais.jpg";
-import { ArrowUpRight, ExternalLink } from "lucide-react";
+import { ArrowUpRight, ExternalLink, Globe, Monitor, Video } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const projects = [
-  { title: "JBN Empreendimentos", category: "Sites", url: "jbnempreendimentos.com.br", image: digitalImg },
-  { title: "JBN Consultoria", category: "Sites", url: "jbnconsultoria.com.br", image: digitalImg },
-  { title: "DEI Soluções", category: "Sites", url: "deisolucoes.com.br", image: digitalImg },
-  { title: "GF Prod", category: "Sites", url: "gfprod.com.br", image: digitalImg },
-  { title: "Car Dreams Pampulha", category: "Sites", url: "cardreamspampulha.com.br", image: digitalImg },
-  { title: "Mister Barbosa", category: "Sites", url: "misterbarbosa.com.br", image: digitalImg },
-  { title: "O Recanto da Floresta", category: "Sites", url: "orecantodafloresta.com.br", image: digitalImg },
-  { title: "Grupo Soul Guetto", category: "Sites", url: "gruposoulguetto.com.br", image: digitalImg },
-  { title: "Espacio Elizete Tavares", category: "Sites", url: "espacioelizetetavares.com", image: digitalImg },
-  { title: "Astroweb Atlas", category: "Sistemas", url: "astrowebatlas.com.br", image: ativacaoImg },
-  { title: "Ed Faria", category: "Audiovisual", url: "edfaria.com.br", image: audiovisualImg },
+  { title: "JBN Empreendimentos", category: "Sites", url: "jbnempreendimentos.com.br", icon: <Globe size={18} /> },
+  { title: "JBN Consultoria", category: "Sites", url: "jbnconsultoria.com.br", icon: <Globe size={18} /> },
+  { title: "DEI Soluções", category: "Sites", url: "deisolucoes.com.br", icon: <Globe size={18} /> },
+  { title: "GF Prod", category: "Sites", url: "gfprod.com.br", icon: <Globe size={18} /> },
+  { title: "Car Dreams Pampulha", category: "Sites", url: "cardreamspampulha.com.br", icon: <Globe size={18} /> },
+  { title: "Mister Barbosa", category: "Sites", url: "misterbarbosa.com.br", icon: <Globe size={18} /> },
+  { title: "O Recanto da Floresta", category: "Sites", url: "orecantodafloresta.com.br", icon: <Globe size={18} /> },
+  { title: "Grupo Soul Guetto", category: "Sites", url: "gruposoulguetto.com.br", icon: <Globe size={18} /> },
+  { title: "Espacio Elizete Tavares", category: "Sites", url: "espacioelizetetavares.com", icon: <Globe size={18} /> },
+  { title: "Astroweb Atlas", category: "Sistemas", url: "astrowebatlas.com.br", icon: <Monitor size={18} /> },
+  { title: "Produção Audiovisual", category: "Audiovisual", url: "edfaria.com.br", icon: <Video size={18} />, partner: "Ed Faria" },
 ];
 
 const Projetos = () => {
   return (
     <Layout>
       <PageHero
-        tag="Projetos"
-        title="Resultados reais. Sem enrolação."
-        description="Uma seleção de projetos que mostram como a BauerLab resolve — do conceito à entrega final. Cada projeto é uma combinação de estratégia, design e execução com foco em resultado."
+        tag="Portfólio"
+        title="Resultados reais. <br /> Sem distrações."
+        description="Nossa entrega fala por si. Abaixo, uma seleção de infraestruturas digitais e audiovisuais que construímos para marcas que dominam seus nichos."
       />
+      
       <Section>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 gap-4">
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
               viewport={{ once: true }}
-              className="group bg-card border border-border rounded-lg overflow-hidden hover:border-primary/40 transition-all duration-300"
             >
-              <div className="aspect-video overflow-hidden relative">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-background/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                  <a 
-                    href={`https://${project.url}`} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="bg-primary text-primary-foreground p-3 rounded-full transform translate-y-4 group-hover:translate-y-0 transition-transform"
-                  >
-                    <ExternalLink size={20} />
-                  </a>
+              <a
+                href={`https://${project.url}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex flex-col md:flex-row md:items-center justify-between p-6 md:p-8 glass rounded-2xl glass-hover transition-all duration-500"
+              >
+                <div className="flex items-center gap-6 mb-4 md:mb-0">
+                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-500">
+                    {project.icon}
+                  </div>
+                  <div>
+                    <div className="flex items-center gap-3 mb-1">
+                      <h3 className="font-heading font-bold text-xl md:text-2xl group-hover:text-primary transition-colors">
+                        {project.title}
+                      </h3>
+                      {project.partner && (
+                        <span className="text-[10px] bg-primary/20 text-primary px-2 py-0.5 rounded-full font-bold uppercase tracking-tighter">
+                          Dir. {project.partner}
+                        </span>
+                      )}
+                    </div>
+                    <p className="text-sm text-muted-foreground font-mono tracking-tight">
+                      {project.url}
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <div className="p-6">
-                <span className="text-[10px] font-heading font-semibold tracking-widest uppercase text-primary mb-2 block">
-                  {project.category}
-                </span>
-                <h3 className="font-heading font-bold text-lg mb-1 group-hover:text-primary transition-colors">
-                  {project.title}
-                </h3>
-                <p className="text-xs text-muted-foreground font-mono">{project.url}</p>
-              </div>
+                
+                <div className="flex items-center justify-between md:justify-end gap-8">
+                  <span className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground/50">
+                    {project.category}
+                  </span>
+                  <div className="w-10 h-10 rounded-full border border-border flex items-center justify-center group-hover:bg-primary group-hover:border-primary group-hover:text-primary-foreground transition-all duration-500">
+                    <ExternalLink size={18} />
+                  </div>
+                </div>
+              </a>
             </motion.div>
           ))}
         </div>
@@ -86,17 +90,16 @@ const Projetos = () => {
             className="max-w-3xl mx-auto"
           >
             <p className="text-2xl md:text-3xl font-heading font-bold leading-tight mb-6">
-              Cada projeto que entregamos é a prova de que{" "}
-              <span className="text-gradient">método e criatividade geram resultado.</span>
+              Sua marca merece uma <span className="text-gradient">infraestrutura de elite.</span>
             </p>
             <p className="text-muted-foreground mb-8">
-              Quer ver sua marca aqui? Converse com a BauerLab e descubra como podemos estruturar o seu próximo projeto.
+              Não entregamos apenas projetos. Entregamos o alicerce para o seu próximo nível de faturamento.
             </p>
             <Link
               to="/contato"
-              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-md font-heading font-semibold hover:bg-primary/90 transition-colors"
+              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-md font-heading font-bold hover:bg-primary/90 transition-all hover:scale-105"
             >
-              Começar um projeto <ArrowUpRight size={18} />
+              Iniciar meu projeto <ArrowUpRight size={18} />
             </Link>
           </motion.div>
         </div>

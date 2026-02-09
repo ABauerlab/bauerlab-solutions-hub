@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { 
   ArrowRight, Monitor, Palette, Video, Sparkles, Package, 
   Zap, Target, ShieldCheck, TrendingUp, ChevronRight, 
-  Layers, Globe, Cpu, BarChart3
+  Layers, Globe, Cpu, BarChart3, Camera
 } from "lucide-react";
 import Layout from "@/components/Layout";
 import ServiceCard from "@/components/ServiceCard";
@@ -27,7 +27,7 @@ const services = [
   },
   {
     title: "Audiovisual de Alto Impacto",
-    description: "Produção cinematográfica para marcas que exigem o melhor. Vídeos que vendem antes mesmo da primeira reunião.",
+    description: "Produção cinematográfica sob direção de Ed Faria. Vídeos que vendem antes mesmo da primeira reunião.",
     path: "/audiovisual",
     icon: <Video size={24} />,
   },
@@ -99,13 +99,6 @@ const Index = () => {
             </div>
           </motion.div>
         </div>
-
-        {/* Floating Elements for 2026 feel */}
-        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex gap-12 opacity-30 hidden md:flex">
-          <div className="flex items-center gap-2 text-xs font-bold tracking-widest uppercase"><Globe size={14} /> Digital First</div>
-          <div className="flex items-center gap-2 text-xs font-bold tracking-widest uppercase"><Layers size={14} /> Integrated</div>
-          <div className="flex items-center gap-2 text-xs font-bold tracking-widest uppercase"><BarChart3 size={14} /> Data Driven</div>
-        </div>
       </section>
 
       {/* Trust Section - Logos */}
@@ -113,14 +106,40 @@ const Index = () => {
         <div className="container mx-auto px-4 md:px-8">
           <p className="text-center text-xs font-bold tracking-[0.3em] uppercase text-muted-foreground mb-10">Marcas que confiam na nossa estrutura</p>
           <div className="flex flex-wrap justify-center md:justify-between items-center gap-12 opacity-40 grayscale hover:grayscale-0 transition-all duration-700">
-            {["JBN", "DEI SOLUÇÕES", "GF PROD", "CAR DREAMS", "ASTROWEB", "ED FARIA"].map((brand) => (
+            {["JBN", "DEI SOLUÇÕES", "GF PROD", "CAR DREAMS", "ASTROWEB"].map((brand) => (
               <span key={brand} className="font-heading font-black text-2xl tracking-tighter">{brand}</span>
             ))}
           </div>
         </div>
       </section>
 
-      {/* The Ecosystem - Por que BauerLab? */}
+      {/* Audiovisual Partner Highlight */}
+      <Section className="bg-primary/5 border-b border-border">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="order-2 lg:order-1">
+            <div className="inline-flex items-center gap-2 text-primary font-bold text-sm uppercase tracking-widest mb-4">
+              <Camera size={18} /> Direção Audiovisual
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">Ed Faria + BauerLab</h2>
+            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+              Nossa entrega audiovisual não é terceirizada. É parte do nosso DNA. 
+              Sob a direção de Ed Faria, produzimos conteúdo cinematográfico que 
+              tangibiliza a autoridade da sua marca e acelera o processo de venda.
+            </p>
+            <Link to="/audiovisual" className="inline-flex items-center gap-2 font-bold text-primary hover:gap-3 transition-all">
+              Conhecer nossa produção <ArrowRight size={18} />
+            </Link>
+          </div>
+          <div className="order-1 lg:order-2 relative aspect-video glass rounded-2xl overflow-hidden flex items-center justify-center">
+             <div className="text-center p-8">
+                <Video size={48} className="text-primary mx-auto mb-4 opacity-50" />
+                <p className="font-heading font-bold text-xl">Produção Cinematográfica Integrada</p>
+             </div>
+          </div>
+        </div>
+      </Section>
+
+      {/* The Ecosystem */}
       <Section className="relative overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
         
@@ -156,29 +175,6 @@ const Index = () => {
               <ServiceCard key={i} {...s} index={i} />
             ))}
           </div>
-        </div>
-      </Section>
-
-      {/* Process Section - Transparência */}
-      <Section className="bg-card/30 border-y border-border">
-        <div className="text-center max-w-3xl mx-auto mb-20">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">Como construímos o futuro.</h2>
-          <p className="text-muted-foreground">Nosso método é testado e validado. Sem burocracia, sem enrolação.</p>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {[
-            { step: "01", title: "Diagnóstico", desc: "Analisamos sua estrutura atual e identificamos os gargalos de marca." },
-            { step: "02", title: "Estratégia", desc: "Desenhamos o ecossistema integrado: digital, físico e audiovisual." },
-            { step: "03", title: "Engenharia", desc: "Execução técnica de alta precisão com foco em conversão imediata." },
-            { step: "04", title: "Escala", desc: "Lançamento e acompanhamento para garantir o crescimento contínuo." },
-          ].map((item, i) => (
-            <div key={i} className="relative p-8 glass rounded-2xl">
-              <div className="text-4xl font-black text-primary/20 mb-4">{item.step}</div>
-              <h3 className="text-xl font-bold mb-3">{item.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
-            </div>
-          ))}
         </div>
       </Section>
 
