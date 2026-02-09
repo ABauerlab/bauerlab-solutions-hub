@@ -89,7 +89,7 @@ const Header = () => {
             )
           )}
           <a
-            href="https://wa.me/5500000000000"
+            href="https://wa.me/5531998021169"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-primary text-primary-foreground px-5 py-2 rounded-md text-sm font-heading font-semibold hover:bg-primary/90 transition-colors"
@@ -157,7 +157,7 @@ const Header = () => {
                 )
               )}
               <a
-                href="https://wa.me/5500000000000"
+                href="https://wa.me/5531998021169"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-4 bg-primary text-primary-foreground px-5 py-3 rounded-md text-sm font-heading font-semibold text-center hover:bg-primary/90 transition-colors"

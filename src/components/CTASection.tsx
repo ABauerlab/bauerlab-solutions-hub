@@ -31,7 +31,7 @@ const CTASection = ({
               Falar com a BauerLab <ArrowRight size={16} />
             </Link>
             <a
-              href="https://wa.me/5500000000000"
+              href="https://wa.me/5531998021169"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 border border-foreground/30 text-foreground px-8 py-3.5 rounded-md font-heading font-medium hover:border-primary hover:text-primary transition-all duration-300"
