@@ -37,11 +37,11 @@ const Footer = () => {
           <div>
             <h4 className="font-heading font-semibold text-sm mb-4 text-foreground">Contato</h4>
             <div className="flex flex-col gap-2.5">
-              <a href="https://wa.me/5500000000000" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+              <a href="https://wa.me/5531998021169" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                 WhatsApp
               </a>
-              <a href="mailto:contato@bauerlab.com.br" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                contato@bauerlab.com.br
+              <a href="mailto:contato.bauerlab@gmail.com" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                contato.bauerlab@gmail.com
               </a>
             </div>
           </div>
