@@ -13,11 +13,11 @@ import { Link } from "react-router-dom";
 
 const projects = [
   { title: "Sistema de Gestão Interno", category: "Sistemas & Digital", description: "Plataforma web sob medida para controle completo de operações, estoque e equipe. Interface intuitiva, painel administrativo e relatórios automatizados.", image: digitalImg },
-  { title: "Identidade Visual — Marca Premium", category: "Posicionamento & Marca", description: "Branding completo para empresa do setor de luxo. Logo, paleta, tipografia, manual de marca e aplicação em todos os materiais.", image: brandingImg },
-  { title: "Vídeo Institucional Corporativo", category: "Audiovisual", description: "Produção audiovisual completa — roteiro, captação, edição e color grading — para apresentação institucional de alto impacto.", image: audiovisualImg },
+  { title: "Identidade Visual para Marca Premium", category: "Posicionamento & Marca", description: "Branding completo para empresa do setor de luxo. Logo, paleta, tipografia, manual de marca e aplicação em todos os materiais.", image: brandingImg },
+  { title: "Vídeo Institucional Corporativo", category: "Audiovisual", description: "Produção audiovisual completa: roteiro, captação, edição e color grading para apresentação institucional de alto impacto.", image: audiovisualImg },
   { title: "Ativação de Lançamento de Produto", category: "Ativação de Marca", description: "Experiência presencial com cenografia, fotos instantâneas personalizadas e integração digital. +500 interações em um único dia.", image: ativacaoImg },
   { title: "Site Institucional de Alta Conversão", category: "Sistemas & Digital", description: "Site responsivo otimizado para SEO e conversão, com design premium, carregamento rápido e painel administrativo.", image: digitalImg },
-  { title: "Kit Completo de Materiais de Marca", category: "Materiais Físicos", description: "Cartões, envelopes, pastas, displays e adesivos — todos alinhados à nova identidade visual com acabamento premium.", image: materiaisImg },
+  { title: "Kit Completo de Materiais de Marca", category: "Materiais Físicos", description: "Cartões, envelopes, pastas, displays e adesivos, todos alinhados à nova identidade visual com acabamento premium.", image: materiaisImg },
 ];
 
 const Projetos = () => {

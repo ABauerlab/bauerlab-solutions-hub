@@ -53,7 +53,7 @@ const MateriaisFisicos = () => {
           <div>
             <h2 className="text-2xl md:text-3xl font-bold mb-6">O físico comunica tanto quanto o digital.</h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              Na era digital, muita empresa esquece que o mundo físico ainda existe — e comunica. 
+              Na era digital, muita empresa esquece que o mundo físico ainda existe. E comunica. 
               O cartão que você entrega numa reunião. O adesivo na embalagem. O display na loja. 
               Cada material é um ponto de contato com a marca.
             </p>
@@ -63,7 +63,7 @@ const MateriaisFisicos = () => {
             </p>
             <p className="text-muted-foreground leading-relaxed">
               Na BauerLab, cada peça é projetada dentro do sistema visual da marca. 
-              Cores, tipografia, acabamento, papel — tudo é escolhido com propósito. 
+              Cores, tipografia, acabamento, papel. Tudo é escolhido com propósito. 
               O resultado é um material que não vai para a gaveta. Vai para a mão do cliente — e fica na memória.
             </p>
           </div>

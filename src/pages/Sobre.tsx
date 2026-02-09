@@ -50,12 +50,12 @@ const Sobre = () => {
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
                 Acreditamos que marcas fortes são construídas com método, não com improviso. 
-                Cada decisão criativa na BauerLab passa por uma lógica de negócio — porque estética sem estratégia 
+                Cada decisão criativa na BauerLab passa por uma lógica de negócio, porque estética sem estratégia 
                 é decoração, não comunicação.
               </p>
               <p>
                 Não somos uma agência genérica que vende pacotes prontos. Somos uma empresa que resolve 
-                problemas reais de marca e posicionamento — usando todas as ferramentas disponíveis: 
+                problemas reais de marca e posicionamento, usando todas as ferramentas disponíveis: 
                 digital, audiovisual, físico e experiencial.
               </p>
               <p>
@@ -70,7 +70,7 @@ const Sobre = () => {
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
                 Cada projeto começa com escuta. Entendemos o negócio, o mercado, o público e o objetivo 
-                antes de propor qualquer solução. Não criamos por impulso — criamos com informação.
+                antes de propor qualquer solução. Não criamos por impulso. Criamos com informação.
               </p>
               <p>
                 A partir disso, montamos um plano claro com escopo, prazos e entregas definidas. 
@@ -78,8 +78,8 @@ const Sobre = () => {
                 Sem surpresas, sem mudanças de última hora.
               </p>
               <p>
-                Entregamos com qualidade e acompanhamos o resultado. Porque marca não é projeto pontual — 
-                é construção contínua. E nós estamos aqui para cada etapa dessa construção.
+                Entregamos com qualidade e acompanhamos o resultado. Porque marca não é projeto pontual. 
+                É construção contínua. E nós estamos aqui para cada etapa dessa construção.
               </p>
             </div>
           </div>
@@ -118,7 +118,7 @@ const Sobre = () => {
             </span>
             <h2 className="text-2xl md:text-3xl font-bold mb-4">Como tratamos cada projeto.</h2>
             <p className="text-muted-foreground leading-relaxed">
-              Não importa o tamanho do projeto. Nossos princípios são os mesmos — 
+              Não importa o tamanho do projeto. Nossos princípios são os mesmos, 
               porque é assim que se constrói reputação e confiança.
             </p>
           </div>
