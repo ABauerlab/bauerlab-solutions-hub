@@ -8,9 +8,9 @@ import ativacaoImg from "@/assets/ativacao.jpg";
 
 const items = [
   { title: "Ativações de marca para empresas", description: "Experiências presenciais que conectam o público à sua marca de forma memorável e impactante. Planejamos e executamos ativações para lançamentos, inaugurações, feiras, eventos corporativos e ações promocionais." },
-  { title: "Experiências presenciais imersivas", description: "Momentos que saem da tela e viram vivência real. Cenários instagramáveis, espaços interativos, experiências sensoriais — tudo planejado para gerar engajamento e lembrança de marca." },
+  { title: "Experiências presenciais imersivas", description: "Momentos que saem da tela e viram vivência real. Cenários instagramáveis, espaços interativos, experiências sensoriais. Tudo planejado para gerar engajamento e lembrança de marca." },
   { title: "Ações promocionais estratégicas", description: "Promoções e campanhas presenciais com estratégia, não improviso. Distribuição de brindes, sampling, ações de guerrilha e experiências que criam vínculo entre a marca e o público." },
-  { title: "Fotos instantâneas (Polaroid)", description: "Ativação com fotos instantâneas personalizadas com a identidade da marca. O público leva uma lembrança física da experiência — e a marca ganha visibilidade orgânica nas redes sociais." },
+  { title: "Fotos instantâneas (Polaroid)", description: "Ativação com fotos instantâneas personalizadas com a identidade da marca. O público leva uma lembrança física da experiência, e a marca ganha visibilidade orgânica nas redes sociais." },
   { title: "Conexão do físico com o digital", description: "Integramos a experiência presencial ao digital: QR codes, hashtags, compartilhamento em tempo real, captação de leads e análise de dados. Tudo conectado para maximizar o resultado." },
   { title: "Cenografia e ambientação", description: "Criação de espaços de marca com cenografia profissional. Stands, lounges, vitrines e ambientes que traduzem a identidade visual da empresa em experiência física." },
 ];
@@ -21,7 +21,7 @@ const AtivacaoMarca = () => {
       <PageHero
         tag="Ativação de Marca"
         title="Sua marca fora da tela. Na mão, no olho, na experiência."
-        description="Criamos experiências presenciais que conectam pessoas à sua marca de forma real, tangível e memorável. A marca sai da tela e vira momento — planejado, executado e documentado com profissionalismo."
+        description="Criamos experiências presenciais que conectam pessoas à sua marca de forma real, tangível e memorável. A marca sai da tela e vira momento. Planejado, executado e documentado com profissionalismo."
       />
 
       <section className="pb-12 md:pb-20">
@@ -41,7 +41,7 @@ const AtivacaoMarca = () => {
         <div className="mb-12">
           <h2 className="text-2xl md:text-3xl font-bold mb-4">O que entregamos</h2>
           <p className="text-muted-foreground max-w-2xl leading-relaxed">
-            Ativação de marca não é evento genérico. É estratégia de conexão — cada detalhe é pensado 
+            Ativação de marca não é evento genérico. É estratégia de conexão. Cada detalhe é pensado 
             para gerar lembrança, engajamento e vínculo real entre o público e a sua marca.
           </p>
         </div>
@@ -54,7 +54,7 @@ const AtivacaoMarca = () => {
             <h2 className="text-2xl md:text-3xl font-bold mb-6">A marca que as pessoas tocam é a marca que lembram.</h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
               No digital, o público rola o feed e esquece. No presencial, ele vive, sente e leva para casa. 
-              Uma ativação de marca bem feita gera mais impacto do que semanas de anúncio online — 
+              Uma ativação de marca bem feita gera mais impacto do que semanas de anúncio online, 
               porque a experiência é real.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-4">
@@ -69,7 +69,7 @@ const AtivacaoMarca = () => {
           </div>
           <div className="space-y-6">
             {[
-              { title: "Planejamento completo", desc: "Da ideia à execução — definimos conceito, logística, equipe, cronograma e fornecedores." },
+              { title: "Planejamento completo", desc: "Da ideia à execução: definimos conceito, logística, equipe, cronograma e fornecedores." },
               { title: "Produção profissional", desc: "Montagem, cenografia, materiais de marca e equipe treinada para cada tipo de ativação." },
               { title: "Registro audiovisual", desc: "Fotos e vídeos profissionais da ativação para uso em redes sociais e comunicação institucional." },
               { title: "Relatório de resultados", desc: "Dados de alcance, engajamento, leads captados e análise de performance da ativação." },

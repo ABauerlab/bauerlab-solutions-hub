@@ -21,7 +21,7 @@ const services = [
   },
   {
     title: "Sistemas & Digital",
-    description: "Sites institucionais, sistemas web, plataformas sob medida e estruturação digital completa. Não é site bonito — é sistema funcional que gera resultado.",
+    description: "Sites institucionais, sistemas web, plataformas sob medida e estruturação digital completa. Não é site bonito. É sistema funcional que gera resultado.",
     path: "/sistemas-digital",
     icon: <Monitor size={24} />,
   },
@@ -39,14 +39,14 @@ const services = [
   },
   {
     title: "Materiais Físicos",
-    description: "Cartões, adesivos, displays e materiais promocionais. Cada peça impressa é uma extensão da sua marca — com qualidade e coerência visual.",
+    description: "Cartões, adesivos, displays e materiais promocionais. Cada peça impressa é uma extensão da sua marca, com qualidade e coerência visual.",
     path: "/materiais-fisicos",
     icon: <Package size={24} />,
   },
 ];
 
 const differentials = [
-  { icon: <Eye size={22} />, title: "Visão de negócio", description: "Entendemos que marca é business. Cada decisão criativa tem impacto direto no resultado financeiro e na percepção do mercado. Não criamos por estética — criamos para gerar valor." },
+  { icon: <Eye size={22} />, title: "Visão de negócio", description: "Entendemos que marca é business. Cada decisão criativa tem impacto direto no resultado financeiro e na percepção do mercado. Não criamos por estética. Criamos para gerar valor." },
   { icon: <Layers size={22} />, title: "Estrutura profissional", description: "Processos claros, entregas organizadas e comunicação profissional do início ao fim. Cada etapa é documentada, validada e entregue dentro do prazo combinado." },
   { icon: <Zap size={22} />, title: "Execução sem improviso", description: "Nada aqui é feito de última hora. Cada projeto é planejado com precisão, executado com método e entregue com a qualidade que sua marca merece." },
   { icon: <Target size={22} />, title: "Integração total", description: "Digital, físico e audiovisual trabalhando juntos em uma estratégia unificada. Sua marca comunica a mesma coisa em todos os canais e pontos de contato." },
@@ -137,7 +137,7 @@ const Index = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-3xl leading-relaxed mb-12"
             >
-              Estratégia, design, tecnologia, audiovisual e experiência física — tudo integrado em um só lugar. 
+              Estratégia, design, tecnologia, audiovisual e experiência física. Tudo integrado em um só lugar. 
               Nada genérico. Nada inflado. Tudo resolvido.
             </motion.p>
             <motion.div
@@ -207,7 +207,7 @@ const Index = () => {
             </h2>
             <p className="text-muted-foreground leading-relaxed">
               Cinco áreas que funcionam de forma independente, mas integradas. Cada uma resolve uma parte 
-              do seu negócio — e juntas, constroem uma marca completa.
+              do seu negócio. E juntas, constroem uma marca completa.
             </p>
           </div>
           <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -312,11 +312,11 @@ const Index = () => {
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
               Não somos uma agência genérica. Não vendemos pacotes prontos. 
-              Somos uma empresa que resolve problemas reais de marca e posicionamento — 
+              Somos uma empresa que resolve problemas reais de marca e posicionamento, 
               usando todas as ferramentas disponíveis: digital, audiovisual, físico e experiencial.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-8">
-              Cada projeto é tratado como um sistema — com começo, meio e resultado mensurável. 
+              Cada projeto é tratado como um sistema, com começo, meio e resultado mensurável. 
               Trabalhamos com método, não com improviso. E entregamos com a qualidade que sua marca merece.
             </p>
             <Link
@@ -363,8 +363,8 @@ const Index = () => {
               Do diagnóstico ao resultado.
             </h2>
             <p className="text-muted-foreground max-w-2xl">
-              Cada projeto segue um processo claro e organizado. Você sabe exatamente o que esperar em cada etapa — 
-              sem surpresas, sem mudanças de última hora, sem promessas vazias.
+              Cada projeto segue um processo claro e organizado. Você sabe exatamente o que esperar em cada etapa. 
+              Sem surpresas, sem mudanças de última hora, sem promessas vazias.
             </p>
           </motion.div>
 
@@ -406,7 +406,7 @@ const Index = () => {
               "Não criamos marcas bonitas.{" "}
               <span className="text-gradient">Criamos marcas que funcionam.</span>"
             </p>
-            <p className="mt-6 text-muted-foreground">— BauerLab</p>
+            <p className="mt-6 text-muted-foreground">BauerLab</p>
           </motion.div>
         </div>
       </section>
@@ -423,7 +423,7 @@ const Index = () => {
             </h2>
             <p className="text-muted-foreground leading-relaxed">
               Se você precisa de uma presença digital profissional, uma identidade visual forte, 
-              conteúdo audiovisual estratégico ou experiências presenciais que conectem pessoas à sua marca — 
+              conteúdo audiovisual estratégico ou experiências presenciais que conectem pessoas à sua marca: 
               a BauerLab resolve.
             </p>
           </div>
@@ -431,7 +431,7 @@ const Index = () => {
             {[
               "Empresas que estão começando e precisam de estrutura desde o primeiro dia.",
               "Negócios que já existem, mas cuja marca não comunica o que deveriam.",
-              "Empresas que precisam de sistema digital funcional — não só um site bonito.",
+              "Empresas que precisam de sistema digital funcional, não só um site bonito.",
               "Marcas que querem ativar experiências presenciais e sair da tela.",
               "Empresas que valorizam profissionalismo, prazo e qualidade.",
             ].map((item, index) => (
@@ -453,7 +453,7 @@ const Index = () => {
 
       <CTASection
         title="Sua marca merece estrutura."
-        description="Converse com a BauerLab e descubra como podemos organizar, posicionar e ativar sua marca — no digital, no físico e na experiência. Sem promessas vazias. Só resultado."
+        description="Converse com a BauerLab e descubra como podemos organizar, posicionar e ativar sua marca no digital, no físico e na experiência. Sem promessas vazias. Só resultado."
       />
     </Layout>
   );

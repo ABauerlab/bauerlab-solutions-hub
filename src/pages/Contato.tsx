@@ -19,7 +19,7 @@ const Contato = () => {
       <PageHero
         tag="Contato"
         title="Vamos conversar sobre o seu projeto."
-        description="Conte o que você precisa. Sem formulários infinitos, sem enrolação, sem vendedores insistentes. Direto ao ponto — como tudo que fazemos na BauerLab."
+        description="Conte o que você precisa. Sem formulários infinitos, sem enrolação, sem vendedores insistentes. Direto ao ponto, como tudo que fazemos na BauerLab."
       />
 
       <Section>
@@ -85,7 +85,7 @@ const Contato = () => {
                 value={formData.mensagem}
                 onChange={(e) => setFormData({ ...formData, mensagem: e.target.value })}
                 className="w-full bg-card border border-border rounded-md px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors resize-none"
-                placeholder="Conte brevemente o que sua empresa precisa. Pode ser um site, uma identidade visual, produção de vídeo, ativação de marca — ou tudo junto."
+                placeholder="Conte brevemente o que sua empresa precisa. Pode ser um site, uma identidade visual, produção de vídeo, ativação de marca ou tudo junto."
               />
             </div>
             <button
@@ -142,7 +142,7 @@ const Contato = () => {
               <h3 className="font-heading font-semibold mb-2">Diagnóstico gratuito</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 Não sabe por onde começar? Solicite um diagnóstico gratuito da sua marca. 
-                Analisamos sua presença digital, identidade visual e pontos de melhoria — sem compromisso.
+                Analisamos sua presença digital, identidade visual e pontos de melhoria. Sem compromisso.
               </p>
             </div>
           </motion.div>

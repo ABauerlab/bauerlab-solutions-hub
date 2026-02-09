@@ -43,7 +43,7 @@ const SistemasDigital = () => {
           <h2 className="text-2xl md:text-3xl font-bold mb-4">O que entregamos</h2>
           <p className="text-muted-foreground max-w-2xl leading-relaxed">
             Cada solução digital que desenvolvemos é pensada para resolver um problema real do seu negócio. 
-            Não entregamos templates — entregamos ferramentas que fazem sua operação funcionar melhor.
+            Não entregamos templates. Entregamos ferramentas que fazem sua operação funcionar melhor.
           </p>
         </div>
         <ServiceDetailList items={items} />
@@ -55,7 +55,7 @@ const SistemasDigital = () => {
             <h2 className="text-2xl md:text-3xl font-bold mb-6">Tecnologia a serviço do resultado.</h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
               Muita empresa contrata um "site bonito" e recebe um cartão de visita digital. Na BauerLab, 
-              cada site e sistema é projetado como uma ferramenta de negócio — com navegação intuitiva, 
+              cada site e sistema é projetado como uma ferramenta de negócio, com navegação intuitiva, 
               carregamento rápido, SEO estruturado e foco em conversão.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-4">

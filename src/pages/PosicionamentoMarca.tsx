@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import brandingImg from "@/assets/branding.jpg";
 
 const items = [
-  { title: "Branding completo", description: "Construção de marca do zero — da estratégia à execução. Definimos posicionamento, tom de voz, valores, arquitetura de marca e toda a base para que sua empresa comunique com clareza e autoridade." },
+  { title: "Branding completo", description: "Construção de marca do zero, da estratégia à execução. Definimos posicionamento, tom de voz, valores, arquitetura de marca e toda a base para que sua empresa comunique com clareza e autoridade." },
   { title: "Identidade visual", description: "Logo, paleta de cores, tipografia, ícones, padrões visuais e manual de marca. Tudo pensado para funcionar em qualquer aplicação — digital, impresso, sinalização e redes sociais." },
   { title: "Rebranding", description: "Sua marca cresceu, mas a identidade ficou para trás? Atualizamos marcas que precisam evoluir sem perder sua essência. Modernização visual e estratégica com coerência." },
   { title: "Copywriting institucional", description: "Textos que comunicam com clareza e profissionalismo. Desde o slogan até os textos do site, redes sociais e materiais impressos — tudo com tom de voz consistente e alinhado ao posicionamento." },
@@ -52,7 +52,7 @@ const PosicionamentoMarca = () => {
           <div>
             <h2 className="text-2xl md:text-3xl font-bold mb-6">Sua marca precisa falar uma língua só.</h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              Posicionamento não é logotipo. É a forma como sua empresa é percebida em cada ponto de contato — 
+              Posicionamento não é logotipo. É a forma como sua empresa é percebida em cada ponto de contato: 
               no site, nas redes sociais, no cartão de visita, no atendimento e na experiência.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-4">
@@ -60,8 +60,8 @@ const PosicionamentoMarca = () => {
               Quando a marca é coerente, o cliente reconhece, lembra e recomenda.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              Na BauerLab, não criamos marcas bonitas que ficam na gaveta. Criamos marcas que funcionam no mundo real — 
-              que vendem, que posicionam e que fazem a diferença no dia a dia do negócio.
+              Na BauerLab, não criamos marcas bonitas que ficam na gaveta. Criamos marcas que funcionam no mundo real. 
+              Que vendem, que posicionam e que fazem a diferença no dia a dia do negócio.
             </p>
           </div>
           <div className="space-y-6">
