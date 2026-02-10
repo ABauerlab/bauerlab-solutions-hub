@@ -3,6 +3,8 @@ import PageHero from "@/components/PageHero";
 import Section from "@/components/Section";
 import ServiceDetailList from "@/components/ServiceDetailList";
 import CTASection from "@/components/CTASection";
+import PricingSection from "@/components/PricingSection";
+import TechnicalSpecs from "@/components/TechnicalSpecs";
 import { motion } from "framer-motion";
 import audiovisualImg from "@/assets/audiovisual.jpg";
 
@@ -47,49 +49,28 @@ const Audiovisual = () => {
         <ServiceDetailList items={items} />
       </Section>
 
-      <Section className="border-t border-border">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          <div>
-            <h2 className="text-2xl md:text-3xl font-bold mb-6">Imagem é linguagem. E precisa ser precisa.</h2>
-            <p className="text-muted-foreground leading-relaxed mb-4">
-              Vivemos na era do visual. A primeira impressão que o cliente tem da sua empresa é uma imagem. 
-              Um vídeo. Uma foto. Se esse conteúdo é amador, a percepção da marca é amadora.
-            </p>
-            <p className="text-muted-foreground leading-relaxed mb-4">
-              O audiovisual da BauerLab é ferramenta de comunicação estratégica. Cada foto, cada frame, 
-              cada edição é pensada para transmitir exatamente o que sua marca precisa dizer — com qualidade 
-              que gera credibilidade e impacto que gera resultado.
-            </p>
-            <p className="text-muted-foreground leading-relaxed">
-              Desde a pré-produção (roteiro, direção de arte, planejamento) até a pós-produção 
-              (edição, color grading, entrega final), cuidamos de cada detalhe para que o resultado 
-              seja impecável e alinhado à identidade da sua marca.
-            </p>
-          </div>
-          <div className="space-y-6">
-            {[
-              { title: "Pré-produção completa", desc: "Roteiro, storyboard, direção de arte e planejamento detalhado antes de qualquer captação." },
-              { title: "Equipamento profissional", desc: "Câmeras, lentes, iluminação, microfones e drones de alta qualidade para cada projeto." },
-              { title: "Pós-produção impecável", desc: "Edição, color grading, motion graphics e trilha sonora que elevam o resultado final." },
-              { title: "Entrega otimizada", desc: "Formatos otimizados para cada plataforma — site, Instagram, YouTube, TikTok, apresentações." },
-            ].map((item, i) => (
-              <motion.div
-                key={item.title}
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.4, delay: i * 0.1 }}
-                viewport={{ once: true }}
-                className="flex gap-4 items-start"
-              >
-                <div className="shrink-0 w-2 h-2 rounded-full bg-primary mt-2" />
-                <div>
-                  <h4 className="font-heading font-semibold text-sm mb-1">{item.title}</h4>
-                  <p className="text-sm text-muted-foreground">{item.desc}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+      {/* Nova Seção de Preços */}
+      <Section className="border-t border-border bg-primary/5">
+        <div className="mb-12 text-center">
+          <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary mb-3 block">Investimento</span>
+          <h2 className="text-3xl md:text-5xl font-bold mb-4">Pacotes de Produção</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Estrutura completa de conteúdo para sua marca manter consistência e autoridade no digital.
+          </p>
         </div>
+        <PricingSection />
+      </Section>
+
+      {/* Nova Seção Técnica */}
+      <Section className="border-t border-border">
+        <div className="mb-12">
+          <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary mb-3 block">Infraestrutura Técnica</span>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Equipamento e Processo</h2>
+          <p className="text-muted-foreground max-w-2xl">
+            Utilizamos o que há de mais moderno em tecnologia de imagem e som para garantir que sua marca seja vista com a máxima qualidade possível.
+          </p>
+        </div>
+        <TechnicalSpecs />
       </Section>
 
       <CTASection
