@@ -3,7 +3,7 @@ import { useRef } from "react";
 import { Link } from "react-router-dom";
 import { 
   ArrowRight, Monitor, Palette, Video, Sparkles, Package, 
-  Zap, Target, ShieldCheck, TrendingUp, ChevronRight, 
+  Zap, Target, ShieldCheck, TrendingUp, ChevronRight, ChevronLeft,
   Cpu, Camera
 } from "lucide-react";
 import Layout from "@/components/Layout";
@@ -47,6 +47,8 @@ const services = [
 
 const Index = () => {
   const heroRef = useRef<HTMLDivElement>(null);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  
   const { scrollYProgress } = useScroll({
     target: heroRef,
     offset: ["start start", "end start"],
@@ -54,6 +56,20 @@ const Index = () => {
   
   const heroY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
   const heroOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+
+  const scroll = (direction: 'left' | 'right') => {
+    if (scrollContainerRef.current) {
+      const { scrollLeft, clientWidth } = scrollContainerRef.current;
+      const scrollTo = direction === 'left' 
+        ? scrollLeft - clientWidth * 0.8 
+        : scrollLeft + clientWidth * 0.8;
+      
+      scrollContainerRef.current.scrollTo({
+        left: scrollTo,
+        behavior: 'smooth'
+      });
+    }
+  };
 
   return (
     <Layout>
@@ -100,7 +116,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Pilares com Scroll Horizontal no Mobile */}
+      {/* Pilares com Scroll Horizontal e Setas */}
       <section className="py-12 md:py-20 border-y border-border bg-card/30">
         <div className="container mx-auto px-4 md:px-8">
           <div className="flex items-end justify-between mb-8 md:mb-12">
@@ -108,14 +124,28 @@ const Index = () => {
               <h2 className="text-2xl md:text-4xl font-bold mb-2">O que entregamos</h2>
               <p className="text-xs md:text-sm text-muted-foreground">Soluções integradas que eliminam a fragmentação da sua marca.</p>
             </div>
-            <div className="hidden md:block">
-               <Link to="/servicos" className="text-xs font-bold text-primary flex items-center gap-1 hover:gap-2 transition-all">
-                  Ver todos <ChevronRight size={14} />
-               </Link>
+            <div className="flex items-center gap-3">
+               <button 
+                 onClick={() => scroll('left')}
+                 className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:bg-primary hover:border-primary hover:text-primary-foreground transition-all"
+                 aria-label="Anterior"
+               >
+                 <ChevronLeft size={20} />
+               </button>
+               <button 
+                 onClick={() => scroll('right')}
+                 className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:bg-primary hover:border-primary hover:text-primary-foreground transition-all"
+                 aria-label="Próximo"
+               >
+                 <ChevronRight size={20} />
+               </button>
             </div>
           </div>
           
-          <div className="flex md:grid md:grid-cols-5 gap-4 overflow-x-auto no-scrollbar pb-4 md:pb-0 snap-x snap-mandatory">
+          <div 
+            ref={scrollContainerRef}
+            className="flex md:grid md:grid-cols-5 gap-4 overflow-x-auto no-scrollbar pb-4 md:pb-0 snap-x snap-mandatory scroll-smooth"
+          >
             {services.map((service, index) => (
               <div key={service.title} className="snap-center">
                 <ServiceCard {...service} index={index} />
