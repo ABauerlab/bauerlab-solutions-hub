@@ -6,17 +6,68 @@ import { motion } from "framer-motion";
 import { ArrowUpRight, ExternalLink, Globe, Monitor, Video } from "lucide-react";
 import { Link } from "react-router-dom";
 
+// Importando as imagens dos projetos
+import jbnEmpreendimentosImg from "@/assets/projects/jbnempreendimentos.png";
+import jbnConsultoriaImg from "@/assets/projects/jbnconsultoria.png";
+import deiSolucoesImg from "@/assets/projects/Deisolucoes.png";
+import gfProdImg from "@/assets/projects/GFPROD.png";
+import carDreamsImg from "@/assets/projects/cardreams.png";
+import recantoImg from "@/assets/projects/recantodafloresta.png";
+import astroImg from "@/assets/projects/astrowebatlas.png";
+
 const projects = [
-  { title: "JBN Empreendimentos", category: "Sites", url: "jbnempreendimentos.com.br", icon: <Globe size={18} /> },
-  { title: "JBN Consultoria", category: "Sites", url: "jbnconsultoria.com.br", icon: <Globe size={18} /> },
-  { title: "DEI Soluções", category: "Sites", url: "deisolucoes.com.br", icon: <Globe size={18} /> },
-  { title: "GF Prod", category: "Sites", url: "gfprod.com.br", icon: <Globe size={18} /> },
-  { title: "Car Dreams Pampulha", category: "Sites", url: "cardreamspampulha.com.br", icon: <Globe size={18} /> },
+  { 
+    title: "Astroweb Atlas", 
+    category: "Sistemas", 
+    url: "astrowebatlas.com.br", 
+    icon: <Monitor size={18} />, 
+    image: astroImg 
+  },
+  { 
+    title: "JBN Empreendimentos", 
+    category: "Sites", 
+    url: "jbnempreendimentos.com.br", 
+    icon: <Globe size={18} />, 
+    image: jbnEmpreendimentosImg 
+  },
+  { 
+    title: "JBN Consultoria", 
+    category: "Sites", 
+    url: "jbnconsultoria.com.br", 
+    icon: <Globe size={18} />, 
+    image: jbnConsultoriaImg 
+  },
+  { 
+    title: "DEI Soluções", 
+    category: "Sites", 
+    url: "deisolucoes.com.br", 
+    icon: <Globe size={18} />, 
+    image: deiSolucoesImg 
+  },
+  { 
+    title: "GF Prod", 
+    category: "Sites", 
+    url: "gfprod.com.br", 
+    icon: <Globe size={18} />, 
+    image: gfProdImg 
+  },
+  { 
+    title: "Car Dreams Pampulha", 
+    category: "Sites", 
+    url: "cardreamspampulha.com.br", 
+    icon: <Globe size={18} />, 
+    image: carDreamsImg 
+  },
+  { 
+    title: "O Recanto da Floresta", 
+    category: "Sites", 
+    url: "orecantodafloresta.com.br", 
+    icon: <Globe size={18} />, 
+    image: recantoImg 
+  },
   { title: "Mister Barbosa", category: "Sites", url: "misterbarbosa.com.br", icon: <Globe size={18} /> },
-  { title: "O Recanto da Floresta", category: "Sites", url: "orecantodafloresta.com.br", icon: <Globe size={18} /> },
   { title: "Grupo Soul Guetto", category: "Sites", url: "gruposoulguetto.com.br", icon: <Globe size={18} /> },
   { title: "Espacio Elizete Tavares", category: "Sites", url: "espacioelizetetavares.com", icon: <Globe size={18} /> },
-  { title: "Astroweb Atlas", category: "Sistemas", url: "astrowebatlas.com.br", icon: <Monitor size={18} /> },
   { title: "Produção Audiovisual", category: "Audiovisual", url: "edfaria.com.br", icon: <Video size={18} />, partner: "Ed Faria" },
 ];
 
@@ -30,48 +81,61 @@ const Projetos = () => {
       />
       
       <Section>
-        <div className="grid grid-cols-1 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
               viewport={{ once: true }}
+              className="group"
             >
               <a
                 href={`https://${project.url}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex flex-col md:flex-row md:items-center justify-between p-6 md:p-8 glass rounded-2xl glass-hover transition-all duration-500"
+                className="block glass rounded-2xl overflow-hidden glass-hover transition-all duration-500 h-full flex flex-col"
               >
-                <div className="flex items-center gap-6 mb-4 md:mb-0">
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-500">
-                    {project.icon}
+                {/* Preview da Imagem */}
+                <div className="relative aspect-[16/10] overflow-hidden bg-muted">
+                  {project.image ? (
+                    <img 
+                      src={project.image} 
+                      alt={project.title} 
+                      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                      loading="lazy"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center bg-primary/5">
+                      <div className="text-primary/20">{project.icon}</div>
+                    </div>
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-60" />
+                  <div className="absolute top-4 right-4 w-10 h-10 rounded-full glass flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                    <ExternalLink size={18} />
                   </div>
+                </div>
+
+                {/* Conteúdo do Card */}
+                <div className="p-6 md:p-8 flex-1 flex flex-col justify-between">
                   <div>
-                    <div className="flex items-center gap-3 mb-1">
-                      <h3 className="font-heading font-bold text-xl md:text-2xl group-hover:text-primary transition-colors">
-                        {project.title}
-                      </h3>
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary">
+                        {project.category}
+                      </span>
                       {project.partner && (
                         <span className="text-[10px] bg-primary/20 text-primary px-2 py-0.5 rounded-full font-bold uppercase tracking-tighter">
                           Dir. {project.partner}
                         </span>
                       )}
                     </div>
+                    <h3 className="font-heading font-bold text-xl md:text-2xl group-hover:text-primary transition-colors mb-1">
+                      {project.title}
+                    </h3>
                     <p className="text-sm text-muted-foreground font-mono tracking-tight">
                       {project.url}
                     </p>
-                  </div>
-                </div>
-                
-                <div className="flex items-center justify-between md:justify-end gap-8">
-                  <span className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground/50">
-                    {project.category}
-                  </span>
-                  <div className="w-10 h-10 rounded-full border border-border flex items-center justify-center group-hover:bg-primary group-hover:border-primary group-hover:text-primary-foreground transition-all duration-500">
-                    <ExternalLink size={18} />
                   </div>
                 </div>
               </a>
