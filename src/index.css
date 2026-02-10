@@ -29,7 +29,7 @@
 
 @layer base {
   * { @apply border-border; }
-  body { @apply bg-background text-foreground font-body antialiased selection:bg-primary/30; }
+  body { @apply bg-background text-foreground font-body antialiased selection:bg-primary/30 overflow-x-hidden; }
   h1, h2, h3, h4, h5, h6 { @apply font-heading tracking-tight; }
 }
 
@@ -57,15 +57,21 @@
   .glow {
     box-shadow: 0 0 50px -12px hsl(var(--primary) / 0.3);
   }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }
 
-::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: hsl(var(--background)); }
 ::-webkit-scrollbar-thumb { 
   background: hsl(var(--muted)); 
   border-radius: 10px;
-  border: 2px solid hsl(var(--background));
 }
-::-webkit-scrollbar-thumb:hover { background: hsl(var(--primary) / 0.5); }
 
 html { scroll-behavior: smooth; }

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { 
   ArrowRight, Monitor, Palette, Video, Sparkles, Package, 
   Zap, Target, ShieldCheck, TrendingUp, ChevronRight, 
-  Layers, Globe, Cpu, BarChart3, Camera
+  Cpu, Camera
 } from "lucide-react";
 import Layout from "@/components/Layout";
 import ServiceCard from "@/components/ServiceCard";
@@ -14,34 +14,34 @@ import heroBg from "@/assets/hero-bg.jpg";
 
 const services = [
   {
-    title: "Branding & Posicionamento",
-    description: "Construímos a percepção de valor que permite cobrar mais caro. Identidade visual e estratégia de mercado para líderes.",
+    title: "Branding",
+    description: "Estratégia e identidade visual para marcas que buscam liderança e percepção de valor.",
     path: "/posicionamento-marca",
-    icon: <Palette size={24} />,
+    icon: <Palette size={22} />,
   },
   {
-    title: "Sistemas & Engenharia Digital",
-    description: "Sites e plataformas de alta performance. Não apenas presença online, mas uma máquina de vendas automatizada.",
+    title: "Sistemas",
+    description: "Engenharia digital de alta performance. Sites e plataformas que escalam seu negócio.",
     path: "/sistemas-digital",
-    icon: <Monitor size={24} />,
+    icon: <Monitor size={22} />,
   },
   {
-    title: "Audiovisual de Alto Impacto",
-    description: "Produção cinematográfica sob direção de Ed Faria. Vídeos que vendem antes mesmo da primeira reunião.",
+    title: "Audiovisual",
+    description: "Produção cinematográfica que tangibiliza autoridade e acelera o processo de venda.",
     path: "/audiovisual",
-    icon: <Video size={24} />,
+    icon: <Video size={22} />,
   },
   {
-    title: "Ativação & Experiência",
-    description: "Conectamos o digital ao mundo real. Eventos e ativações que transformam curiosos em advogados da marca.",
+    title: "Ativação",
+    description: "Experiências presenciais que conectam o digital ao mundo real de forma memorável.",
     path: "/ativacao-de-marca",
-    icon: <Sparkles size={24} />,
+    icon: <Sparkles size={22} />,
   },
   {
-    title: "Materiais & Tangibilização",
-    description: "A qualidade que se toca. Materiais físicos premium que reforçam a autoridade da sua empresa no dia a dia.",
+    title: "Materiais",
+    description: "Tangibilização premium da marca em materiais físicos que reforçam sua autoridade.",
     path: "/materiais-fisicos",
-    icon: <Package size={24} />,
+    icon: <Package size={22} />,
   },
 ];
 
@@ -52,162 +52,129 @@ const Index = () => {
     offset: ["start start", "end start"],
   });
   
-  const heroY = useTransform(scrollYProgress, [0, 1], ["0%", "25%"]);
+  const heroY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
   const heroOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   return (
     <Layout>
-      {/* Hero 2026 - Ultra Impacto */}
-      <section ref={heroRef} className="relative min-h-screen flex items-center justify-center overflow-hidden bg-mesh">
+      {/* Hero Compacto e Visual */}
+      <section ref={heroRef} className="relative min-h-[85vh] md:min-h-screen flex items-center justify-center overflow-hidden bg-mesh">
         <motion.div className="absolute inset-0 z-0" style={{ y: heroY, opacity: heroOpacity }}>
-          <div className="absolute inset-0 bg-cover bg-center scale-110" style={{ backgroundImage: `url(${heroBg})` }} />
-          <div className="absolute inset-0 bg-background/80 backdrop-blur-[2px]" />
+          <div className="absolute inset-0 bg-cover bg-center scale-105" style={{ backgroundImage: `url(${heroBg})` }} />
+          <div className="absolute inset-0 bg-background/85 backdrop-blur-[1px]" />
         </motion.div>
 
         <div className="container mx-auto px-4 md:px-8 relative z-10 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
-            <span className="inline-flex items-center gap-2 glass px-4 py-2 rounded-full text-xs font-bold tracking-[0.2em] uppercase text-primary mb-8 glow">
-              <Cpu size={14} /> Infraestrutura de Marca 2026
+            <span className="inline-flex items-center gap-2 glass px-3 py-1.5 rounded-full text-[10px] font-bold tracking-[0.2em] uppercase text-primary mb-6 glow">
+              <Cpu size={12} /> Infraestrutura de Marca
             </span>
             
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.95] mb-8 text-gradient">
-              Estruturamos marcas <br /> para dominar o mercado.
+            <h1 className="text-4xl md:text-7xl lg:text-8xl font-bold leading-[1.1] md:leading-[0.95] mb-6 text-gradient">
+              Estruturamos marcas <br className="hidden md:block" /> para o próximo nível.
             </h1>
             
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed">
-              Unimos estratégia, tecnologia e audiovisual em um ecossistema único. 
-              Não entregamos apenas design; entregamos a estrutura necessária para sua empresa escalar.
+            <p className="text-sm md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed px-4">
+              Estratégia, tecnologia e audiovisual integrados em um ecossistema único para sua empresa escalar com autoridade.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a
                 href="https://wa.me/5531998021169"
-                className="group relative inline-flex items-center justify-center gap-3 bg-primary text-primary-foreground px-10 py-5 rounded-full font-heading font-bold text-lg hover:scale-105 transition-all duration-500 glow"
+                className="w-full sm:w-auto group inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-full font-heading font-bold text-base hover:scale-105 transition-all duration-500 glow"
               >
-                Iniciar Estruturação <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                Iniciar Projeto <ArrowRight size={18} />
               </a>
               <Link
                 to="/projetos"
-                className="glass px-10 py-5 rounded-full font-heading font-bold text-lg hover:bg-white/10 transition-all duration-500"
+                className="w-full sm:w-auto glass px-8 py-4 rounded-full font-heading font-bold text-base hover:bg-white/10 transition-all duration-500"
               >
-                Ver Portfólio
+                Portfólio
               </Link>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Seção de Entendimento Imediato - Os 5 Pilares */}
-      <section className="py-20 border-y border-border bg-card/50">
+      {/* Pilares com Scroll Horizontal no Mobile */}
+      <section className="py-12 md:py-20 border-y border-border bg-card/30">
         <div className="container mx-auto px-4 md:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">Nossa Entrega Integrada</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Tudo o que sua marca precisa para crescer, estruturado em 5 pilares fundamentais que funcionam em harmonia.
-            </p>
+          <div className="flex items-end justify-between mb-8 md:mb-12">
+            <div className="max-w-xl">
+              <h2 className="text-2xl md:text-4xl font-bold mb-2">O que entregamos</h2>
+              <p className="text-xs md:text-sm text-muted-foreground">Soluções integradas que eliminam a fragmentação da sua marca.</p>
+            </div>
+            <div className="hidden md:block">
+               <Link to="/servicos" className="text-xs font-bold text-primary flex items-center gap-1 hover:gap-2 transition-all">
+                  Ver todos <ChevronRight size={14} />
+               </Link>
+            </div>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+          <div className="flex md:grid md:grid-cols-5 gap-4 overflow-x-auto no-scrollbar pb-4 md:pb-0 snap-x snap-mandatory">
             {services.map((service, index) => (
-              <motion.div
-                key={service.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="group p-6 glass rounded-2xl text-center hover:border-primary/50 transition-all duration-500"
-              >
-                <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary mx-auto mb-6 group-hover:scale-110 transition-transform">
-                  {service.icon}
-                </div>
-                <h3 className="font-bold text-lg mb-3 leading-tight">{service.title}</h3>
-                <p className="text-xs text-muted-foreground leading-relaxed mb-6">
-                  {service.description}
-                </p>
-                <Link 
-                  to={service.path} 
-                  className="inline-flex items-center gap-1 text-xs font-bold text-primary hover:gap-2 transition-all"
-                >
-                  Saiba mais <ChevronRight size={14} />
-                </Link>
-              </motion.div>
+              <div key={service.title} className="snap-center">
+                <ServiceCard {...service} index={index} />
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Audiovisual Highlight */}
-      <Section className="bg-primary/5 border-b border-border">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      {/* Audiovisual - Mais Visual, Menos Texto */}
+      <Section className="bg-primary/5">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           <div className="order-2 lg:order-1">
-            <div className="inline-flex items-center gap-2 text-primary font-bold text-sm uppercase tracking-widest mb-4">
-              <Camera size={18} /> Produção de Elite
+            <div className="inline-flex items-center gap-2 text-primary font-bold text-[10px] uppercase tracking-widest mb-3">
+              <Camera size={14} /> Produção de Elite
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Audiovisual Cinematográfico</h2>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              Nossa entrega audiovisual é parte fundamental da nossa infraestrutura. 
-              Sob a direção de Ed Faria, produzimos conteúdo de alto impacto que 
-              tangibiliza a autoridade da sua marca e acelera o processo de venda.
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">Audiovisual Cinematográfico</h2>
+            <p className="text-sm md:text-lg text-muted-foreground leading-relaxed mb-6">
+              Sob a direção de Ed Faria, produzimos conteúdo que tangibiliza a autoridade da sua marca e acelera o processo de venda.
             </p>
-            <Link to="/audiovisual" className="inline-flex items-center gap-2 font-bold text-primary hover:gap-3 transition-all">
-              Conhecer nossa produção <ArrowRight size={18} />
+            <Link to="/audiovisual" className="inline-flex items-center gap-2 font-bold text-primary text-sm hover:gap-3 transition-all">
+              Conhecer produção <ArrowRight size={16} />
             </Link>
           </div>
-          <div className="order-1 lg:order-2 relative aspect-video glass rounded-2xl overflow-hidden flex items-center justify-center">
-             <div className="text-center p-8">
-                <Video size={48} className="text-primary mx-auto mb-4 opacity-50" />
-                <p className="font-heading font-bold text-xl">Produção Integrada</p>
-             </div>
+          <div className="order-1 lg:order-2 relative aspect-video glass rounded-2xl overflow-hidden flex items-center justify-center group">
+             <div className="absolute inset-0 bg-primary/10 group-hover:bg-primary/20 transition-colors" />
+             <Video size={40} className="text-primary opacity-40 group-hover:scale-110 transition-transform" />
           </div>
         </div>
       </Section>
 
-      {/* The Ecosystem */}
-      <Section className="relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
+      {/* Ecossistema Compacto */}
+      <Section>
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-5xl font-bold mb-4">Um só ecossistema.</h2>
+          <p className="text-sm md:text-lg text-muted-foreground max-w-2xl mx-auto">
+            O fim da fragmentação. Na BauerLab, tudo nasce do mesmo DNA estratégico.
+          </p>
+        </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-          <div>
-            <h2 className="text-4xl md:text-6xl font-bold mb-8 leading-tight">
-              O fim da fragmentação. <br />
-              <span className="text-primary">Um só ecossistema.</span>
-            </h2>
-            <p className="text-lg text-muted-foreground mb-12 leading-relaxed">
-              O maior erro das empresas é contratar agências diferentes para cada serviço. 
-              O resultado é uma marca sem alma e sem coerência. Na BauerLab, tudo nasce do mesmo DNA.
-            </p>
-            
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-              {[
-                { icon: <Zap />, title: "Agilidade Real", desc: "Sem reuniões inúteis. Foco total em execução e entrega." },
-                { icon: <Target />, title: "Foco em ROI", desc: "Cada pixel e cada linha de código servem para vender." },
-                { icon: <ShieldCheck />, title: "Qualidade Premium", desc: "Padrão internacional em cada entrega audiovisual e digital." },
-                { icon: <TrendingUp />, title: "Escalabilidade", desc: "Sistemas preparados para suportar o crescimento do seu negócio." },
-              ].map((item, i) => (
-                <div key={i} className="space-y-3">
-                  <div className="text-primary">{item.icon}</div>
-                  <h3 className="font-bold text-lg">{item.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
-                </div>
-              ))}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+          {[
+            { icon: <Zap size={20} />, title: "Agilidade", desc: "Foco total em execução." },
+            { icon: <Target size={20} />, title: "ROI", desc: "Foco em conversão." },
+            { icon: <ShieldCheck size={20} />, title: "Premium", desc: "Padrão internacional." },
+            { icon: <TrendingUp size={20} />, title: "Escala", desc: "Pronto para crescer." },
+          ].map((item, i) => (
+            <div key={i} className="p-4 md:p-6 glass rounded-xl text-center">
+              <div className="text-primary mb-3 flex justify-center">{item.icon}</div>
+              <h3 className="font-bold text-sm md:text-lg mb-1">{item.title}</h3>
+              <p className="text-[10px] md:text-xs text-muted-foreground">{item.desc}</p>
             </div>
-          </div>
-          
-          <div className="grid grid-cols-1 gap-4">
-            {services.slice(0, 3).map((s, i) => (
-              <ServiceCard key={i} {...s} index={i} />
-            ))}
-          </div>
+          ))}
         </div>
       </Section>
 
       <CTASection 
-        title="Sua empresa está pronta para 2026?"
-        description="Não espere o mercado mudar para se adaptar. Construa hoje a infraestrutura que vai garantir sua liderança amanhã."
+        title="Pronto para 2026?"
+        description="Construa hoje a infraestrutura que vai garantir sua liderança amanhã."
       />
     </Layout>
   );
