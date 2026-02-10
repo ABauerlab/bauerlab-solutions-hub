@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 interface PageHeroProps {
   tag?: string;
-  title: string;
+  title: ReactNode;
   description: string;
   children?: ReactNode;
 }

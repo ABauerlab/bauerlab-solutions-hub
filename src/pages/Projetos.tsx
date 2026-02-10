@@ -25,7 +25,7 @@ const Projetos = () => {
     <Layout>
       <PageHero
         tag="Portfólio"
-        title="Resultados reais. <br /> Sem distrações."
+        title={<>Resultados reais. <br /> Sem distrações.</>}
         description="Nossa entrega fala por si. Abaixo, uma seleção de infraestruturas digitais e audiovisuais que construímos para marcas que dominam seus nichos."
       />
       
