@@ -73,10 +73,17 @@ const Index = () => {
 
   return (
     <Layout>
-      {/* Hero Compacto e Visual */}
+      {/* Hero Otimizado para LCP */}
       <section ref={heroRef} className="relative min-h-[85vh] md:min-h-screen flex items-center justify-center overflow-hidden bg-mesh">
         <motion.div className="absolute inset-0 z-0" style={{ y: heroY, opacity: heroOpacity }}>
-          <div className="absolute inset-0 bg-cover bg-center scale-105" style={{ backgroundImage: `url(${heroBg})` }} />
+          <img 
+            src={heroBg} 
+            alt="" 
+            className="absolute inset-0 w-full h-full object-cover scale-105"
+            fetchPriority="high"
+            loading="eager"
+            aria-hidden="true"
+          />
           <div className="absolute inset-0 bg-background/85 backdrop-blur-[1px]" />
         </motion.div>
 
@@ -116,7 +123,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Pilares com Scroll Horizontal e Setas */}
+      {/* Pilares com Scroll Horizontal */}
       <section className="py-12 md:py-20 border-y border-border bg-card/30">
         <div className="container mx-auto px-4 md:px-8">
           <div className="flex items-end justify-between mb-8 md:mb-12">
@@ -155,7 +162,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Audiovisual - Mais Visual, Menos Texto */}
+      {/* Audiovisual */}
       <Section className="bg-primary/5">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           <div className="order-2 lg:order-1">
@@ -177,7 +184,7 @@ const Index = () => {
         </div>
       </Section>
 
-      {/* Ecossistema Compacto */}
+      {/* Ecossistema */}
       <Section>
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-5xl font-bold mb-4">Um só ecossistema.</h2>
