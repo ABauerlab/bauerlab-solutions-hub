@@ -137,7 +137,6 @@ const projects = [
     icon: <Globe size={18} />,
     image: elizeteTavaresImg
   },
-  { title: "Produção Audiovisual", category: "Audiovisual", url: "edfaria.com.br", icon: <Video size={18} />, partner: "Ed Faria" },
 ];
 
 const Projetos = () => {
