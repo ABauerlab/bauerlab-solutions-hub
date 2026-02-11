@@ -5,6 +5,7 @@ import ServiceDetailList from "@/components/ServiceDetailList";
 import CTASection from "@/components/CTASection";
 import PricingSection from "@/components/PricingSection";
 import TechnicalSpecs from "@/components/TechnicalSpecs";
+import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 import audiovisualImg from "@/assets/audiovisual.jpg";
@@ -21,6 +22,11 @@ const items = [
 const Audiovisual = () => {
   return (
     <Layout>
+      <SEO 
+        title="Audiovisual Cinematográfico & Produção de Conteúdo"
+        description="Produção audiovisual de elite dirigida por Ed Faria. Vídeos institucionais, fotografia profissional e conteúdo estratégico para marcas premium."
+      />
+      
       <PageHero
         tag="Audiovisual"
         title="Audiovisual estratégico. Cada imagem tem um propósito."

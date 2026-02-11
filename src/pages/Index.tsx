@@ -10,6 +10,7 @@ import Layout from "@/components/Layout";
 import ServiceCard from "@/components/ServiceCard";
 import Section from "@/components/Section";
 import CTASection from "@/components/CTASection";
+import SEO from "@/components/SEO";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const services = [
@@ -73,6 +74,11 @@ const Index = () => {
 
   return (
     <Layout>
+      <SEO 
+        title="BauerLab — Estruturamos marcas para o próximo nível"
+        description="Estratégia, tecnologia e audiovisual integrados em um ecossistema único para sua empresa escalar com autoridade e design de elite."
+      />
+      
       {/* Hero Otimizado para LCP */}
       <section ref={heroRef} className="relative min-h-[85vh] md:min-h-screen flex items-center justify-center overflow-hidden bg-mesh">
         <motion.div className="absolute inset-0 z-0" style={{ y: heroY, opacity: heroOpacity }}>

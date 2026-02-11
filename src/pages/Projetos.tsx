@@ -2,8 +2,9 @@ import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
 import Section from "@/components/Section";
 import CTASection from "@/components/CTASection";
+import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
-import { ArrowUpRight, ExternalLink, Globe, Monitor, Video } from "lucide-react";
+import { ArrowUpRight, ExternalLink, Globe, Monitor } from "lucide-react";
 import { Link } from "react-router-dom";
 
 // Importando as imagens dos projetos
@@ -142,6 +143,11 @@ const projects = [
 const Projetos = () => {
   return (
     <Layout>
+      <SEO 
+        title="Portfólio de Projetos — Infraestrutura Digital & Design"
+        description="Confira os resultados reais que construímos para nossos clientes. Sites, sistemas e landing pages de alta performance."
+      />
+      
       <PageHero
         tag="Portfólio"
         title={<>Resultados reais. <br /> Sem distrações.</>}
@@ -192,11 +198,6 @@ const Projetos = () => {
                       <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary">
                         {project.category}
                       </span>
-                      {project.partner && (
-                        <span className="text-[10px] bg-primary/20 text-primary px-2 py-0.5 rounded-full font-bold uppercase tracking-tighter">
-                          Dir. {project.partner}
-                        </span>
-                      )}
                     </div>
                     <h3 className="font-heading font-bold text-xl md:text-2xl group-hover:text-primary transition-colors mb-1">
                       {project.title}
