@@ -8,7 +8,6 @@ import TechnicalSpecs from "@/components/TechnicalSpecs";
 import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 import audiovisualImg from "@/assets/audiovisual.jpg";
-import edFariaPortfolioImg from "@/assets/projects/edfaria.png";
 
 const items = [
   { title: "Fotografia profissional", description: "Imagens que comunicam a essência da sua marca com qualidade e intenção. Fotografia de produtos, ambientes, equipe e eventos — com direção de arte e pós-produção profissional." },
@@ -53,16 +52,16 @@ const Audiovisual = () => {
 
       {/* Seção de Direção Criativa / Portfólio Ed Faria */}
       <Section className="border-t border-border">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-3xl mx-auto text-center">
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
             <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary mb-3 block">Direção Criativa</span>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">A assinatura visual da BauerLab.</h2>
-            <p className="text-muted-foreground leading-relaxed mb-6">
+            <p className="text-muted-foreground leading-relaxed mb-8">
               Toda a nossa produção audiovisual é dirigida por <strong>Ed Faria</strong>, garantindo um padrão estético e técnico de nível internacional. 
               Não entregamos apenas arquivos; entregamos narrativas visuais que posicionam sua marca como autoridade.
             </p>
@@ -70,33 +69,11 @@ const Audiovisual = () => {
               href="https://edfaria.com.br" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-md font-heading font-bold text-sm hover:bg-primary/90 transition-all"
+              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-md font-heading font-bold text-base hover:bg-primary/90 transition-all hover:scale-105"
             >
-              Ver Portfólio Completo <ExternalLink size={16} />
+              Ver Portfólio Completo <ExternalLink size={18} />
             </a>
           </motion.div>
-          
-          <motion.a
-            href="https://edfaria.com.br"
-            target="_blank"
-            rel="noopener noreferrer"
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="relative group block rounded-2xl overflow-hidden border border-border shadow-2xl"
-          >
-            <img 
-              src={edFariaPortfolioImg} 
-              alt="Portfólio Ed Faria" 
-              className="w-full h-auto group-hover:scale-105 transition-transform duration-700"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
-              <p className="text-white font-bold flex items-center gap-2">
-                edfaria.com.br <ExternalLink size={14} />
-              </p>
-            </div>
-          </motion.a>
         </div>
       </Section>
 
