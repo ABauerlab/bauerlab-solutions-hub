@@ -28,7 +28,7 @@ const services = [
   {
     title: "Audiovisual",
     description: "Produção cinematográfica que tangibiliza autoridade e acelera o processo de venda.",
-    path: "/audiovisual",
+    path: "/14:02",
     icon: <Video size={22} />,
   },
   {
@@ -173,7 +173,7 @@ const Index = () => {
             <p className="text-sm md:text-lg text-muted-foreground leading-relaxed mb-6">
               Sob a direção de Ed Faria, produzimos conteúdo que tangibiliza a autoridade da sua marca e acelera o processo de venda.
             </p>
-            <Link to="/audiovisual" className="inline-flex items-center gap-2 font-bold text-primary text-sm hover:gap-3 transition-all">
+            <Link to="/14:02" className="inline-flex items-center gap-2 font-bold text-primary text-sm hover:gap-3 transition-all">
               Conhecer produção <ArrowRight size={16} />
             </Link>
           </div>

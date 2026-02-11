@@ -19,7 +19,7 @@ const Footer = () => {
           <div>
             <h4 className="font-heading font-semibold text-sm mb-4 text-foreground">Serviços</h4>
             <div className="flex flex-col gap-2.5">
-              <Link to="/audiovisual" className="text-sm text-muted-foreground hover:text-primary transition-colors">Audiovisual</Link>
+              <Link to="/14:02" className="text-sm text-muted-foreground hover:text-primary transition-colors">Audiovisual</Link>
               <Link to="/ativacao-de-marca" className="text-sm text-muted-foreground hover:text-primary transition-colors">Ativação de Marca</Link>
               <Link to="/sistemas-digital" className="text-sm text-muted-foreground hover:text-primary transition-colors">Sistemas & Digital</Link>
               <Link to="/posicionamento-marca" className="text-sm text-muted-foreground hover:text-primary transition-colors">Posicionamento & Marca</Link>
