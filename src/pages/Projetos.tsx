@@ -17,8 +17,16 @@ import astroImg from "@/assets/projects/astrowebatlas.png";
 import contaLabImg from "@/assets/projects/contalab.png";
 import contaLabMeiImg from "@/assets/projects/contalab-mei.png";
 import contaLabSimplesImg from "@/assets/projects/contalab-simples.png";
+import contaLabFiscalImg from "@/assets/projects/contalab-fiscal.png";
 
 const projects = [
+  { 
+    title: "ContaLab Digital Fiscal", 
+    category: "Landing Page", 
+    url: "fiscal.contalabdigital.com.br", 
+    icon: <Globe size={18} />, 
+    image: contaLabFiscalImg 
+  },
   { 
     title: "ContaLab Simples Nacional", 
     category: "Landing Page", 
