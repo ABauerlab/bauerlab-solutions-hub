@@ -19,8 +19,16 @@ import contaLabMeiImg from "@/assets/projects/contalab-mei.png";
 import contaLabSimplesImg from "@/assets/projects/contalab-simples.png";
 import contaLabFiscalImg from "@/assets/projects/contalab-fiscal.png";
 import contaLabRegularizarImg from "@/assets/projects/contalab-regularizar.png";
+import contaLabContabilImg from "@/assets/projects/contalab-contabil.png";
 
 const projects = [
+  { 
+    title: "ContaLab Contábil", 
+    category: "Landing Page", 
+    url: "contabil.contalabdigital.com.br", 
+    icon: <Globe size={18} />, 
+    image: contaLabContabilImg 
+  },
   { 
     title: "ContaLab Regularização", 
     category: "Landing Page", 
