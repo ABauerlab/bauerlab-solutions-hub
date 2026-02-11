@@ -76,12 +76,15 @@ const Audiovisual = () => {
             </a>
           </motion.div>
           
-          <motion.div
+          <motion.a
+            href="https://edfaria.com.br"
+            target="_blank"
+            rel="noopener noreferrer"
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="relative group rounded-2xl overflow-hidden border border-border shadow-2xl"
+            className="relative group block rounded-2xl overflow-hidden border border-border shadow-2xl"
           >
             <img 
               src={edFariaPortfolioImg} 
@@ -89,9 +92,11 @@ const Audiovisual = () => {
               className="w-full h-auto group-hover:scale-105 transition-transform duration-700"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
-              <p className="text-white font-bold">edfaria.com.br</p>
+              <p className="text-white font-bold flex items-center gap-2">
+                edfaria.com.br <ExternalLink size={14} />
+              </p>
             </div>
-          </motion.div>
+          </motion.a>
         </div>
       </Section>
 
