@@ -16,8 +16,16 @@ import recantoImg from "@/assets/projects/recantodafloresta.png";
 import astroImg from "@/assets/projects/astrowebatlas.png";
 import contaLabImg from "@/assets/projects/contalab.png";
 import contaLabMeiImg from "@/assets/projects/contalab-mei.png";
+import contaLabSimplesImg from "@/assets/projects/contalab-simples.png";
 
 const projects = [
+  { 
+    title: "ContaLab Simples Nacional", 
+    category: "Landing Page", 
+    url: "simplesnacional.contalabdigital.com.br", 
+    icon: <Globe size={18} />, 
+    image: contaLabSimplesImg 
+  },
   { 
     title: "ContaLab Digital MEI", 
     category: "Landing Page", 
