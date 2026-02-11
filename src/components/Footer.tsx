@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
+import { getEmail, getWhatsAppUrl } from "@/lib/contact";
 import logo from "@/assets/logo.jpeg";
 
 const Footer = () => {
+  const email = getEmail();
+
   return (
     <footer className="border-t border-border bg-card">
       <div className="container mx-auto px-4 md:px-8 py-16">
@@ -39,11 +42,11 @@ const Footer = () => {
           <div>
             <h4 className="font-heading font-semibold text-sm mb-4 text-foreground">Contato</h4>
             <div className="flex flex-col gap-2.5">
-              <a href="https://wa.me/5531998021169" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+              <a href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                 WhatsApp
               </a>
-              <a href="mailto:contato.bauerlab@gmail.com" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                contato.bauerlab@gmail.com
+              <a href={`mailto:${email}`} className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                {email}
               </a>
             </div>
           </div>

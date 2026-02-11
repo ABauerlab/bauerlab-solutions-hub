@@ -4,14 +4,21 @@ import PageHero from "@/components/PageHero";
 import Section from "@/components/Section";
 import { motion } from "framer-motion";
 import { Send, MessageCircle, Mail, ArrowRight } from "lucide-react";
+import { getEmail, getWhatsAppUrl } from "@/lib/contact";
 
 const Contato = () => {
   const [formData, setFormData] = useState({ nome: "", email: "", telefone: "", empresa: "", mensagem: "" });
+  const businessEmail = getEmail();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const message = `Olá, sou ${formData.nome}${formData.empresa ? ` da empresa ${formData.empresa}` : ""}. ${formData.mensagem}`;
-    window.open(`https://wa.me/5531998021169?text=${encodeURIComponent(message)}`, "_blank");
+    const message = `Olá, sou ${formData.nome}${formData.empresa ? ` da empresa ${formData.empresa}` : ""}.
+E-mail: ${formData.email}
+Telefone: ${formData.telefone}
+
+Mensagem: ${formData.mensagem}`;
+    
+    window.open(getWhatsAppUrl(message), "_blank");
   };
 
   return (
@@ -115,7 +122,7 @@ const Contato = () => {
                 Geralmente respondemos em menos de 2 horas.
               </p>
               <a
-                href="https://wa.me/5531998021169"
+                href={getWhatsAppUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-md font-heading font-semibold text-sm hover:bg-primary/90 transition-colors"
@@ -133,8 +140,8 @@ const Contato = () => {
               <p className="text-sm text-muted-foreground mb-4">
                 Para propostas mais detalhadas, envie um e-mail com as informações do seu projeto.
               </p>
-              <a href="mailto:contato.bauerlab@gmail.com" className="inline-flex items-center gap-2 text-primary font-heading font-semibold text-sm hover:gap-3 transition-all duration-300">
-                contato.bauerlab@gmail.com <ArrowRight size={14} />
+              <a href={`mailto:${businessEmail}`} className="inline-flex items-center gap-2 text-primary font-heading font-semibold text-sm hover:gap-3 transition-all duration-300">
+                {businessEmail} <ArrowRight size={14} />
               </a>
             </div>
 

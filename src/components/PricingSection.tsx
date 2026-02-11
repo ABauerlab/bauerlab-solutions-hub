@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Check, Zap } from "lucide-react";
+import { getWhatsAppUrl } from "@/lib/contact";
 
 const packages = [
   {
@@ -92,7 +93,7 @@ const PricingSection = () => {
           </ul>
 
           <a
-            href={`https://wa.me/5531998021169?text=Olá, tenho interesse no pacote ${pkg.name} de Audiovisual.`}
+            href={getWhatsAppUrl(`Olá, tenho interesse no pacote ${pkg.name} de Audiovisual.`)}
             target="_blank"
             rel="noopener noreferrer"
             className={`w-full py-4 rounded-xl font-heading font-bold text-sm text-center transition-all ${

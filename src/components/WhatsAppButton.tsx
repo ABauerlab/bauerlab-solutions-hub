@@ -1,12 +1,11 @@
 import { MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
-
-const WHATSAPP_URL = "https://wa.me/5531998021169";
+import { getWhatsAppUrl } from "@/lib/contact";
 
 const WhatsAppButton = () => {
   return (
     <motion.a
-      href={WHATSAPP_URL}
+      href={getWhatsAppUrl()}
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-[#25D366] text-white px-5 py-3.5 rounded-full shadow-2xl hover:bg-[#128C7E] transition-all duration-300 hover:scale-105 group"

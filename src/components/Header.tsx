@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, MessageCircle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { getWhatsAppUrl } from "@/lib/contact";
 import logo from "@/assets/logo.jpeg";
 
 const navItems = [
@@ -59,7 +60,7 @@ const Header = () => {
             </Link>
           ))}
           <a
-            href="https://wa.me/5531998021169"
+            href={getWhatsAppUrl()}
             target="_blank"
             rel="noopener noreferrer"
             className="bg-[#25D366] text-white px-5 py-2.5 rounded-md text-sm font-heading font-bold hover:bg-[#128C7E] transition-all flex items-center gap-2"
@@ -101,7 +102,7 @@ const Header = () => {
                 </Link>
               ))}
               <a
-                href="https://wa.me/5531998021169"
+                href={getWhatsAppUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-4 bg-[#25D366] text-white px-6 py-4 rounded-md text-lg font-heading font-bold text-center flex items-center justify-center gap-2"
