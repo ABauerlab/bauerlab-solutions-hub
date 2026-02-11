@@ -22,6 +22,7 @@ import contaLabRegularizarImg from "@/assets/projects/contalab-regularizar.png";
 import contaLabContabilImg from "@/assets/projects/contalab-contabil.png";
 import soulGuettoImg from "@/assets/projects/soulguetto.png";
 import misterBarbosaImg from "@/assets/projects/misterbarbosa.png";
+import elizeteTavaresImg from "@/assets/projects/elizetetavares.png";
 
 const projects = [
   { 
@@ -129,7 +130,13 @@ const projects = [
     icon: <Globe size={18} />,
     image: misterBarbosaImg
   },
-  { title: "Espacio Elizete Tavares", category: "Sites", url: "espacioelizetetavares.com", icon: <Globe size={18} /> },
+  { 
+    title: "Espacio Elizete Tavares", 
+    category: "Sites", 
+    url: "espacioelizetetavares.com", 
+    icon: <Globe size={18} />,
+    image: elizeteTavaresImg
+  },
   { title: "Produção Audiovisual", category: "Audiovisual", url: "edfaria.com.br", icon: <Video size={18} />, partner: "Ed Faria" },
 ];
 
