@@ -4,7 +4,7 @@ import Section from "@/components/Section";
 import CTASection from "@/components/CTASection";
 import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
-import { ArrowUpRight, ExternalLink, Globe, Monitor } from "lucide-react";
+import { ArrowUpRight, ExternalLink, Globe, Monitor, ShoppingBag } from "lucide-react";
 import { Link } from "react-router-dom";
 
 // Importando as imagens dos projetos
@@ -24,8 +24,16 @@ import contaLabContabilImg from "@/assets/projects/contalab-contabil.png";
 import soulGuettoImg from "@/assets/projects/soulguetto.png";
 import misterBarbosaImg from "@/assets/projects/misterbarbosa.png";
 import elizeteTavaresImg from "@/assets/projects/elizetetavares.png";
+import vistaKodaraImg from "@/assets/projects/vistakodara.png";
 
 const projects = [
+  { 
+    title: "Vista Kodara", 
+    category: "E-commerce", 
+    url: "vistakodara.com.br", 
+    icon: <ShoppingBag size={18} />, 
+    image: vistaKodaraImg 
+  },
   { 
     title: "ContaLab Contábil", 
     category: "Landing Page", 
