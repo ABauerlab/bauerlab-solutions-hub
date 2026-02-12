@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { 
   ArrowRight, Monitor, Palette, Video, Sparkles, Package, 
   Zap, Target, ShieldCheck, TrendingUp, ChevronRight, ChevronLeft,
-  Cpu, Camera
+  Cpu, Camera, Calculator
 } from "lucide-react";
 import Layout from "@/components/Layout";
 import ServiceCard from "@/components/ServiceCard";
@@ -40,9 +40,15 @@ const services = [
   },
   {
     title: "Materiais",
-    description: "Tangibilização premium da marca em materiais físicos que reforçam sua autoridade.",
+    description: "Tangibilização premium da marca em materiais físicos que reforçar sua autoridade.",
     path: "/materiais-fisicos",
     icon: <Package size={22} />,
+  },
+  {
+    title: "Contabilidade",
+    description: "Soluções contábeis integradas à sua estrutura digital através da ContaLab Digital.",
+    path: "http://contalabdigital.com.br/",
+    icon: <Calculator size={22} />,
   },
 ];
 
@@ -157,7 +163,7 @@ const Index = () => {
           
           <div 
             ref={scrollContainerRef}
-            className="flex md:grid md:grid-cols-5 gap-4 overflow-x-auto no-scrollbar pb-4 md:pb-0 snap-x snap-mandatory scroll-smooth"
+            className="flex md:grid md:grid-cols-3 lg:grid-cols-6 gap-4 overflow-x-auto no-scrollbar pb-4 md:pb-0 snap-x snap-mandatory scroll-smooth"
           >
             {services.map((service, index) => (
               <div key={service.title} className="snap-center">
