@@ -13,6 +13,7 @@ const items = [
   { title: "Google Meu Negócio", description: "Configuração e otimização completa do seu perfil no Google. Sua empresa aparece nas buscas locais com informações corretas, fotos profissionais e avaliações organizadas. Visibilidade local sem custo de anúncio." },
   { title: "Automações básicas", description: "Automatize tarefas repetitivas que tomam tempo da sua equipe. Respostas automáticas, notificações, integração entre sistemas e fluxos inteligentes que economizam horas de trabalho manual." },
   { title: "Estruturação digital completa", description: "Do domínio ao e-mail profissional, do site ao sistema, das redes sociais ao Google — organizamos toda a presença digital da sua empresa para que tudo funcione de forma integrada e profissional." },
+  { title: "Serviços de contabilidade", description: "Através da ContaLab Digital, oferecemos soluções contábeis completas e integradas à sua estrutura digital. Regularização, fiscal, contábil e MEI com foco em agilidade e tecnologia.", link: "http://contalabdigital.com.br/" },
 ];
 
 const SistemasDigital = () => {
@@ -21,7 +22,7 @@ const SistemasDigital = () => {
       <PageHero
         tag="Sistemas & Digital"
         title="Não é site bonito. É sistema funcional que gera resultado."
-        description="Desenvolvemos soluções digitais que funcionam de verdade. Sites, sistemas, plataformas e automações que estruturam o seu negócio no digital — com foco em performance, usabilidade e conversão."
+        description="Desenvolvemos soluções digitais que funcionam de verdade. Sites, sistemas, platforms e automações que estruturam o seu negócio no digital — com foco em performance, usabilidade e conversão."
       />
 
       {/* Imagem de impacto */}
@@ -54,7 +55,7 @@ const SistemasDigital = () => {
           <div>
             <h2 className="text-2xl md:text-3xl font-bold mb-6">Tecnologia a serviço do resultado.</h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              Muita empresa contrata um "site bonito" e recebe um cartão de visita digital. Na BauerLab, 
+              Muita empresa contrata um \"site bonito\" e recebe um cartão de visita digital. Na BauerLab, 
               cada site e sistema é projetado como uma ferramenta de negócio, com navegação intuitiva, 
               carregamento rápido, SEO estruturado e foco em conversão.
             </p>
@@ -64,7 +65,7 @@ const SistemasDigital = () => {
             </p>
             <p className="text-muted-foreground leading-relaxed">
               E o mais importante: você tem acompanhamento real durante todo o processo. 
-              Nada de sumir depois da entrega. Nada de "vou ver isso depois". 
+              Nada de sumir depois da entrega. Nada de \"vou ver isso depois\". 
               Resolve, entrega e acompanha.
             </p>
           </div>
