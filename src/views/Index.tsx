@@ -6,7 +6,7 @@ import Link from "next/link";
 import {
   ArrowRight, ArrowUpRight, Monitor, Palette, Video, Sparkles, Package,
   Zap, Target, ShieldCheck, TrendingUp, Check, X,
-  Cpu, Camera, ClipboardCheck
+  Camera, ClipboardCheck
 } from "lucide-react";
 import Layout from "@/components/Layout";
 import Section from "@/components/Section";
@@ -28,6 +28,7 @@ const services = [
     path: "/trafego-pago",
     icon: <Target size={20} />,
     span: "lg:col-span-6",
+    tone: "primary" as const,
   },
   {
     title: "Branding",
@@ -63,6 +64,7 @@ const services = [
     path: "/ativacao-de-marca",
     icon: <Sparkles size={20} />,
     span: "lg:col-span-3",
+    tone: "lime" as const,
   },
   {
     title: "Materiais Físicos",
@@ -129,12 +131,13 @@ const Index = () => {
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               className="lg:col-span-7"
             >
-              <span className="inline-flex items-center gap-2 text-[10px] font-bold tracking-[0.2em] uppercase text-primary mb-6">
-                <Cpu size={12} /> 01. Infraestrutura de Marca
+              <span className="inline-flex items-center gap-2 text-[10px] font-bold tracking-[0.2em] uppercase text-foreground mb-6">
+                <span className="w-2 h-2 rounded-full bg-lime" /> 01. Infraestrutura de Marca
               </span>
 
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.05] mb-6 text-gradient text-left">
-                Estruturamos marcas para o próximo nível.
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-[1.02] mb-6 text-left">
+                Estruturamos marcas para o{" "}
+                <span className="inline-block bg-lime text-lime-foreground px-3 -rotate-1">próximo nível</span>.
               </h1>
 
               <p className="text-sm md:text-lg text-muted-foreground max-w-xl mb-6 md:mb-10 leading-relaxed text-left">
@@ -145,13 +148,13 @@ const Index = () => {
               <div className="flex flex-col sm:flex-row gap-4 items-start">
                 <a
                   href="https://wa.me/5531998021169"
-                  className="w-full sm:w-auto group inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-full font-heading font-bold text-base hover:scale-105 transition-all duration-500 glow"
+                  className="w-full sm:w-auto group inline-flex items-center justify-center gap-2 bg-lime text-lime-foreground px-8 py-4 rounded-full font-heading font-extrabold text-base hover:scale-105 transition-all duration-500"
                 >
                   Iniciar Projeto <ArrowRight size={18} />
                 </a>
                 <Link
                   href="/projetos"
-                  className="w-full sm:w-auto border border-border px-8 py-4 rounded-full font-heading font-bold text-base hover:border-primary/50 hover:bg-white/5 transition-all duration-500 text-center"
+                  className="w-full sm:w-auto border-2 border-primary text-primary px-8 py-4 rounded-full font-heading font-bold text-base hover:bg-primary hover:text-primary-foreground transition-all duration-500 text-center"
                 >
                   Portfólio
                 </Link>
@@ -164,11 +167,11 @@ const Index = () => {
               transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
               className="lg:col-span-5"
             >
-              <div className="grid grid-cols-2 gap-x-10 gap-y-8">
+              <div className="bg-primary rounded-3xl p-6 md:p-8 rotate-1 grid grid-cols-2 gap-x-8 gap-y-6">
                 {stats.map((stat) => (
                   <div key={stat.label}>
-                    <div className="text-4xl md:text-6xl font-bold text-gradient font-heading leading-none">{stat.value}</div>
-                    <div className="text-xs md:text-sm text-muted-foreground uppercase tracking-wider mt-2">{stat.label}</div>
+                    <div className="text-4xl md:text-6xl font-extrabold text-primary-foreground font-heading leading-none">{stat.value}</div>
+                    <div className="text-xs md:text-sm text-primary-foreground/70 uppercase tracking-wider mt-2">{stat.label}</div>
                   </div>
                 ))}
               </div>
@@ -191,25 +194,46 @@ const Index = () => {
           <div className="grid grid-cols-2 lg:grid-cols-6 gap-3 md:gap-4">
             {services.map((service, index) => {
               const isExternal = service.path.startsWith("http");
+              const tone = (service as { tone?: "primary" | "lime" }).tone;
+              const toneClasses =
+                tone === "primary"
+                  ? "bg-primary border-transparent"
+                  : tone === "lime"
+                  ? "bg-lime border-transparent"
+                  : "border border-border bg-card/40 hover:border-primary/40";
+              const textClasses =
+                tone === "primary"
+                  ? "text-primary-foreground"
+                  : tone === "lime"
+                  ? "text-lime-foreground"
+                  : "";
+              const mutedClasses =
+                tone === "primary" ? "text-primary-foreground/70" : tone === "lime" ? "text-lime-foreground/70" : "text-muted-foreground";
+              const iconWrapClasses =
+                tone === "primary"
+                  ? "bg-primary-foreground/15 text-primary-foreground"
+                  : tone === "lime"
+                  ? "bg-lime-foreground/10 text-lime-foreground"
+                  : "bg-primary/10 text-primary";
               const CardBody = (
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: index * 0.05 }}
                   viewport={{ once: true }}
-                  className={`group relative border border-border bg-card/40 p-4 md:p-8 rounded-2xl hover:border-primary/40 transition-colors duration-500 h-full overflow-hidden ${service.span}`}
+                  className={`group relative p-4 md:p-8 rounded-2xl transition-colors duration-500 h-full overflow-hidden ${toneClasses} ${service.span}`}
                 >
                   <div className="absolute top-5 right-5 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-x-2 group-hover:translate-x-0">
-                    <ArrowUpRight className="text-primary" size={20} />
+                    <ArrowUpRight className={tone ? textClasses : "text-primary"} size={20} />
                   </div>
                   <div className="relative z-10">
-                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-4 group-hover:scale-110 transition-transform duration-500">
+                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-500 ${iconWrapClasses}`}>
                       {service.icon}
                     </div>
-                    <h3 className="text-lg font-bold mb-2 group-hover:text-primary transition-colors duration-300">
+                    <h3 className={`text-lg font-bold mb-2 transition-colors duration-300 ${textClasses || "group-hover:text-primary"}`}>
                       {service.title}
                     </h3>
-                    <p className="text-muted-foreground leading-relaxed text-xs md:text-sm max-w-md">
+                    <p className={`leading-relaxed text-xs md:text-sm max-w-md ${mutedClasses}`}>
                       {service.description}
                     </p>
                   </div>

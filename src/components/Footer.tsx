@@ -20,7 +20,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="font-heading font-semibold text-sm mb-4 text-foreground">Serviços</h4>
+            <h3 className="font-heading font-semibold text-sm mb-4 text-foreground">Serviços</h3>
             <div className="flex flex-col gap-2.5">
               <Link href="/audiovisual" className="text-sm text-muted-foreground hover:text-primary transition-colors">Audiovisual</Link>
               <Link href="/ativacao-de-marca" className="text-sm text-muted-foreground hover:text-primary transition-colors">Ativação de Marca</Link>
@@ -33,7 +33,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="font-heading font-semibold text-sm mb-4 text-foreground">Empresa</h4>
+            <h3 className="font-heading font-semibold text-sm mb-4 text-foreground">Empresa</h3>
             <div className="flex flex-col gap-2.5">
               <Link href="/projetos" className="text-sm text-muted-foreground hover:text-primary transition-colors">Projetos</Link>
               <Link href="/empresas-do-grupo" className="text-sm text-muted-foreground hover:text-primary transition-colors">Empresas do Grupo</Link>
@@ -47,7 +47,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="font-heading font-semibold text-sm mb-4 text-foreground">Contato</h4>
+            <h3 className="font-heading font-semibold text-sm mb-4 text-foreground">Contato</h3>
             <div className="flex flex-col gap-2.5">
               <a href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                 WhatsApp

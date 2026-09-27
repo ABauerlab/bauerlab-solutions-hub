@@ -1,19 +1,19 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Inter } from "next/font/google";
+import { Bricolage_Grotesque, Manrope } from "next/font/google";
 import "./globals.css";
 import Providers from "@/components/Providers";
 import { SITE_URL, SITE_NAME, BUSINESS } from "@/lib/site";
 
-const spaceGrotesk = Space_Grotesk({
+const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["400", "700", "800"],
   variable: "--font-heading",
   display: "swap",
 });
 
-const inter = Inter({
+const manrope = Manrope({
   subsets: ["latin"],
-  weight: ["400", "600"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-body",
   display: "swap",
 });
@@ -88,7 +88,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html
       lang="pt-BR"
       suppressHydrationWarning
-      className={`${spaceGrotesk.variable} ${inter.variable}`}
+      className={`${bricolage.variable} ${manrope.variable}`}
     >
       <head>
         {/* Fontes agora são self-hosted via next/font (sem chamada externa a fonts.googleapis.com),
