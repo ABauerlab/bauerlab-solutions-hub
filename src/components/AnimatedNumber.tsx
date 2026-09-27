@@ -11,15 +11,19 @@ interface AnimatedNumberProps {
 const AnimatedNumber = ({ value, className }: AnimatedNumberProps) => {
   const ref = useRef<HTMLSpanElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
-  const [display, setDisplay] = useState(value.replace(/[0-9]/g, "0"));
-
-  const match = value.match(/^(\D*)(\d+)(\D*)$/);
+  const [display, setDisplay] = useState(value.replace(/\d/g, "0"));
+  const hasAnimated = useRef(false);
 
   useEffect(() => {
-    if (!isInView || !match) {
-      if (!match) setDisplay(value);
+    if (!isInView || hasAnimated.current) return;
+
+    const match = value.match(/^(\D*)(\d+)(\D*)$/);
+    if (!match) {
+      setDisplay(value);
       return;
     }
+
+    hasAnimated.current = true;
     const [, prefix, numStr, suffix] = match;
     const target = parseInt(numStr, 10);
     const controls = animate(0, target, {
@@ -28,7 +32,8 @@ const AnimatedNumber = ({ value, className }: AnimatedNumberProps) => {
       onUpdate: (v) => setDisplay(`${prefix}${Math.round(v)}${suffix}`),
     });
     return () => controls.stop();
-  }, [isInView, match, value]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isInView]);
 
   return (
     <span ref={ref} className={className}>
