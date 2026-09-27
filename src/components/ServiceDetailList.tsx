@@ -9,10 +9,10 @@ interface ServiceDetailProps {
 
 const ServiceDetailList = ({ items }: ServiceDetailProps) => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6">
       {items.map((item, index) => {
         const Content = (
-          <div className="flex gap-4 p-6 bg-card border border-border rounded-lg h-full hover:border-primary/50 transition-colors group">
+          <div className="flex gap-3 md:gap-4 p-4 md:p-6 bg-card border border-border rounded-lg h-full hover:border-primary/50 transition-colors group">
             <div className="shrink-0 mt-0.5">
               <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center">
                 <Check size={12} className="text-primary" />

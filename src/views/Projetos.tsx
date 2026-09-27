@@ -127,22 +127,22 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
       rel="noopener noreferrer"
       className="block glass rounded-2xl overflow-hidden glass-hover transition-all duration-500 h-full flex flex-col"
     >
-      <div className="p-6 md:p-8 flex-1 flex flex-col justify-between">
+      <div className="p-4 md:p-8 flex-1 flex flex-col justify-between">
         <div>
-          <div className="flex items-center justify-between mb-4">
-            <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-500">
+          <div className="flex items-center justify-between mb-2 md:mb-4">
+            <div className="w-8 h-8 md:w-11 md:h-11 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-500">
               {project.icon}
             </div>
             <ExternalLink size={16} className="text-primary opacity-0 group-hover:opacity-100 transition-opacity" />
           </div>
-          <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary">
+          <span className="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.2em] text-primary">
             {project.category}
           </span>
-          <h3 className="font-heading font-bold text-xl md:text-2xl group-hover:text-primary transition-colors mb-1 mt-2">
+          <h3 className="font-heading font-bold text-base md:text-2xl group-hover:text-primary transition-colors mb-1 mt-1 md:mt-2">
             {project.title}
           </h3>
-          <p className="text-sm text-muted-foreground font-mono tracking-tight mb-2">{project.url}</p>
-          {project.note && <p className="text-xs text-muted-foreground/70">{project.note}</p>}
+          <p className="text-xs md:text-sm text-muted-foreground font-mono tracking-tight mb-1 md:mb-2">{project.url}</p>
+          {project.note && <p className="text-[11px] md:text-xs text-muted-foreground/70">{project.note}</p>}
         </div>
       </div>
     </a>
@@ -170,7 +170,7 @@ const Projetos = () => {
       />
 
       <Section className="pt-0">
-        <div className="flex flex-wrap gap-3 mb-10">
+        <div className="flex flex-wrap gap-2 md:gap-3 mb-6 md:mb-10">
           <button
             onClick={() => setFilter("Todos")}
             className={`px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all ${
@@ -193,12 +193,12 @@ const Projetos = () => {
         </div>
 
         {destaques.length > 0 && (
-          <div className="mb-16">
-            <div className="flex items-center gap-2 mb-6 text-primary">
+          <div className="mb-8 md:mb-16">
+            <div className="flex items-center gap-2 mb-4 md:mb-6 text-primary">
               <Layers size={16} />
               <h2 className="text-sm font-bold uppercase tracking-[0.2em]">Cases em destaque</h2>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+            <div className="grid grid-cols-2 gap-3 md:gap-8">
               {destaques.map((project, index) => (
                 <ProjectCard key={project.title} project={project} index={index} />
               ))}
@@ -207,15 +207,15 @@ const Projetos = () => {
         )}
 
         {produtos.length > 0 && (
-          <div className="mb-16">
-            <div className="flex items-center gap-2 mb-6 text-primary">
+          <div className="mb-8 md:mb-16">
+            <div className="flex items-center gap-2 mb-4 md:mb-6 text-primary">
               <Rocket size={16} />
               <h2 className="text-sm font-bold uppercase tracking-[0.2em]">Produtos próprios BauerLab</h2>
             </div>
-            <p className="text-sm text-muted-foreground mb-6 max-w-2xl">
+            <p className="text-sm text-muted-foreground mb-4 md:mb-6 max-w-2xl">
               Sistemas que não são cliente, são construídos e operados pela própria agência.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+            <div className="grid grid-cols-2 gap-3 md:gap-8">
               {produtos.map((project, index) => (
                 <ProjectCard key={project.title} project={project} index={index} />
               ))}
@@ -225,11 +225,11 @@ const Projetos = () => {
 
         {volume.length > 0 && (
           <div>
-            <div className="flex items-center gap-2 mb-6 text-primary">
+            <div className="flex items-center gap-2 mb-4 md:mb-6 text-primary">
               <Globe size={16} />
               <h2 className="text-sm font-bold uppercase tracking-[0.2em]">Mais projetos</h2>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+            <div className="grid grid-cols-2 gap-3 md:gap-8">
               {volume.map((project, index) => (
                 <ProjectCard key={project.title} project={project} index={index} />
               ))}
@@ -238,7 +238,7 @@ const Projetos = () => {
         )}
       </Section>
 
-      <section className="py-20 md:py-32 border-t border-border">
+      <section className="py-12 md:py-32 border-t border-border">
         <div className="container mx-auto px-4 md:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}

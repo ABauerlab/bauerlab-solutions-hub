@@ -55,7 +55,7 @@ const packages = [
 
 const PricingSection = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
       {packages.map((pkg, index) => (
         <motion.div
           key={pkg.name}
@@ -63,7 +63,7 @@ const PricingSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: index * 0.1 }}
           viewport={{ once: true }}
-          className={`relative p-8 rounded-2xl border ${
+          className={`relative p-5 md:p-8 rounded-2xl border ${
             pkg.popular 
               ? "bg-primary/5 border-primary shadow-2xl shadow-primary/10" 
               : "bg-card border-border"
@@ -75,9 +75,9 @@ const PricingSection = () => {
             </div>
           )}
           
-          <div className="mb-8">
+          <div className="mb-5 md:mb-8">
             <h3 className="text-xl font-bold mb-2">{pkg.name}</h3>
-            <p className="text-sm text-muted-foreground mb-6">{pkg.description}</p>
+            <p className="text-sm text-muted-foreground mb-4 md:mb-6">{pkg.description}</p>
             <div className="flex items-baseline gap-1">
               <span className="text-sm font-bold text-muted-foreground">R$</span>
               <span className="text-4xl font-bold">{pkg.price}</span>
@@ -85,7 +85,7 @@ const PricingSection = () => {
             </div>
           </div>
 
-          <ul className="space-y-4 mb-8 flex-1">
+          <ul className="space-y-2.5 md:space-y-4 mb-5 md:mb-8 flex-1">
             {pkg.features.map((feature) => (
               <li key={feature} className="flex items-start gap-3 text-sm">
                 <Check size={16} className="text-primary shrink-0 mt-0.5" />
