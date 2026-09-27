@@ -1,12 +1,12 @@
-import type { Metadata } from "next";
 import IndexPage from "@/views/Index";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "BauerLab — Estruturamos marcas para o próximo nível",
   description:
     "Estratégia, tecnologia e audiovisual integrados em um ecossistema único para sua empresa escalar com autoridade e design de elite.",
-  alternates: { canonical: "/" },
-};
+  path: "/",
+});
 
 export default function Page() {
   return <IndexPage />;
