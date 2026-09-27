@@ -32,7 +32,7 @@ const Sobre = () => {
         description="A BauerLab une estratégia, tecnologia, audiovisual e experiência física num único ecossistema, fundada por João Victor Bauer para estruturar marcas e negócios que precisam operar como empresa de verdade, não como projeto pontual."
       />
 
-      <section className="pb-12 md:pb-20">
+      <section className="pb-8 md:pb-20">
         <div className="container mx-auto px-4 md:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -40,7 +40,7 @@ const Sobre = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="rounded-lg overflow-hidden"
           >
-            <img src={aboutImg.src} alt="Equipe BauerLab" className="w-full h-[300px] md:h-[500px] object-cover" loading="lazy" />
+            <img src={aboutImg.src} alt="Equipe BauerLab" className="w-full h-[220px] md:h-[500px] object-cover" loading="lazy" />
           </motion.div>
         </div>
       </section>

@@ -28,7 +28,7 @@ const SistemasDigital = () => {
       />
 
       {/* Imagem de impacto */}
-      <section className="pb-12 md:pb-20">
+      <section className="pb-8 md:pb-20">
         <div className="container mx-auto px-4 md:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -36,7 +36,7 @@ const SistemasDigital = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="rounded-lg overflow-hidden"
           >
-            <img src={digitalImg.src} alt="Desenvolvimento digital" className="w-full h-[300px] md:h-[500px] object-cover" loading="lazy" />
+            <img src={digitalImg.src} alt="Desenvolvimento digital" className="w-full h-[220px] md:h-[500px] object-cover" loading="lazy" />
           </motion.div>
         </div>
       </section>

@@ -26,7 +26,7 @@ const MateriaisFisicos = () => {
         description="Produzimos materiais gráficos que mantêm a identidade visual, a qualidade e a coerência da sua marca em cada peça. Do cartão de visita ao display, tudo com o mesmo rigor e profissionalismo."
       />
 
-      <section className="pb-12 md:pb-20">
+      <section className="pb-8 md:pb-20">
         <div className="container mx-auto px-4 md:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -34,7 +34,7 @@ const MateriaisFisicos = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="rounded-lg overflow-hidden"
           >
-            <img src={materiaisImg.src} alt="Materiais gráficos premium" className="w-full h-[300px] md:h-[500px] object-cover" loading="lazy" />
+            <img src={materiaisImg.src} alt="Materiais gráficos premium" className="w-full h-[220px] md:h-[500px] object-cover" loading="lazy" />
           </motion.div>
         </div>
       </section>

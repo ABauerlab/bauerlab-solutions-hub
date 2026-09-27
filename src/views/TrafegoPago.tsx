@@ -92,9 +92,9 @@ const TrafegoPago = () => {
       />
 
       <Section className="pt-0">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
           {methodSteps.map((step) => (
-            <div key={step.title} className="glass p-5 rounded-2xl h-full">
+            <div key={step.title} className="glass p-3 md:p-5 rounded-2xl h-full">
               <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-3">
                 {step.icon}
               </div>
