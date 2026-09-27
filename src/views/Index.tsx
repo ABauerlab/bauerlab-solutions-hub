@@ -4,12 +4,11 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import Link from "next/link";
 import {
-  ArrowRight, Monitor, Palette, Video, Sparkles, Package,
-  Zap, Target, ShieldCheck, TrendingUp, ChevronRight, ChevronLeft,
+  ArrowRight, ArrowUpRight, Monitor, Palette, Video, Sparkles, Package,
+  Zap, Target, ShieldCheck, TrendingUp,
   Cpu, Camera, Calculator, ClipboardCheck
 } from "lucide-react";
 import Layout from "@/components/Layout";
-import ServiceCard from "@/components/ServiceCard";
 import Section from "@/components/Section";
 import CTASection from "@/components/CTASection";
 import LogoMarquee from "@/components/LogoMarquee";
@@ -27,76 +26,75 @@ const services = [
     title: "Branding",
     description: "Estratégia e identidade visual para marcas que buscam liderança e percepção de valor.",
     path: "/posicionamento-marca",
-    icon: <Palette size={22} />,
+    icon: <Palette size={20} />,
+    span: "lg:col-span-4",
   },
   {
-    title: "Sistemas",
+    title: "Sistemas & Digital",
     description: "Engenharia digital de alta performance. Sites e plataformas que escalam seu negócio.",
     path: "/sistemas-digital",
-    icon: <Monitor size={22} />,
-  },
-  {
-    title: "Audiovisual",
-    description: "Produção cinematográfica que tangibiliza autoridade e acelera o processo de venda.",
-    path: "/audiovisual",
-    icon: <Video size={22} />,
-  },
-  {
-    title: "Ativação",
-    description: "Experiências presenciais que conectam o digital ao mundo real de forma memorável.",
-    path: "/ativacao-de-marca",
-    icon: <Sparkles size={22} />,
-  },
-  {
-    title: "Materiais",
-    description: "Tangibilização premium da marca em materiais físicos que reforçar sua autoridade.",
-    path: "/materiais-fisicos",
-    icon: <Package size={22} />,
-  },
-  {
-    title: "Contabilidade",
-    description: "Soluções contábeis integradas à sua estrutura digital através da ContaLab Digital.",
-    path: "http://contalabdigital.com.br/",
-    icon: <Calculator size={22} />,
+    icon: <Monitor size={20} />,
+    span: "lg:col-span-2",
   },
   {
     title: "Consultoria",
     description: "Diagnóstico honesto da presença digital antes de vender qualquer solução.",
     path: "/consultoria-digital",
-    icon: <ClipboardCheck size={22} />,
+    icon: <ClipboardCheck size={20} />,
+    span: "lg:col-span-2",
   },
+  {
+    title: "Audiovisual",
+    description: "Produção cinematográfica que tangibiliza autoridade e acelera o processo de venda.",
+    path: "/audiovisual",
+    icon: <Video size={20} />,
+    span: "lg:col-span-4",
+  },
+  {
+    title: "Ativação de Marca",
+    description: "Experiências presenciais que conectam o digital ao mundo real de forma memorável.",
+    path: "/ativacao-de-marca",
+    icon: <Sparkles size={20} />,
+    span: "lg:col-span-3",
+  },
+  {
+    title: "Materiais Físicos",
+    description: "Tangibilização premium da marca em materiais físicos que reforçam sua autoridade.",
+    path: "/materiais-fisicos",
+    icon: <Package size={20} />,
+    span: "lg:col-span-3",
+  },
+  {
+    title: "Contabilidade",
+    description: "Soluções contábeis integradas através da ContaLab Digital.",
+    path: "http://contalabdigital.com.br/",
+    icon: <Calculator size={20} />,
+    span: "lg:col-span-6",
+  },
+];
+
+const ecosystemPoints = [
+  { icon: <Zap size={18} />, title: "Agilidade", desc: "Foco total em execução." },
+  { icon: <Target size={18} />, title: "ROI", desc: "Foco em conversão." },
+  { icon: <ShieldCheck size={18} />, title: "Premium", desc: "Padrão internacional." },
+  { icon: <TrendingUp size={18} />, title: "Escala", desc: "Pronto para crescer." },
 ];
 
 const Index = () => {
   const heroRef = useRef<HTMLDivElement>(null);
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
-  
+
   const { scrollYProgress } = useScroll({
     target: heroRef,
     offset: ["start start", "end start"],
   });
-  
+
   const heroY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
   const heroOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
-  const scroll = (direction: 'left' | 'right') => {
-    if (scrollContainerRef.current) {
-      const { scrollLeft, clientWidth } = scrollContainerRef.current;
-      const scrollTo = direction === 'left' 
-        ? scrollLeft - clientWidth * 0.8 
-        : scrollLeft + clientWidth * 0.8;
-      
-      scrollContainerRef.current.scrollTo({
-        left: scrollTo,
-        behavior: 'smooth'
-      });
-    }
-  };
-
   return (
     <Layout>
-      {/* Hero Otimizado para LCP */}
-      <section ref={heroRef} className="relative min-h-[85vh] md:min-h-screen flex items-center justify-center overflow-hidden bg-mesh">
+      {/* Hero editorial — assimétrico, não centralizado */}
+      <section ref={heroRef} className="relative min-h-[90vh] md:min-h-screen flex items-center overflow-hidden bg-mesh">
         <motion.div className="absolute inset-0 z-0" style={{ y: heroY, opacity: heroOpacity }}>
           <img
             src={heroBg.src}
@@ -106,91 +104,113 @@ const Index = () => {
             loading="eager"
             aria-hidden="true"
           />
-          <div className="absolute inset-0 bg-background/85 backdrop-blur-[1px]" />
+          <div className="absolute inset-0 bg-background/90 backdrop-blur-[1px]" />
         </motion.div>
 
-        <div className="container mx-auto px-4 md:px-8 relative z-10 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          >
-            <span className="inline-flex items-center gap-2 glass px-3 py-1.5 rounded-full text-[10px] font-bold tracking-[0.2em] uppercase text-primary mb-6 glow">
-              <Cpu size={12} /> Infraestrutura de Marca
-            </span>
-            
-            <h1 className="text-4xl md:text-7xl lg:text-8xl font-bold leading-[1.1] md:leading-[0.95] mb-6 text-gradient">
-              Estruturamos marcas <br className="hidden md:block" /> para o próximo nível.
-            </h1>
-            
-            <p className="text-sm md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed px-4">
-              Estratégia, tecnologia e audiovisual integrados em um ecossistema único para sua empresa escalar com autoridade.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10">
-              <a
-                href="https://wa.me/5531998021169"
-                className="w-full sm:w-auto group inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-full font-heading font-bold text-base hover:scale-105 transition-all duration-500 glow"
-              >
-                Iniciar Projeto <ArrowRight size={18} />
-              </a>
-              <Link
-                href="/projetos"
-                className="w-full sm:w-auto glass px-8 py-4 rounded-full font-heading font-bold text-base hover:bg-white/10 transition-all duration-500"
-              >
-                Portfólio
-              </Link>
-            </div>
+        <div className="container mx-auto px-4 md:px-8 relative z-10 pt-28 pb-16 md:py-0">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-6 items-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              className="lg:col-span-7"
+            >
+              <span className="inline-flex items-center gap-2 glass px-3 py-1.5 rounded-full text-[10px] font-bold tracking-[0.2em] uppercase text-primary mb-6 glow">
+                <Cpu size={12} /> Infraestrutura de Marca
+              </span>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 max-w-2xl mx-auto pt-8 border-t border-border/50">
-              {stats.map((stat) => (
-                <div key={stat.label}>
-                  <div className="text-2xl md:text-4xl font-bold text-gradient font-heading">{stat.value}</div>
-                  <div className="text-[10px] md:text-xs text-muted-foreground uppercase tracking-wider mt-1">{stat.label}</div>
-                </div>
-              ))}
-            </div>
-          </motion.div>
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.05] mb-6 text-gradient text-left">
+                Estruturamos marcas para o próximo nível.
+              </h1>
+
+              <p className="text-sm md:text-lg text-muted-foreground max-w-xl mb-10 leading-relaxed text-left">
+                Estratégia, tecnologia e audiovisual integrados em um ecossistema único para sua empresa escalar
+                com autoridade.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4 items-start">
+                <a
+                  href="https://wa.me/5531998021169"
+                  className="w-full sm:w-auto group inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-full font-heading font-bold text-base hover:scale-105 transition-all duration-500 glow"
+                >
+                  Iniciar Projeto <ArrowRight size={18} />
+                </a>
+                <Link
+                  href="/projetos"
+                  className="w-full sm:w-auto glass px-8 py-4 rounded-full font-heading font-bold text-base hover:bg-white/10 transition-all duration-500 text-center"
+                >
+                  Portfólio
+                </Link>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+              className="lg:col-span-5"
+            >
+              <div className="glass rounded-3xl p-6 md:p-8 grid grid-cols-2 gap-6 md:gap-8">
+                {stats.map((stat) => (
+                  <div key={stat.label} className="border-l-2 border-primary/40 pl-4">
+                    <div className="text-2xl md:text-4xl font-bold text-gradient font-heading">{stat.value}</div>
+                    <div className="text-[10px] md:text-xs text-muted-foreground uppercase tracking-wider mt-1">{stat.label}</div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
       <LogoMarquee />
 
-      {/* Pilares com Scroll Horizontal */}
-      <section className="py-12 md:py-20 border-y border-border bg-card/30">
+      {/* Pilares — bento assimétrico, sem carrossel */}
+      <section className="py-16 md:py-24 border-b border-border bg-card/30">
         <div className="container mx-auto px-4 md:px-8">
-          <div className="flex items-end justify-between mb-8 md:mb-12">
-            <div className="max-w-xl">
-              <h2 className="text-2xl md:text-4xl font-bold mb-2">O que entregamos</h2>
-              <p className="text-xs md:text-sm text-muted-foreground">Soluções integradas que eliminam a fragmentação da sua marca.</p>
-            </div>
-            <div className="flex items-center gap-3">
-               <button 
-                 onClick={() => scroll('left')}
-                 className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:bg-primary hover:border-primary hover:text-primary-foreground transition-all"
-                 aria-label="Anterior"
-               >
-                 <ChevronLeft size={20} />
-               </button>
-               <button 
-                 onClick={() => scroll('right')}
-                 className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:bg-primary hover:border-primary hover:text-primary-foreground transition-all"
-                 aria-label="Próximo"
-               >
-                 <ChevronRight size={20} />
-               </button>
-            </div>
+          <div className="max-w-xl mb-10 md:mb-14">
+            <h2 className="text-2xl md:text-4xl font-bold mb-2">O que entregamos</h2>
+            <p className="text-xs md:text-sm text-muted-foreground">Soluções integradas que eliminam a fragmentação da sua marca.</p>
           </div>
-          
-          <div 
-            ref={scrollContainerRef}
-            className="flex md:grid md:grid-cols-3 lg:grid-cols-6 gap-4 overflow-x-auto no-scrollbar pb-4 md:pb-0 snap-x snap-mandatory scroll-smooth"
-          >
-            {services.map((service, index) => (
-              <div key={service.title} className="snap-center">
-                <ServiceCard {...service} index={index} />
-              </div>
-            ))}
+
+          <div className="grid grid-cols-1 lg:grid-cols-6 gap-4">
+            {services.map((service, index) => {
+              const isExternal = service.path.startsWith("http");
+              const CardBody = (
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: index * 0.05 }}
+                  viewport={{ once: true }}
+                  className={`group relative glass p-6 md:p-8 rounded-2xl glass-hover h-full overflow-hidden ${service.span}`}
+                >
+                  <div className="absolute top-5 right-5 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-x-2 group-hover:translate-x-0">
+                    <ArrowUpRight className="text-primary" size={20} />
+                  </div>
+                  <div className="relative z-10">
+                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-4 group-hover:scale-110 transition-transform duration-500">
+                      {service.icon}
+                    </div>
+                    <h3 className="text-lg font-bold mb-2 group-hover:text-primary transition-colors duration-300">
+                      {service.title}
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed text-xs md:text-sm max-w-md">
+                      {service.description}
+                    </p>
+                  </div>
+                </motion.div>
+              );
+
+              return isExternal ? (
+                <a key={service.title} href={service.path} target="_blank" rel="noopener noreferrer" className={service.span}>
+                  {CardBody}
+                </a>
+              ) : (
+                <Link key={service.title} href={service.path} className={service.span}>
+                  {CardBody}
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -217,32 +237,29 @@ const Index = () => {
         </div>
       </Section>
 
-      {/* Ecossistema */}
+      {/* Ecossistema — editorial, não mais grid de 4 caixas uniformes */}
       <Section>
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">Um só ecossistema.</h2>
-          <p className="text-sm md:text-lg text-muted-foreground max-w-2xl mx-auto">
-            O fim da fragmentação. Na BauerLab, tudo nasce do mesmo DNA estratégico.
-          </p>
-        </div>
-        
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
-          {[
-            { icon: <Zap size={20} />, title: "Agilidade", desc: "Foco total em execução." },
-            { icon: <Target size={20} />, title: "ROI", desc: "Foco em conversão." },
-            { icon: <ShieldCheck size={20} />, title: "Premium", desc: "Padrão internacional." },
-            { icon: <TrendingUp size={20} />, title: "Escala", desc: "Pronto para crescer." },
-          ].map((item, i) => (
-            <div key={i} className="p-4 md:p-6 glass rounded-xl text-center">
-              <div className="text-primary mb-3 flex justify-center">{item.icon}</div>
-              <h3 className="font-bold text-sm md:text-lg mb-1">{item.title}</h3>
-              <p className="text-[10px] md:text-xs text-muted-foreground">{item.desc}</p>
-            </div>
-          ))}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+          <div className="lg:col-span-7">
+            <p className="text-2xl md:text-4xl font-heading font-bold leading-tight">
+              Um só ecossistema. O fim da fragmentação — na BauerLab, <span className="text-gradient">tudo nasce do mesmo DNA estratégico.</span>
+            </p>
+          </div>
+          <div className="lg:col-span-5 flex flex-col gap-5 lg:pl-6 lg:border-l border-border">
+            {ecosystemPoints.map((item) => (
+              <div key={item.title} className="flex items-center gap-4">
+                <div className="text-primary shrink-0">{item.icon}</div>
+                <div>
+                  <span className="font-bold text-sm mr-2">{item.title}</span>
+                  <span className="text-xs text-muted-foreground">{item.desc}</span>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </Section>
 
-      <CTASection 
+      <CTASection
         title="Pronto para 2026?"
         description="Construa hoje a infraestrutura que vai garantir sua liderança amanhã."
       />
