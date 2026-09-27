@@ -39,6 +39,8 @@ const Footer = () => {
               <Link href="/empresas-do-grupo" className="text-sm text-muted-foreground hover:text-primary transition-colors">Empresas do Grupo</Link>
               <Link href="/metodologia" className="text-sm text-muted-foreground hover:text-primary transition-colors">Metodologia</Link>
               <Link href="/blog" className="text-sm text-muted-foreground hover:text-primary transition-colors">Blog</Link>
+              <Link href="/carreiras" className="text-sm text-muted-foreground hover:text-primary transition-colors">Carreiras</Link>
+              <Link href="/kit-imprensa" className="text-sm text-muted-foreground hover:text-primary transition-colors">Kit de Imprensa</Link>
               <Link href="/sobre" className="text-sm text-muted-foreground hover:text-primary transition-colors">Sobre</Link>
               <Link href="/contato" className="text-sm text-muted-foreground hover:text-primary transition-colors">Contato</Link>
             </div>
