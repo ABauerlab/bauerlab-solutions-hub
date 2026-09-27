@@ -8,9 +8,6 @@ import { motion } from "framer-motion";
 
 import bauerlabPost from "@/assets/design-grafico/bauerlab-post.webp";
 import bauerlabBanner from "@/assets/design-grafico/bauerlab-banner.webp";
-import kodaraPost from "@/assets/design-grafico/kodara-post.webp";
-import asariPost from "@/assets/design-grafico/asari-post.webp";
-import mambaiaPost from "@/assets/design-grafico/mambaia-post.webp";
 
 const pieces = [
   {
@@ -22,21 +19,6 @@ const pieces = [
     image: bauerlabBanner.src,
     title: "Banner de campanha — BauerLab",
     caption: "Criado para a BauerLab, objetivo: banner de campanha institucional em formato widescreen para site e mídia paga.",
-  },
-  {
-    image: kodaraPost.src,
-    title: "Post de campanha — Vista Kodara",
-    caption: "Criado para a Vista Kodara (marca do grupo), objetivo: comunicar a estética streetwear urbana da coleção em post de Instagram.",
-  },
-  {
-    image: asariPost.src,
-    title: "Post de produto — Asari",
-    caption: "Criado para a Asari (marca do grupo), objetivo: apresentar a linha de peças artesanais (bolsas, miçanga, crochê) com identidade boho-artesanal.",
-  },
-  {
-    image: mambaiaPost.src,
-    title: "Post institucional — Mambaia",
-    caption: "Criado para a Mambaia (marca do grupo), objetivo: divulgar o estúdio fotográfico e a estrutura de captação disponível para locação.",
   },
 ];
 
