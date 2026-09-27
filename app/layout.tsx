@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     images: ["/logo-og.jpg"],
   },
   robots: { index: true, follow: true },
-  icons: { icon: "/favicon.ico" },
+  icons: { icon: "/favicon.ico", apple: "/apple-touch-icon.png" },
 };
 
 const organizationJsonLd = {
