@@ -28,8 +28,8 @@ const Sobre = () => {
     <Layout>
       <PageHero
         tag="Sobre"
-        title="Resolvemos. Estruturamos. Ativamos."
-        description="A BauerLab é uma empresa criativa e tecnológica que une estratégia, design, tecnologia, audiovisual e experiência física para estruturar marcas e negócios que funcionam no mundo real."
+        title="Infraestrutura de marca. Não é agenciazinha de post."
+        description="A BauerLab une estratégia, tecnologia, audiovisual e experiência física num único ecossistema — fundada por João Victor Bauer para estruturar marcas e negócios que precisam operar como empresa de verdade, não como projeto pontual."
       />
 
       <section className="pb-12 md:pb-20">
@@ -51,19 +51,19 @@ const Sobre = () => {
             <h2 className="text-2xl md:text-3xl font-bold mb-6">Nossa visão</h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                Acreditamos que marcas fortes são construídas com método, não com improviso. 
-                Cada decisão criativa na BauerLab passa por uma lógica de negócio, porque estética sem estratégia 
-                é decoração, não comunicação.
+                Marca forte não nasce de improviso, nasce de método. Cada decisão criativa na BauerLab passa
+                por uma lógica de negócio — estética sem estratégia é decoração, não comunicação, e decoração
+                não vende.
               </p>
               <p>
-                Não somos uma agência genérica que vende pacotes prontos. Somos uma empresa que resolve 
-                problemas reais de marca e posicionamento, usando todas as ferramentas disponíveis: 
-                digital, audiovisual, físico e experiencial.
+                Não vendemos pacote fechado de agência genérica. Operamos como um único ecossistema —
+                estratégia, tecnologia, audiovisual e presença física sob o mesmo teto — porque fragmentar
+                a marca entre fornecedores diferentes é a forma mais rápida de perder coerência.
               </p>
               <p>
-                Nosso trabalho é tornar marcas coerentes, visíveis e funcionais em todos os pontos de contato 
-                com o público. Do site ao cartão de visita. Do vídeo institucional à ativação presencial. 
-                Tudo integrado. Tudo com propósito.
+                O grupo BauerLab não fala só em teoria: construímos e operamos marcas próprias (Vista Kodara,
+                Asari, Mambaia) usando exatamente o mesmo método que aplicamos para clientes. Prova de domínio
+                técnico, não promessa de slide.
               </p>
             </div>
           </div>

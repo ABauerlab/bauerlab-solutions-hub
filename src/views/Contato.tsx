@@ -8,8 +8,38 @@ import { motion } from "framer-motion";
 import { Send, MessageCircle, Mail, ArrowRight } from "lucide-react";
 import { getEmail, getWhatsAppUrl } from "@/lib/contact";
 
+const servicos = [
+  "Sistemas & Digital",
+  "Posicionamento & Marca",
+  "Tráfego Pago & Performance",
+  "Audiovisual",
+  "Ativação de Marca",
+  "Materiais Físicos",
+  "Consultoria & Estruturação Digital",
+  "Ainda não sei / mais de um",
+];
+
+const faixasOrcamento = [
+  "Até R$ 2.000",
+  "R$ 2.000 – R$ 5.000",
+  "R$ 5.000 – R$ 15.000",
+  "Acima de R$ 15.000",
+  "Prefiro conversar antes",
+];
+
+const prazos = ["Urgente (até 2 semanas)", "Até 1 mês", "1 a 3 meses", "Sem pressa / planejando"];
+
 const Contato = () => {
-  const [formData, setFormData] = useState({ nome: "", email: "", telefone: "", empresa: "", mensagem: "" });
+  const [formData, setFormData] = useState({
+    nome: "",
+    email: "",
+    telefone: "",
+    empresa: "",
+    servico: "",
+    orcamento: "",
+    prazo: "",
+    mensagem: "",
+  });
   const businessEmail = getEmail();
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -17,9 +47,12 @@ const Contato = () => {
     const message = `Olá, sou ${formData.nome}${formData.empresa ? ` da empresa ${formData.empresa}` : ""}.
 E-mail: ${formData.email}
 Telefone: ${formData.telefone}
+Serviço de interesse: ${formData.servico || "não informado"}
+Faixa de orçamento: ${formData.orcamento || "não informado"}
+Prazo desejado: ${formData.prazo || "não informado"}
 
 Mensagem: ${formData.mensagem}`;
-    
+
     window.open(getWhatsAppUrl(message), "_blank");
   };
 
@@ -84,6 +117,48 @@ Mensagem: ${formData.mensagem}`;
                   className="w-full bg-card border border-border rounded-md px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
                   placeholder="Nome da sua empresa"
                 />
+              </div>
+            </div>
+            <div>
+              <label className="block text-sm font-heading font-medium mb-2">Que tipo de serviço você precisa? *</label>
+              <select
+                required
+                value={formData.servico}
+                onChange={(e) => setFormData({ ...formData, servico: e.target.value })}
+                className="w-full bg-card border border-border rounded-md px-4 py-3 text-sm text-foreground focus:outline-none focus:border-primary transition-colors"
+              >
+                <option value="" disabled>Selecione um serviço</option>
+                {servicos.map((s) => (
+                  <option key={s} value={s}>{s}</option>
+                ))}
+              </select>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div>
+                <label className="block text-sm font-heading font-medium mb-2">Faixa de orçamento</label>
+                <select
+                  value={formData.orcamento}
+                  onChange={(e) => setFormData({ ...formData, orcamento: e.target.value })}
+                  className="w-full bg-card border border-border rounded-md px-4 py-3 text-sm text-foreground focus:outline-none focus:border-primary transition-colors"
+                >
+                  <option value="">Prefiro não informar agora</option>
+                  {faixasOrcamento.map((f) => (
+                    <option key={f} value={f}>{f}</option>
+                  ))}
+                </select>
+              </div>
+              <div>
+                <label className="block text-sm font-heading font-medium mb-2">Prazo desejado</label>
+                <select
+                  value={formData.prazo}
+                  onChange={(e) => setFormData({ ...formData, prazo: e.target.value })}
+                  className="w-full bg-card border border-border rounded-md px-4 py-3 text-sm text-foreground focus:outline-none focus:border-primary transition-colors"
+                >
+                  <option value="">Sem prazo definido</option>
+                  {prazos.map((p) => (
+                    <option key={p} value={p}>{p}</option>
+                  ))}
+                </select>
               </div>
             </div>
             <div>
