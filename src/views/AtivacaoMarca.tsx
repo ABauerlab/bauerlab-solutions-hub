@@ -47,7 +47,7 @@ const AtivacaoMarca = () => {
             para gerar lembrança, engajamento e vínculo real entre o público e a sua marca.
           </p>
         </div>
-        <ServiceDetailList items={items} />
+        <ServiceDetailList items={items} highlightFirst />
       </Section>
 
       <Section className="border-t border-border">

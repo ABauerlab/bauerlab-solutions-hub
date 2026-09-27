@@ -47,7 +47,7 @@ const MateriaisFisicos = () => {
             Porque um cartão de visita mal feito diz tanto sobre a empresa quanto um site amador.
           </p>
         </div>
-        <ServiceDetailList items={items} />
+        <ServiceDetailList items={items} highlightFirst />
       </Section>
 
       <Section className="border-t border-border">

@@ -49,7 +49,7 @@ const SistemasDigital = () => {
             Não entregamos templates. Entregamos ferramentas que fazem sua operação funcionar melhor.
           </p>
         </div>
-        <ServiceDetailList items={items} />
+        <ServiceDetailList items={items} highlightFirst />
       </Section>
 
       <Section className="border-t border-border">

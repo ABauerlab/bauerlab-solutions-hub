@@ -31,7 +31,7 @@ const ConsultoriaDigital = () => {
             claras sobre onde investir primeiro.
           </p>
         </div>
-        <ServiceDetailList items={items} />
+        <ServiceDetailList items={items} highlightFirst />
       </Section>
 
       <CTASection

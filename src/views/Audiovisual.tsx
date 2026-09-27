@@ -49,7 +49,7 @@ const Audiovisual = () => {
             Nosso audiovisual não é genérico. É planejado com base no posicionamento da marca e nos objetivos de comunicação do negócio.
           </p>
         </div>
-        <ServiceDetailList items={items} />
+        <ServiceDetailList items={items} highlightFirst />
       </Section>
 
       {/* Seção de Parceria com o Estúdio Mambaia */}

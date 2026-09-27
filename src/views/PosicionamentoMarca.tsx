@@ -46,7 +46,7 @@ const PosicionamentoMarca = () => {
             Nós garantimos que todas essas oportunidades sejam aproveitadas com consistência e profissionalismo.
           </p>
         </div>
-        <ServiceDetailList items={items} />
+        <ServiceDetailList items={items} highlightFirst />
       </Section>
 
       <Section className="border-t border-border">
