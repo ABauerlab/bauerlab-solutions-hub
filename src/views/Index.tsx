@@ -129,7 +129,7 @@ const Index = () => {
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               className="lg:col-span-7"
             >
-              <span className="inline-flex items-center gap-2 glass px-3 py-1.5 rounded-full text-[10px] font-bold tracking-[0.2em] uppercase text-primary mb-6 glow">
+              <span className="inline-flex items-center gap-2 text-[10px] font-bold tracking-[0.2em] uppercase text-primary mb-6">
                 <Cpu size={12} /> 01. Infraestrutura de Marca
               </span>
 
@@ -151,7 +151,7 @@ const Index = () => {
                 </a>
                 <Link
                   href="/projetos"
-                  className="w-full sm:w-auto glass px-8 py-4 rounded-full font-heading font-bold text-base hover:bg-white/10 transition-all duration-500 text-center"
+                  className="w-full sm:w-auto border border-border px-8 py-4 rounded-full font-heading font-bold text-base hover:border-primary/50 hover:bg-white/5 transition-all duration-500 text-center"
                 >
                   Portfólio
                 </Link>
@@ -197,7 +197,7 @@ const Index = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: index * 0.05 }}
                   viewport={{ once: true }}
-                  className={`group relative glass p-4 md:p-8 rounded-2xl glass-hover h-full overflow-hidden ${service.span}`}
+                  className={`group relative border border-border bg-card/40 p-4 md:p-8 rounded-2xl hover:border-primary/40 transition-colors duration-500 h-full overflow-hidden ${service.span}`}
                 >
                   <div className="absolute top-5 right-5 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-x-2 group-hover:translate-x-0">
                     <ArrowUpRight className="text-primary" size={20} />
@@ -245,7 +245,7 @@ const Index = () => {
               Conhecer produção <ArrowRight size={16} />
             </Link>
           </div>
-          <div className="order-1 lg:order-2 relative aspect-video glass rounded-2xl overflow-hidden">
+          <div className="order-1 lg:order-2 relative aspect-video border border-border rounded-2xl overflow-hidden">
             <iframe
               src="https://www.youtube.com/embed/ktxhpmlbPvo?autoplay=1&mute=1&loop=1&playlist=ktxhpmlbPvo&controls=0&modestbranding=1&rel=0&playsinline=1&vq=hd1080"
               title="Produção audiovisual BauerLab"
@@ -296,7 +296,7 @@ const Index = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="group glass p-6 rounded-2xl glass-hover flex flex-col justify-between h-full"
+              className="group border border-border bg-card/40 p-6 rounded-2xl hover:border-primary/40 transition-colors duration-500 flex flex-col justify-between h-full"
             >
               <div className="flex items-center justify-between mb-6">
                 <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-500">

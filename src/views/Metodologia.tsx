@@ -59,7 +59,7 @@ const Metodologia = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="glass p-6 md:p-8 rounded-2xl h-full"
+              className="border border-border bg-card/40 p-6 md:p-8 rounded-2xl h-full"
             >
               <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-4">
                 {step.icon}

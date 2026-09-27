@@ -40,7 +40,7 @@ const DesignGrafico = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.08 }}
               viewport={{ once: true }}
-              className="glass rounded-2xl overflow-hidden glass-hover"
+              className="border border-border bg-card/40 rounded-2xl overflow-hidden hover:border-primary/40 transition-colors duration-500"
             >
               <div className="aspect-square overflow-hidden bg-muted">
                 <img

@@ -49,7 +49,7 @@ const EmpresasDoGrupo = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="group block glass p-8 rounded-2xl glass-hover h-full"
+              className="group block border border-border bg-card/40 p-8 rounded-2xl hover:border-primary/40 transition-colors duration-500 h-full"
             >
               <span className="inline-block text-[10px] font-bold uppercase tracking-[0.2em] text-primary mb-4">
                 Marca do Grupo BauerLab

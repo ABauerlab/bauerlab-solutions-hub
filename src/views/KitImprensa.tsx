@@ -21,7 +21,7 @@ const KitImprensa = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           <div>
             <h2 className="text-xl font-bold mb-4">Logo</h2>
-            <div className="glass rounded-2xl p-8 flex items-center justify-center mb-4">
+            <div className="border border-border bg-card/40 rounded-2xl p-8 flex items-center justify-center mb-4">
               <img src={logo.src} alt="Logo BauerLab" className="w-32 h-32 rounded-xl object-cover" />
             </div>
             <a

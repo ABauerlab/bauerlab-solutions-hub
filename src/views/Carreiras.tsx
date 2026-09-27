@@ -36,7 +36,7 @@ const Carreiras = () => {
           </p>
           <div className="flex flex-wrap gap-2 mb-8">
             {areas.map((area) => (
-              <span key={area} className="text-xs px-3 py-1.5 rounded-full glass text-muted-foreground">
+              <span key={area} className="text-xs px-3 py-1.5 rounded-full border border-border text-muted-foreground">
                 {area}
               </span>
             ))}

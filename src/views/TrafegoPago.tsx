@@ -94,7 +94,7 @@ const TrafegoPago = () => {
       <Section className="pt-0">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
           {methodSteps.map((step) => (
-            <div key={step.title} className="glass p-3 md:p-5 rounded-2xl h-full">
+            <div key={step.title} className="border border-border bg-card/40 p-3 md:p-5 rounded-2xl h-full">
               <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-3">
                 {step.icon}
               </div>
@@ -114,7 +114,7 @@ const TrafegoPago = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="glass p-6 md:p-8 rounded-2xl h-full"
+              className="border border-border bg-card/40 p-6 md:p-8 rounded-2xl h-full"
             >
               <div className="flex items-center gap-2 text-primary mb-2">
                 <Target size={18} />
@@ -140,7 +140,7 @@ const TrafegoPago = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="max-w-3xl glass p-6 md:p-8 rounded-2xl flex gap-5 items-start"
+          className="max-w-3xl border border-border bg-card/40 p-6 md:p-8 rounded-2xl flex gap-5 items-start"
         >
           <div className="shrink-0 w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
             <Search size={20} />

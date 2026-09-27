@@ -16,7 +16,7 @@ const ServiceCard = ({ title, description, path, index, icon }: ServiceCardProps
   const isExternal = path.startsWith("http");
 
   const CardContent = (
-    <div className="group relative block glass p-6 md:p-8 rounded-2xl glass-hover h-full overflow-hidden">
+    <div className="group relative block border border-border bg-card/40 p-6 md:p-8 rounded-2xl hover:border-primary/40 transition-colors duration-500 h-full overflow-hidden">
       <div className="absolute top-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-x-2 group-hover:translate-x-0">
         <ArrowUpRight className="text-primary" size={20} />
       </div>

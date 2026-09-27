@@ -31,7 +31,7 @@ const Blog = () => {
               transition={{ duration: 0.4, delay: index * 0.05 }}
               viewport={{ once: true }}
             >
-              <Link href={`/blog/${post.slug}`} className="group block glass p-6 rounded-2xl glass-hover h-full">
+              <Link href={`/blog/${post.slug}`} className="group block border border-border bg-card/40 p-6 rounded-2xl hover:border-primary/40 transition-colors duration-500 h-full">
                 <div className="flex items-center justify-between mb-3">
                   <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary">{post.category}</span>
                   <ArrowUpRight size={16} className="text-primary opacity-0 group-hover:opacity-100 transition-opacity" />

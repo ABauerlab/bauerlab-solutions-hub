@@ -125,7 +125,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
       href={`https://${project.url}`}
       target="_blank"
       rel="noopener noreferrer"
-      className="block glass rounded-2xl overflow-hidden glass-hover transition-all duration-500 h-full flex flex-col"
+      className="block border border-border bg-card/40 rounded-2xl overflow-hidden hover:border-primary/40 transition-all duration-500 h-full flex flex-col"
     >
       <div className="p-4 md:p-8 flex-1 flex flex-col justify-between">
         <div>
@@ -174,7 +174,7 @@ const Projetos = () => {
           <button
             onClick={() => setFilter("Todos")}
             className={`px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all ${
-              filter === "Todos" ? "bg-primary text-primary-foreground" : "glass hover:bg-white/10"
+              filter === "Todos" ? "bg-primary text-primary-foreground" : "border border-border hover:bg-white/5"
             }`}
           >
             Todos
@@ -184,7 +184,7 @@ const Projetos = () => {
               key={cat}
               onClick={() => setFilter(cat)}
               className={`px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all ${
-                filter === cat ? "bg-primary text-primary-foreground" : "glass hover:bg-white/10"
+                filter === cat ? "bg-primary text-primary-foreground" : "border border-border hover:bg-white/5"
               }`}
             >
               {cat}
