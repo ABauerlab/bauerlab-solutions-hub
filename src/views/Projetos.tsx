@@ -1,11 +1,12 @@
+"use client";
+
 import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
 import Section from "@/components/Section";
 import CTASection from "@/components/CTASection";
-import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
 import { ArrowUpRight, ExternalLink, Globe, Monitor, ShoppingBag } from "lucide-react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 // Importando as imagens dos projetos
 import jbnEmpreendimentosImg from "@/assets/projects/jbnempreendimentos.png";
@@ -151,11 +152,6 @@ const projects = [
 const Projetos = () => {
   return (
     <Layout>
-      <SEO 
-        title="Portfólio de Projetos — Infraestrutura Digital & Design"
-        description="Confira os resultados reais que construímos para nossos clientes. Sites, sistemas e landing pages de alta performance."
-      />
-      
       <PageHero
         tag="Portfólio"
         title={<>Resultados reais. <br /> Sem distrações.</>}
@@ -182,9 +178,9 @@ const Projetos = () => {
                 {/* Preview da Imagem */}
                 <div className="relative aspect-[16/10] overflow-hidden bg-muted">
                   {project.image ? (
-                    <img 
-                      src={project.image} 
-                      alt={project.title} 
+                    <img
+                      src={project.image.src}
+                      alt={project.title}
                       className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
                       loading="lazy"
                     />
@@ -237,7 +233,7 @@ const Projetos = () => {
               Não entregamos apenas projetos. Entregamos o alicerce para o seu próximo nível de faturamento.
             </p>
             <Link
-              to="/contato"
+              href="/contato"
               className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-md font-heading font-bold hover:bg-primary/90 transition-all hover:scale-105"
             >
               Iniciar meu projeto <ArrowUpRight size={18} />

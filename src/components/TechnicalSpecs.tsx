@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { Cpu, Camera, Mic, Sun, Layers, Clock } from "lucide-react";
 
@@ -66,7 +68,7 @@ const TechnicalSpecs = () => {
           </div>
         </div>
         <div className="text-xs text-muted-foreground max-w-md text-center md:text-right">
-          Toda a produção é realizada pela <strong>14:02 Produções</strong>, dirigida por <strong>Ed Faria</strong>, garantindo máxima fidelidade de cor e execução técnica.
+          Toda a produção é realizada em parceria com o estúdio <strong>Mambaia</strong>, garantindo máxima fidelidade de cor e execução técnica.
         </div>
       </motion.div>
     </div>

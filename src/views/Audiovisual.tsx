@@ -1,3 +1,5 @@
+"use client";
+
 import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
 import Section from "@/components/Section";
@@ -5,7 +7,6 @@ import ServiceDetailList from "@/components/ServiceDetailList";
 import CTASection from "@/components/CTASection";
 import PricingSection from "@/components/PricingSection";
 import TechnicalSpecs from "@/components/TechnicalSpecs";
-import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 import audiovisualImg from "@/assets/audiovisual.jpg";
@@ -22,11 +23,6 @@ const items = [
 const Audiovisual = () => {
   return (
     <Layout>
-      <SEO 
-        title="Audiovisual Cinematográfico & Produção de Conteúdo"
-        description="Produção audiovisual de elite dirigida por Ed Faria. Vídeos institucionais, fotografia profissional e conteúdo estratégico para marcas premium."
-      />
-      
       <PageHero
         tag="Audiovisual"
         title="Audiovisual estratégico. Cada imagem tem um propósito."
@@ -41,7 +37,7 @@ const Audiovisual = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="rounded-lg overflow-hidden"
           >
-            <img src={audiovisualImg} alt="Produção audiovisual profissional" className="w-full h-[300px] md:h-[500px] object-cover" loading="lazy" />
+            <img src={audiovisualImg.src} alt="Produção audiovisual profissional" className="w-full h-[300px] md:h-[500px] object-cover" loading="lazy" />
           </motion.div>
         </div>
       </section>
@@ -56,7 +52,7 @@ const Audiovisual = () => {
         <ServiceDetailList items={items} />
       </Section>
 
-      {/* Seção de Direção Criativa / Portfólio Ed Faria */}
+      {/* Seção de Parceria com o Estúdio Mambaia */}
       <Section className="border-t border-border">
         <div className="max-w-3xl mx-auto text-center">
           <motion.div
@@ -65,19 +61,20 @@ const Audiovisual = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary mb-3 block">Direção Criativa</span>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">A assinatura visual da BauerLab.</h2>
+            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary mb-3 block">Estúdio Parceiro</span>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">Produzido em parceria com a Mambaia.</h2>
             <p className="text-muted-foreground leading-relaxed mb-8">
-              Toda a nossa produção audiovisual é dirigida por <strong>Ed Faria</strong>, garantindo um padrão estético e técnico de nível internacional. 
-              Não entregamos apenas arquivos; entregamos narrativas visuais que posicionam sua marca como autoridade.
+              Nossa produção audiovisual é realizada em parceria com a <strong>Mambaia</strong>, estúdio fotográfico e de coworking criativo
+              na Praça Sete, em Belo Horizonte — marca do grupo BauerLab. Estrutura completa de estúdio, equipamento e equipe
+              para garantir um padrão técnico e estético de nível internacional.
             </p>
-            <a 
-              href="https://edfaria.com.br" 
-              target="_blank" 
+            <a
+              href="https://mambaiabh.com.br"
+              target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-md font-heading font-bold text-base hover:bg-primary/90 transition-all hover:scale-105"
             >
-              Ver Portfólio Completo <ExternalLink size={18} />
+              Conhecer a Mambaia <ExternalLink size={18} />
             </a>
           </motion.div>
         </div>

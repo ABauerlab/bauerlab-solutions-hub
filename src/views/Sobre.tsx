@@ -1,3 +1,5 @@
+"use client";
+
 import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
 import Section from "@/components/Section";
@@ -38,7 +40,7 @@ const Sobre = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="rounded-lg overflow-hidden"
           >
-            <img src={aboutImg} alt="Equipe BauerLab" className="w-full h-[300px] md:h-[500px] object-cover" loading="lazy" />
+            <img src={aboutImg.src} alt="Equipe BauerLab" className="w-full h-[300px] md:h-[500px] object-cover" loading="lazy" />
           </motion.div>
         </div>
       </section>

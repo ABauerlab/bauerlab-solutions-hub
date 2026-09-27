@@ -1,3 +1,5 @@
+"use client";
+
 import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
 import Section from "@/components/Section";
@@ -32,7 +34,7 @@ const MateriaisFisicos = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="rounded-lg overflow-hidden"
           >
-            <img src={materiaisImg} alt="Materiais gráficos premium" className="w-full h-[300px] md:h-[500px] object-cover" loading="lazy" />
+            <img src={materiaisImg.src} alt="Materiais gráficos premium" className="w-full h-[300px] md:h-[500px] object-cover" loading="lazy" />
           </motion.div>
         </div>
       </section>

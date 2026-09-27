@@ -1,7 +1,9 @@
+"use client";
+
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { Link } from "react-router-dom";
-import { 
+import Link from "next/link";
+import {
   ArrowRight, Monitor, Palette, Video, Sparkles, Package, 
   Zap, Target, ShieldCheck, TrendingUp, ChevronRight, ChevronLeft,
   Cpu, Camera, Calculator
@@ -10,7 +12,6 @@ import Layout from "@/components/Layout";
 import ServiceCard from "@/components/ServiceCard";
 import Section from "@/components/Section";
 import CTASection from "@/components/CTASection";
-import SEO from "@/components/SEO";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const services = [
@@ -29,7 +30,7 @@ const services = [
   {
     title: "Audiovisual",
     description: "Produção cinematográfica que tangibiliza autoridade e acelera o processo de venda.",
-    path: "/14:02",
+    path: "/audiovisual",
     icon: <Video size={22} />,
   },
   {
@@ -80,17 +81,12 @@ const Index = () => {
 
   return (
     <Layout>
-      <SEO 
-        title="BauerLab — Estruturamos marcas para o próximo nível"
-        description="Estratégia, tecnologia e audiovisual integrados em um ecossistema único para sua empresa escalar com autoridade e design de elite."
-      />
-      
       {/* Hero Otimizado para LCP */}
       <section ref={heroRef} className="relative min-h-[85vh] md:min-h-screen flex items-center justify-center overflow-hidden bg-mesh">
         <motion.div className="absolute inset-0 z-0" style={{ y: heroY, opacity: heroOpacity }}>
-          <img 
-            src={heroBg} 
-            alt="" 
+          <img
+            src={heroBg.src}
+            alt=""
             className="absolute inset-0 w-full h-full object-cover scale-105"
             fetchPriority="high"
             loading="eager"
@@ -125,7 +121,7 @@ const Index = () => {
                 Iniciar Projeto <ArrowRight size={18} />
               </a>
               <Link
-                to="/projetos"
+                href="/projetos"
                 className="w-full sm:w-auto glass px-8 py-4 rounded-full font-heading font-bold text-base hover:bg-white/10 transition-all duration-500"
               >
                 Portfólio
@@ -183,9 +179,9 @@ const Index = () => {
             </div>
             <h2 className="text-3xl md:text-5xl font-bold mb-4">Audiovisual Cinematográfico</h2>
             <p className="text-sm md:text-lg text-muted-foreground leading-relaxed mb-6">
-              Sob a direção de Ed Faria, produzimos conteúdo que tangibiliza a autoridade da sua marca e acelera o processo de venda.
+              Em parceria com o estúdio Mambaia, produzimos conteúdo que tangibiliza a autoridade da sua marca e acelera o processo de venda.
             </p>
-            <Link to="/14:02" className="inline-flex items-center gap-2 font-bold text-primary text-sm hover:gap-3 transition-all">
+            <Link href="/audiovisual" className="inline-flex items-center gap-2 font-bold text-primary text-sm hover:gap-3 transition-all">
               Conhecer produção <ArrowRight size={16} />
             </Link>
           </div>

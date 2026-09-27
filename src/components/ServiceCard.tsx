@@ -1,5 +1,7 @@
+"use client";
+
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
 interface ServiceCardProps {
@@ -48,7 +50,7 @@ const ServiceCard = ({ title, description, path, index, icon }: ServiceCardProps
           {CardContent}
         </a>
       ) : (
-        <Link to={path} className="block h-full">
+        <Link href={path} className="block h-full">
           {CardContent}
         </Link>
       )}
