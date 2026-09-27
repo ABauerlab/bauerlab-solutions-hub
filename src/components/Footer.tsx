@@ -25,6 +25,7 @@ const Footer = () => {
               <Link href="/audiovisual" className="text-sm text-muted-foreground hover:text-primary transition-colors">Audiovisual</Link>
               <Link href="/ativacao-de-marca" className="text-sm text-muted-foreground hover:text-primary transition-colors">Ativação de Marca</Link>
               <Link href="/sistemas-digital" className="text-sm text-muted-foreground hover:text-primary transition-colors">Sistemas & Digital</Link>
+              <Link href="/trafego-pago" className="text-sm text-muted-foreground hover:text-primary transition-colors">Tráfego Pago & Performance</Link>
               <Link href="/posicionamento-marca" className="text-sm text-muted-foreground hover:text-primary transition-colors">Posicionamento & Marca</Link>
               <Link href="/materiais-fisicos" className="text-sm text-muted-foreground hover:text-primary transition-colors">Materiais Físicos</Link>
             </div>

@@ -9,6 +9,7 @@ const routes = [
   "/audiovisual",
   "/ativacao-de-marca",
   "/materiais-fisicos",
+  "/trafego-pago",
   "/projetos",
   "/empresas-do-grupo",
   "/metodologia",
