@@ -9,7 +9,7 @@ import PricingSection from "@/components/PricingSection";
 import TechnicalSpecs from "@/components/TechnicalSpecs";
 import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
-import audiovisualImg from "@/assets/audiovisual.jpg";
+import audiovisualImg from "@/assets/audiovisual.webp";
 
 const items = [
   { title: "Fotografia profissional", description: "Imagens que comunicam a essência da sua marca com qualidade e intenção. Fotografia de produtos, ambientes, equipe e eventos — com direção de arte e pós-produção profissional." },

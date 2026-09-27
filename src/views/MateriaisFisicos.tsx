@@ -6,7 +6,7 @@ import Section from "@/components/Section";
 import ServiceDetailList from "@/components/ServiceDetailList";
 import CTASection from "@/components/CTASection";
 import { motion } from "framer-motion";
-import materiaisImg from "@/assets/materiais.jpg";
+import materiaisImg from "@/assets/materiais.webp";
 
 const items = [
   { title: "Cartões de visita premium", description: "Design profissional e impressão em alta qualidade. Acabamentos especiais como hot stamping, verniz localizado e papel texturizado. Seu cartão transmite a seriedade da sua marca antes mesmo de você abrir a boca." },

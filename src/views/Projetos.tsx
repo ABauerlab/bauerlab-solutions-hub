@@ -9,23 +9,23 @@ import { ArrowUpRight, ExternalLink, Globe, Monitor, ShoppingBag } from "lucide-
 import Link from "next/link";
 
 // Importando as imagens dos projetos
-import jbnEmpreendimentosImg from "@/assets/projects/jbnempreendimentos.png";
-import jbnConsultoriaImg from "@/assets/projects/jbnconsultoria.png";
-import deiSolucoesImg from "@/assets/projects/Deisolucoes.png";
-import gfProdImg from "@/assets/projects/GFPROD.png";
-import carDreamsImg from "@/assets/projects/cardreams.png";
-import recantoImg from "@/assets/projects/recantodafloresta.png";
-import astroImg from "@/assets/projects/astrowebatlas.png";
-import contaLabImg from "@/assets/projects/contalab.png";
-import contaLabMeiImg from "@/assets/projects/contalab-mei.png";
-import contaLabSimplesImg from "@/assets/projects/contalab-simples.png";
-import contaLabFiscalImg from "@/assets/projects/contalab-fiscal.png";
-import contaLabRegularizarImg from "@/assets/projects/contalab-regularizar.png";
-import contaLabContabilImg from "@/assets/projects/contalab-contabil.png";
-import soulGuettoImg from "@/assets/projects/soulguetto.png";
-import misterBarbosaImg from "@/assets/projects/misterbarbosa.png";
-import elizeteTavaresImg from "@/assets/projects/elizetetavares.png";
-import vistaKodaraImg from "@/assets/projects/vistakodara.png";
+import jbnEmpreendimentosImg from "@/assets/projects/jbnempreendimentos.webp";
+import jbnConsultoriaImg from "@/assets/projects/jbnconsultoria.webp";
+import deiSolucoesImg from "@/assets/projects/Deisolucoes.webp";
+import gfProdImg from "@/assets/projects/GFPROD.webp";
+import carDreamsImg from "@/assets/projects/cardreams.webp";
+import recantoImg from "@/assets/projects/recantodafloresta.webp";
+import astroImg from "@/assets/projects/astrowebatlas.webp";
+import contaLabImg from "@/assets/projects/contalab.webp";
+import contaLabMeiImg from "@/assets/projects/contalab-mei.webp";
+import contaLabSimplesImg from "@/assets/projects/contalab-simples.webp";
+import contaLabFiscalImg from "@/assets/projects/contalab-fiscal.webp";
+import contaLabRegularizarImg from "@/assets/projects/contalab-regularizar.webp";
+import contaLabContabilImg from "@/assets/projects/contalab-contabil.webp";
+import soulGuettoImg from "@/assets/projects/soulguetto.webp";
+import misterBarbosaImg from "@/assets/projects/misterbarbosa.webp";
+import elizeteTavaresImg from "@/assets/projects/elizetetavares.webp";
+import vistaKodaraImg from "@/assets/projects/vistakodara.webp";
 
 const projects = [
   { 

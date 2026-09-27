@@ -6,7 +6,7 @@ import Section from "@/components/Section";
 import ServiceDetailList from "@/components/ServiceDetailList";
 import CTASection from "@/components/CTASection";
 import { motion } from "framer-motion";
-import digitalImg from "@/assets/digital.jpg";
+import digitalImg from "@/assets/digital.webp";
 
 const items = [
   { title: "Sites institucionais", description: "Sua empresa precisa de uma presença digital profissional. Criamos sites que transmitem credibilidade, são otimizados para conversão e funcionam perfeitamente em qualquer dispositivo. Nada de templates — tudo sob medida para o seu negócio." },

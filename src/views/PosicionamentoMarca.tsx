@@ -6,7 +6,7 @@ import Section from "@/components/Section";
 import ServiceDetailList from "@/components/ServiceDetailList";
 import CTASection from "@/components/CTASection";
 import { motion } from "framer-motion";
-import brandingImg from "@/assets/branding.jpg";
+import brandingImg from "@/assets/branding.webp";
 
 const items = [
   { title: "Branding completo", description: "Construção de marca do zero, da estratégia à execução. Definimos posicionamento, tom de voz, valores, arquitetura de marca e toda a base para que sua empresa comunique com clareza e autoridade." },

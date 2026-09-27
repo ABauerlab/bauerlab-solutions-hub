@@ -5,7 +5,7 @@ import PageHero from "@/components/PageHero";
 import Section from "@/components/Section";
 import CTASection from "@/components/CTASection";
 import { motion } from "framer-motion";
-import aboutImg from "@/assets/about.jpg";
+import aboutImg from "@/assets/about.webp";
 
 const values = [
   { title: "Resolver", description: "Nosso trabalho começa no problema. Antes de criar qualquer coisa, entendemos o que precisa ser resolvido. Diagnóstico vem antes de execução." },

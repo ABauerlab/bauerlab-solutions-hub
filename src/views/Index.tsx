@@ -12,7 +12,7 @@ import Layout from "@/components/Layout";
 import ServiceCard from "@/components/ServiceCard";
 import Section from "@/components/Section";
 import CTASection from "@/components/CTASection";
-import heroBg from "@/assets/hero-bg.jpg";
+import heroBg from "@/assets/hero-bg.webp";
 
 const services = [
   {

@@ -6,7 +6,7 @@ import Section from "@/components/Section";
 import ServiceDetailList from "@/components/ServiceDetailList";
 import CTASection from "@/components/CTASection";
 import { motion } from "framer-motion";
-import ativacaoImg from "@/assets/ativacao.jpg";
+import ativacaoImg from "@/assets/ativacao.webp";
 
 const items = [
   { title: "Ativações de marca para empresas", description: "Experiências presenciais que conectam o público à sua marca de forma memorável e impactante. Planejamos e executamos ativações para lançamentos, inaugurações, feiras, eventos corporativos e ações promocionais." },
