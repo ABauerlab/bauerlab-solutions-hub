@@ -51,7 +51,7 @@ const AtivacaoMarca = () => {
       </Section>
 
       <Section className="border-t border-border">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16">
           <div>
             <h2 className="text-2xl md:text-3xl font-bold mb-6">A marca que as pessoas tocam é a marca que lembram.</h2>
             <p className="text-muted-foreground leading-relaxed mb-4">

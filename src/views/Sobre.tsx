@@ -46,7 +46,7 @@ const Sobre = () => {
       </section>
 
       <Section>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16">
           <div>
             <h2 className="text-2xl md:text-3xl font-bold mb-6">Nossa visão</h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
@@ -89,13 +89,13 @@ const Sobre = () => {
       </Section>
 
       <Section className="border-t border-border">
-        <div className="mb-12">
+        <div className="mb-8 md:mb-12">
           <span className="text-xs font-heading font-semibold tracking-widest uppercase text-primary mb-3 block">
             Nossos valores
           </span>
           <h2 className="text-2xl md:text-4xl font-bold">O que nos move</h2>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-5">
           {values.map((value, index) => (
             <motion.div
               key={value.title}
@@ -103,9 +103,9 @@ const Sobre = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.12 }}
               viewport={{ once: true }}
-              className="p-6 border border-border rounded-lg hover:border-primary/30 transition-colors"
+              className="p-4 md:p-6 border border-border rounded-lg hover:border-primary/30 transition-colors"
             >
-              <h3 className="font-heading font-bold text-primary text-xl mb-3">{value.title}</h3>
+              <h3 className="font-heading font-bold text-primary text-lg md:text-xl mb-2 md:mb-3">{value.title}</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">{value.description}</p>
             </motion.div>
           ))}
@@ -113,7 +113,7 @@ const Sobre = () => {
       </Section>
 
       <Section className="border-t border-border">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16">
           <div>
             <span className="text-xs font-heading font-semibold tracking-widest uppercase text-primary mb-3 block">
               Princípios
