@@ -164,11 +164,11 @@ const Index = () => {
               transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
               className="lg:col-span-5"
             >
-              <div className="glass rounded-3xl p-6 md:p-8 grid grid-cols-2 gap-6 md:gap-8">
+              <div className="grid grid-cols-2 gap-x-10 gap-y-8">
                 {stats.map((stat) => (
-                  <div key={stat.label} className="border-l-2 border-primary/40 pl-4">
-                    <div className="text-2xl md:text-4xl font-bold text-gradient font-heading">{stat.value}</div>
-                    <div className="text-[10px] md:text-xs text-muted-foreground uppercase tracking-wider mt-1">{stat.label}</div>
+                  <div key={stat.label}>
+                    <div className="text-4xl md:text-6xl font-bold text-gradient font-heading leading-none">{stat.value}</div>
+                    <div className="text-xs md:text-sm text-muted-foreground uppercase tracking-wider mt-2">{stat.label}</div>
                   </div>
                 ))}
               </div>
