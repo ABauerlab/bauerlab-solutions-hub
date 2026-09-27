@@ -3,7 +3,7 @@ import PageHero from "@/components/PageHero";
 import ServiceCard from "@/components/ServiceCard";
 import Section from "@/components/Section";
 import CTASection from "@/components/CTASection";
-import { Monitor, Palette, Video, Sparkles, Package, TrendingUp } from "lucide-react";
+import { Monitor, Palette, Video, Sparkles, Package, TrendingUp, ClipboardCheck } from "lucide-react";
 
 const services = [
   { title: "Posicionamento & Marca", description: "Branding, identidade visual, rebranding e posicionamento estratégico. Marcas que comunicam com clareza e se diferenciam no mercado.", path: "/posicionamento-marca", icon: <Palette size={24} /> },
@@ -12,6 +12,7 @@ const services = [
   { title: "Audiovisual", description: "Fotografia profissional, vídeos institucionais, conteúdo para redes sociais e captação de eventos. Imagem com propósito.", path: "/audiovisual", icon: <Video size={24} /> },
   { title: "Ativação de Marca", description: "Experiências presenciais, ações promocionais, fotos instantâneas e conexão do físico com o digital. Marca que sai da tela.", path: "/ativacao-de-marca", icon: <Sparkles size={24} /> },
   { title: "Materiais Físicos", description: "Cartões, adesivos, displays e materiais promocionais com qualidade premium. Extensão da marca no mundo real.", path: "/materiais-fisicos", icon: <Package size={24} /> },
+  { title: "Consultoria & Estruturação Digital", description: "Diagnóstico honesto da presença digital, planilhas de gestão e estruturação de processos. Antes de vender solução, entendemos o problema.", path: "/consultoria-digital", icon: <ClipboardCheck size={24} /> },
 ];
 
 const Services = () => {

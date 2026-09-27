@@ -10,6 +10,7 @@ const routes = [
   "/ativacao-de-marca",
   "/materiais-fisicos",
   "/trafego-pago",
+  "/consultoria-digital",
   "/projetos",
   "/empresas-do-grupo",
   "/metodologia",

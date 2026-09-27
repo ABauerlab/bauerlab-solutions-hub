@@ -4,15 +4,23 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import Link from "next/link";
 import {
-  ArrowRight, Monitor, Palette, Video, Sparkles, Package, 
+  ArrowRight, Monitor, Palette, Video, Sparkles, Package,
   Zap, Target, ShieldCheck, TrendingUp, ChevronRight, ChevronLeft,
-  Cpu, Camera, Calculator
+  Cpu, Camera, Calculator, ClipboardCheck
 } from "lucide-react";
 import Layout from "@/components/Layout";
 import ServiceCard from "@/components/ServiceCard";
 import Section from "@/components/Section";
 import CTASection from "@/components/CTASection";
+import LogoMarquee from "@/components/LogoMarquee";
 import heroBg from "@/assets/hero-bg.webp";
+
+const stats = [
+  { value: "20+", label: "Projetos entregues" },
+  { value: "3", label: "Marcas do grupo" },
+  { value: "7", label: "Áreas de atuação" },
+  { value: "100%", label: "Dados reais no site" },
+];
 
 const services = [
   {
@@ -50,6 +58,12 @@ const services = [
     description: "Soluções contábeis integradas à sua estrutura digital através da ContaLab Digital.",
     path: "http://contalabdigital.com.br/",
     icon: <Calculator size={22} />,
+  },
+  {
+    title: "Consultoria",
+    description: "Diagnóstico honesto da presença digital antes de vender qualquer solução.",
+    path: "/consultoria-digital",
+    icon: <ClipboardCheck size={22} />,
   },
 ];
 
@@ -113,7 +127,7 @@ const Index = () => {
               Estratégia, tecnologia e audiovisual integrados em um ecossistema único para sua empresa escalar com autoridade.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10">
               <a
                 href="https://wa.me/5531998021169"
                 className="w-full sm:w-auto group inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-full font-heading font-bold text-base hover:scale-105 transition-all duration-500 glow"
@@ -127,9 +141,20 @@ const Index = () => {
                 Portfólio
               </Link>
             </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 max-w-2xl mx-auto pt-8 border-t border-border/50">
+              {stats.map((stat) => (
+                <div key={stat.label}>
+                  <div className="text-2xl md:text-4xl font-bold text-gradient font-heading">{stat.value}</div>
+                  <div className="text-[10px] md:text-xs text-muted-foreground uppercase tracking-wider mt-1">{stat.label}</div>
+                </div>
+              ))}
+            </div>
           </motion.div>
         </div>
       </section>
+
+      <LogoMarquee />
 
       {/* Pilares com Scroll Horizontal */}
       <section className="py-12 md:py-20 border-y border-border bg-card/30">
