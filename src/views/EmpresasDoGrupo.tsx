@@ -13,6 +13,7 @@ const companies = [
     domain: "vistakodara.com.br",
     url: "https://vistakodara.com.br",
     description: "Streetwear com e-commerce próprio, operado como produto do grupo BauerLab.",
+    tone: "lime" as const,
   },
   {
     name: "Asari",
@@ -25,6 +26,7 @@ const companies = [
     domain: "mambaiabh.com.br",
     url: "https://mambaiabh.com.br",
     description: "Estúdio fotográfico, coworking criativo e locação de espaço na Praça Sete, BH. Parceiro oficial de audiovisual da BauerLab.",
+    tone: "primary" as const,
   },
 ];
 
@@ -39,32 +41,45 @@ const EmpresasDoGrupo = () => {
 
       <Section>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-          {companies.map((company, index) => (
-            <motion.a
-              key={company.name}
-              href={company.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="group block border border-border bg-card/40 p-8 rounded-2xl hover:border-primary/40 transition-colors duration-500 h-full"
-            >
-              <span className="inline-block text-[10px] font-bold uppercase tracking-[0.2em] text-primary mb-4">
-                Marca do Grupo BauerLab
-              </span>
-              <h3 className="font-heading font-bold text-2xl mb-3 group-hover:text-primary transition-colors">
-                {company.name}
-              </h3>
-              <p className="text-sm text-muted-foreground leading-relaxed mb-6">
-                {company.description}
-              </p>
-              <div className="flex items-center gap-2 text-sm font-bold text-primary">
-                {company.domain} <ExternalLink size={14} />
-              </div>
-            </motion.a>
-          ))}
+          {companies.map((company, index) => {
+            const tone = company.tone;
+            const toneClasses =
+              tone === "primary"
+                ? "bg-primary border-transparent"
+                : tone === "lime"
+                ? "bg-lime border-transparent"
+                : "border border-border bg-card/40 hover:border-primary/40";
+            const textClasses = tone === "primary" ? "text-primary-foreground" : tone === "lime" ? "text-lime-foreground" : "";
+            const mutedClasses =
+              tone === "primary" ? "text-primary-foreground/70" : tone === "lime" ? "text-lime-foreground/70" : "text-muted-foreground";
+            const tagClasses = tone ? textClasses : "text-primary";
+            return (
+              <motion.a
+                key={company.name}
+                href={company.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className={`group block p-8 rounded-2xl transition-colors duration-500 h-full ${toneClasses}`}
+              >
+                <span className={`inline-block text-[10px] font-bold uppercase tracking-[0.2em] mb-4 ${tagClasses}`}>
+                  Marca do Grupo BauerLab
+                </span>
+                <h3 className={`font-heading font-bold text-2xl mb-3 transition-colors ${textClasses || "group-hover:text-primary"}`}>
+                  {company.name}
+                </h3>
+                <p className={`text-sm leading-relaxed mb-6 ${mutedClasses}`}>
+                  {company.description}
+                </p>
+                <div className={`flex items-center gap-2 text-sm font-bold ${tagClasses}`}>
+                  {company.domain} <ExternalLink size={14} />
+                </div>
+              </motion.a>
+            );
+          })}
         </div>
       </Section>
 

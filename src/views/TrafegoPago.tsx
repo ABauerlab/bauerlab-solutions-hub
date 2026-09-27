@@ -107,30 +107,33 @@ const TrafegoPago = () => {
 
       <Section className="border-t border-border">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {cases.map((c, index) => (
-            <motion.div
-              key={c.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="border border-border bg-card/40 p-6 md:p-8 rounded-2xl h-full"
-            >
-              <div className="flex items-center gap-2 text-primary mb-2">
-                <Target size={18} />
-                <h3 className="font-heading font-bold text-xl">{c.name}</h3>
-              </div>
-              <p className="text-sm text-muted-foreground leading-relaxed mb-5">{c.context}</p>
-              <div className="grid grid-cols-2 gap-3">
-                {c.stats.map((stat) => (
-                  <div key={stat.label} className="p-3 rounded-lg bg-primary/5 border border-primary/10">
-                    <div className="text-lg font-bold text-primary">{stat.value}</div>
-                    <div className="text-[11px] text-muted-foreground leading-tight">{stat.label}</div>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-          ))}
+          {cases.map((c, index) => {
+            const isFirst = index === 0;
+            return (
+              <motion.div
+                key={c.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className={`p-6 md:p-8 rounded-2xl h-full ${isFirst ? "bg-primary" : "border border-border bg-card/40"}`}
+              >
+                <div className={`flex items-center gap-2 mb-2 ${isFirst ? "text-primary-foreground" : "text-primary"}`}>
+                  <Target size={18} />
+                  <h3 className="font-heading font-bold text-xl">{c.name}</h3>
+                </div>
+                <p className={`text-sm leading-relaxed mb-5 ${isFirst ? "text-primary-foreground/70" : "text-muted-foreground"}`}>{c.context}</p>
+                <div className="grid grid-cols-2 gap-3">
+                  {c.stats.map((stat) => (
+                    <div key={stat.label} className={`p-3 rounded-lg ${isFirst ? "bg-primary-foreground/10 border border-primary-foreground/10" : "bg-primary/5 border border-primary/10"}`}>
+                      <div className={`text-lg font-bold ${isFirst ? "text-lime" : "text-primary"}`}>{stat.value}</div>
+                      <div className={`text-[11px] leading-tight ${isFirst ? "text-primary-foreground/70" : "text-muted-foreground"}`}>{stat.label}</div>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </Section>
 

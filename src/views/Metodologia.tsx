@@ -52,25 +52,28 @@ const Metodologia = () => {
 
       <Section>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {steps.map((step, index) => (
-            <motion.div
-              key={step.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="border border-border bg-card/40 p-6 md:p-8 rounded-2xl h-full"
-            >
-              <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-4">
-                {step.icon}
-              </div>
-              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary mb-1 block">
-                Etapa {index + 1}
-              </span>
-              <h3 className="font-heading font-bold text-lg mb-2">{step.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{step.description}</p>
-            </motion.div>
-          ))}
+          {steps.map((step, index) => {
+            const isFirst = index === 0;
+            return (
+              <motion.div
+                key={step.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className={`p-6 md:p-8 rounded-2xl h-full ${isFirst ? "bg-lime" : "border border-border bg-card/40"}`}
+              >
+                <div className={`w-10 h-10 rounded-xl flex items-center justify-center mb-4 ${isFirst ? "bg-lime-foreground/10 text-lime-foreground" : "bg-primary/10 text-primary"}`}>
+                  {step.icon}
+                </div>
+                <span className={`text-[10px] font-bold uppercase tracking-[0.2em] mb-1 block ${isFirst ? "text-lime-foreground" : "text-primary"}`}>
+                  Etapa {index + 1}
+                </span>
+                <h3 className={`font-heading font-bold text-lg mb-2 ${isFirst ? "text-lime-foreground" : ""}`}>{step.title}</h3>
+                <p className={`text-sm leading-relaxed ${isFirst ? "text-lime-foreground/70" : "text-muted-foreground"}`}>{step.description}</p>
+              </motion.div>
+            );
+          })}
         </div>
       </Section>
 
