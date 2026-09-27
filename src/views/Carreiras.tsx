@@ -45,7 +45,7 @@ const Carreiras = () => {
             href={getWhatsAppUrl("Olá! Gostaria de deixar meu portfólio no banco de talentos da BauerLab.")}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-md font-heading font-bold text-sm hover:bg-primary/90 transition-colors"
+            className="inline-flex items-center gap-2 bg-lime text-lime-foreground px-6 py-3 rounded-full font-heading font-extrabold text-sm hover:scale-105 transition-all"
           >
             Enviar portfólio pelo WhatsApp
           </a>

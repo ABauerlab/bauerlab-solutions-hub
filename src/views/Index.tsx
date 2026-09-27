@@ -9,6 +9,7 @@ import {
   Camera, ClipboardCheck
 } from "lucide-react";
 import Layout from "@/components/Layout";
+import AnimatedNumber from "@/components/AnimatedNumber";
 import Section from "@/components/Section";
 import CTASection from "@/components/CTASection";
 import LogoMarquee from "@/components/LogoMarquee";
@@ -170,7 +171,7 @@ const Index = () => {
               <div className="bg-primary rounded-3xl p-6 md:p-8 rotate-1 grid grid-cols-2 gap-x-8 gap-y-6">
                 {stats.map((stat) => (
                   <div key={stat.label}>
-                    <div className="text-4xl md:text-6xl font-extrabold text-primary-foreground font-heading leading-none">{stat.value}</div>
+                    <AnimatedNumber value={stat.value} className="text-4xl md:text-6xl font-extrabold text-primary-foreground font-heading leading-none" />
                     <div className="text-xs md:text-sm text-primary-foreground/70 uppercase tracking-wider mt-2">{stat.label}</div>
                   </div>
                 ))}

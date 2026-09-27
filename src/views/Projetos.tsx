@@ -8,6 +8,48 @@ import CTASection from "@/components/CTASection";
 import { motion } from "framer-motion";
 import { ArrowUpRight, ExternalLink, Globe, Monitor, ShoppingBag, Layers, Rocket } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
+import imgVistaKodara from "@/assets/portfolio/vistakodara-com-br.webp";
+import imgLucenaParquet from "@/assets/portfolio/lucenaparquetarima-com.webp";
+import imgMindra from "@/assets/portfolio/mindraperformance-com-br.webp";
+import imgAstroweb from "@/assets/portfolio/astrowebatlas-com-br.webp";
+import imgFluxo from "@/assets/portfolio/fluxodosmercados-com-br.webp";
+import imgContaLab from "@/assets/portfolio/contalabdigital-com-br.webp";
+import imgQuiz from "@/assets/portfolio/quiz-vistakodara-com-br.webp";
+import imgSuaLoja from "@/assets/portfolio/sualoja-bauerlab-com-br.webp";
+import imgReserva from "@/assets/portfolio/reserva-bauerlab-com-br.webp";
+import imgJbnEmp from "@/assets/portfolio/jbnempreendimentos-com-br.webp";
+import imgJbnCons from "@/assets/portfolio/jbnconsultoria-com-br.webp";
+import imgDei from "@/assets/portfolio/deisolucoes-com-br.webp";
+import imgGfProd from "@/assets/portfolio/gfprod-me.webp";
+import imgCarDreams from "@/assets/portfolio/cardreamspampulha-com-br.webp";
+import imgRecanto from "@/assets/portfolio/orecantodafloresta-com-br.webp";
+import imgSoulGuetto from "@/assets/portfolio/gruposoulguetto-com-br.webp";
+import imgMisterBarbosa from "@/assets/portfolio/misterbarbosa-com-br.webp";
+import imgEspacioElizete from "@/assets/portfolio/espacioelizetetavares-com.webp";
+import imgParapente from "@/assets/portfolio/parapentearraialdajuda-com-br.webp";
+
+const projectImages: Record<string, typeof imgVistaKodara> = {
+  "vistakodara.com.br": imgVistaKodara,
+  "lucenaparquetarima.com": imgLucenaParquet,
+  "mindraperformance.com.br": imgMindra,
+  "astrowebatlas.com.br": imgAstroweb,
+  "fluxodosmercados.com.br": imgFluxo,
+  "contalabdigital.com.br": imgContaLab,
+  "quiz.vistakodara.com.br": imgQuiz,
+  "sualoja.bauerlab.com.br": imgSuaLoja,
+  "reserva.bauerlab.com.br": imgReserva,
+  "jbnempreendimentos.com.br": imgJbnEmp,
+  "jbnconsultoria.com.br": imgJbnCons,
+  "deisolucoes.com.br": imgDei,
+  "gfprod.me": imgGfProd,
+  "cardreamspampulha.com.br": imgCarDreams,
+  "orecantodafloresta.com.br": imgRecanto,
+  "gruposoulguetto.com.br": imgSoulGuetto,
+  "misterbarbosa.com.br": imgMisterBarbosa,
+  "espacioelizetetavares.com": imgEspacioElizete,
+  "parapentearraialdajuda.com.br": imgParapente,
+};
 
 type Category = "Sites & Sistemas" | "E-commerce" | "Tráfego Pago" | "Produto Próprio";
 
@@ -113,41 +155,56 @@ const projects: Project[] = [
 
 const categories: Category[] = ["Sites & Sistemas", "E-commerce", "Tráfego Pago", "Produto Próprio"];
 
-const ProjectCard = ({ project, index }: { project: Project; index: number }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.5, delay: index * 0.04 }}
-    viewport={{ once: true }}
-    className="group"
-  >
-    <a
-      href={`https://${project.url}`}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="block border border-border bg-card/40 rounded-2xl overflow-hidden hover:border-primary/40 transition-all duration-500 h-full flex flex-col"
+const ProjectCard = ({ project, index }: { project: Project; index: number }) => {
+  const image = projectImages[project.url];
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: index * 0.04 }}
+      viewport={{ once: true }}
+      className="group"
     >
-      <div className="p-4 md:p-8 flex-1 flex flex-col justify-between">
-        <div>
-          <div className="flex items-center justify-between mb-2 md:mb-4">
-            <div className="w-8 h-8 md:w-11 md:h-11 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-500">
-              {project.icon}
-            </div>
-            <ExternalLink size={16} className="text-primary opacity-0 group-hover:opacity-100 transition-opacity" />
+      <a
+        href={`https://${project.url}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block border border-border bg-card/40 rounded-2xl overflow-hidden hover:border-primary/40 transition-all duration-500 h-full flex flex-col"
+      >
+        {image && (
+          <div className="relative aspect-[4/3] overflow-hidden border-b border-border">
+            <Image
+              src={image}
+              alt={`Captura de tela do site ${project.title}`}
+              fill
+              className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
+              loading="lazy"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
           </div>
-          <span className="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.2em] text-primary">
-            {project.category}
-          </span>
-          <h3 className="font-heading font-bold text-base md:text-2xl group-hover:text-primary transition-colors mb-1 mt-1 md:mt-2">
-            {project.title}
-          </h3>
-          <p className="text-xs md:text-sm text-muted-foreground font-mono tracking-tight mb-1 md:mb-2">{project.url}</p>
-          {project.note && <p className="text-[11px] md:text-xs text-muted-foreground/70">{project.note}</p>}
+        )}
+        <div className="p-4 md:p-8 flex-1 flex flex-col justify-between">
+          <div>
+            <div className="flex items-center justify-between mb-2 md:mb-4">
+              <div className="w-8 h-8 md:w-11 md:h-11 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-500">
+                {project.icon}
+              </div>
+              <ExternalLink size={16} className="text-primary opacity-0 group-hover:opacity-100 transition-opacity" />
+            </div>
+            <span className="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.2em] text-primary">
+              {project.category}
+            </span>
+            <h3 className="font-heading font-bold text-base md:text-2xl group-hover:text-primary transition-colors mb-1 mt-1 md:mt-2">
+              {project.title}
+            </h3>
+            <p className="text-xs md:text-sm text-muted-foreground font-mono tracking-tight mb-1 md:mb-2">{project.url}</p>
+            {project.note && <p className="text-[11px] md:text-xs text-muted-foreground/70">{project.note}</p>}
+          </div>
         </div>
-      </div>
-    </a>
-  </motion.div>
-);
+      </a>
+    </motion.div>
+  );
+};
 
 const Projetos = () => {
   const [filter, setFilter] = useState<Category | "Todos">("Todos");
@@ -255,7 +312,7 @@ const Projetos = () => {
             </p>
             <Link
               href="/contato"
-              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-md font-heading font-bold hover:bg-primary/90 transition-all hover:scale-105"
+              className="inline-flex items-center gap-2 bg-lime text-lime-foreground px-8 py-4 rounded-full font-heading font-extrabold hover:scale-105 transition-all"
             >
               Iniciar meu projeto <ArrowUpRight size={18} />
             </Link>

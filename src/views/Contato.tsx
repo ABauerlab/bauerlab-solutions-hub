@@ -174,7 +174,7 @@ Mensagem: ${formData.mensagem}`;
             </div>
             <button
               type="submit"
-              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-md font-heading font-semibold text-base hover:bg-primary/90 transition-all duration-300 hover:gap-3"
+              className="inline-flex items-center gap-2 bg-lime text-lime-foreground px-8 py-4 rounded-full font-heading font-extrabold text-base hover:scale-105 transition-all duration-300"
             >
               Enviar pelo WhatsApp <Send size={18} />
             </button>
@@ -202,7 +202,7 @@ Mensagem: ${formData.mensagem}`;
                 href={getWhatsAppUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-md font-heading font-semibold text-sm hover:bg-primary/90 transition-colors"
+                className="inline-flex items-center gap-2 bg-lime text-lime-foreground px-6 py-3 rounded-full font-heading font-extrabold text-sm hover:scale-105 transition-all"
               >
                 <MessageCircle size={16} />
                 Abrir WhatsApp

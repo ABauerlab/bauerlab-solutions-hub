@@ -72,7 +72,7 @@ const Audiovisual = () => {
               href="https://mambaiabh.com.br"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 md:px-8 py-3 md:py-4 rounded-md font-heading font-bold text-sm md:text-base hover:bg-primary/90 transition-all hover:scale-105"
+              className="inline-flex items-center gap-2 bg-lime text-lime-foreground px-6 md:px-8 py-3 md:py-4 rounded-full font-heading font-extrabold text-sm md:text-base hover:scale-105 transition-all"
             >
               Conhecer a Mambaia <ExternalLink size={18} />
             </a>
