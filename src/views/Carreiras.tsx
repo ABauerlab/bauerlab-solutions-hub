@@ -32,7 +32,7 @@ const Carreiras = () => {
           <h2 className="text-xl font-bold mb-3">Nenhuma vaga aberta no momento</h2>
           <p className="text-muted-foreground leading-relaxed mb-6">
             Quando abrirmos processo seletivo, ele será publicado aqui primeiro. Se você atua em uma dessas áreas
-            e quer ficar no radar, manda seu portfólio pelo WhatsApp — guardamos pra quando a vaga certa aparecer.
+            e quer ficar no radar, manda seu portfólio pelo WhatsApp, guardamos pra quando a vaga certa aparecer.
           </p>
           <div className="flex flex-wrap gap-2 mb-8">
             {areas.map((area) => (

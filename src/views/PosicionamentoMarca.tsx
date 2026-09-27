@@ -10,9 +10,9 @@ import brandingImg from "@/assets/branding.webp";
 
 const items = [
   { title: "Branding completo", description: "Construção de marca do zero, da estratégia à execução. Definimos posicionamento, tom de voz, valores, arquitetura de marca e toda a base para que sua empresa comunique com clareza e autoridade." },
-  { title: "Identidade visual", description: "Logo, paleta de cores, tipografia, ícones, padrões visuais e manual de marca. Tudo pensado para funcionar em qualquer aplicação — digital, impresso, sinalização e redes sociais." },
+  { title: "Identidade visual", description: "Logo, paleta de cores, tipografia, ícones, padrões visuais e manual de marca. Tudo pensado para funcionar em qualquer aplicação, digital, impresso, sinalização e redes sociais." },
   { title: "Rebranding", description: "Sua marca cresceu, mas a identidade ficou para trás? Atualizamos marcas que precisam evoluir sem perder sua essência. Modernização visual e estratégica com coerência." },
-  { title: "Copywriting institucional", description: "Textos que comunicam com clareza e profissionalismo. Desde o slogan até os textos do site, redes sociais e materiais impressos — tudo com tom de voz consistente e alinhado ao posicionamento." },
+  { title: "Copywriting institucional", description: "Textos que comunicam com clareza e profissionalismo. Desde o slogan até os textos do site, redes sociais e materiais impressos, tudo com tom de voz consistente e alinhado ao posicionamento." },
   { title: "Posicionamento estratégico", description: "Como sua empresa quer ser percebida pelo mercado? Definimos a posição da sua marca, seus diferenciais, público-alvo e a narrativa que vai guiar toda a comunicação." },
 ];
 
@@ -22,7 +22,7 @@ const PosicionamentoMarca = () => {
       <PageHero
         tag="Posicionamento & Marca"
         title="Marca forte é marca coerente. E marca coerente vende."
-        description="Construímos marcas que comunicam com clareza, transmitem confiança e se diferenciam no mercado. Do conceito à aplicação — cada detalhe é pensado para gerar percepção de valor."
+        description="Construímos marcas que comunicam com clareza, transmitem confiança e se diferenciam no mercado. Do conceito à aplicação, cada detalhe é pensado para gerar percepção de valor."
       />
 
       <section className="pb-12 md:pb-20">
@@ -70,7 +70,7 @@ const PosicionamentoMarca = () => {
             {[
               { title: "Pesquisa e análise de mercado", desc: "Entendemos o cenário antes de criar. Analisamos concorrentes, público e tendências." },
               { title: "Naming e tagline", desc: "Nome e slogan que comunicam a essência da marca com impacto e memorabilidade." },
-              { title: "Aplicações completas", desc: "Sua marca aplicada em todos os materiais — digital, impresso, uniformes, sinalização." },
+              { title: "Aplicações completas", desc: "Sua marca aplicada em todos os materiais, digital, impresso, uniformes, sinalização." },
               { title: "Manual de marca", desc: "Documento completo com todas as regras de uso, garantindo coerência em qualquer aplicação." },
             ].map((item, i) => (
               <motion.div
@@ -94,7 +94,7 @@ const PosicionamentoMarca = () => {
 
       <CTASection
         title="Sua marca transmite o que deveria?"
-        description="Converse com a BauerLab. Fazemos um diagnóstico gratuito da sua marca e mostramos como ela pode comunicar melhor — e vender mais."
+        description="Converse com a BauerLab. Fazemos um diagnóstico gratuito da sua marca e mostramos como ela pode comunicar melhor, e vender mais."
       />
     </Layout>
   );

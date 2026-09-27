@@ -4,55 +4,52 @@ import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
 import Section from "@/components/Section";
 import CTASection from "@/components/CTASection";
-import { Rss, Mail } from "lucide-react";
-import { getEmail } from "@/lib/contact";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
+import { blogPosts } from "@/lib/blog-posts";
+
+const formatDate = (iso: string) =>
+  new Date(iso).toLocaleDateString("pt-BR", { day: "2-digit", month: "long", year: "numeric" });
 
 const Blog = () => {
-  const email = getEmail();
-
   return (
     <Layout>
       <PageHero
         tag="Blog"
         title="Insights sobre marca, tecnologia e performance."
-        description="Conteúdo autoral da BauerLab sobre estratégia digital, branding, audiovisual e tráfego pago. Publicações mensais, direto da nossa experiência de campo."
+        description="Conteúdo autoral da BauerLab sobre estratégia digital, branding, audiovisual e tráfego pago. Direto da nossa experiência de campo."
       />
 
       <Section>
-        <div className="max-w-xl mx-auto text-center py-12">
-          <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mx-auto mb-6">
-            <Rss size={24} />
-          </div>
-          <h2 className="text-xl font-bold mb-3">Primeiro artigo em preparação</h2>
-          <p className="text-muted-foreground leading-relaxed">
-            Estamos estruturando a publicação mensal de conteúdo. Em breve, artigos reais sobre os bastidores dos
-            nossos projetos — sem enrolação e sem conteúdo genérico.
-          </p>
-        </div>
-      </Section>
-
-      <Section className="border-t border-border bg-primary/5">
-        <div className="max-w-xl mx-auto text-center">
-          <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mx-auto mb-5">
-            <Mail size={20} />
-          </div>
-          <h2 className="text-xl font-bold mb-3">Newsletter mensal</h2>
-          <p className="text-sm text-muted-foreground leading-relaxed mb-6">
-            Ainda não temos automação de inscrição — mas se quiser entrar na lista assim que a newsletter for ao
-            ar, manda um e-mail e a gente te adiciona manualmente.
-          </p>
-          <a
-            href={`mailto:${email}?subject=Quero entrar na newsletter da BauerLab`}
-            className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-md font-heading font-bold text-sm hover:bg-primary/90 transition-colors"
-          >
-            <Mail size={16} /> Quero receber
-          </a>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {blogPosts.map((post, index) => (
+            <motion.div
+              key={post.slug}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: index * 0.05 }}
+              viewport={{ once: true }}
+            >
+              <Link href={`/blog/${post.slug}`} className="group block glass p-6 rounded-2xl glass-hover h-full">
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary">{post.category}</span>
+                  <ArrowUpRight size={16} className="text-primary opacity-0 group-hover:opacity-100 transition-opacity" />
+                </div>
+                <h2 className="font-heading font-bold text-lg mb-2 group-hover:text-primary transition-colors">
+                  {post.title}
+                </h2>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-3">{post.description}</p>
+                <p className="text-xs text-muted-foreground/60">{formatDate(post.date)}</p>
+              </Link>
+            </motion.div>
+          ))}
         </div>
       </Section>
 
       <CTASection
-        title="Quer receber os próximos artigos?"
-        description="Fale com a gente e entre na nossa lista de contatos para ser avisado sobre novos conteúdos."
+        title="Quer aplicar isso no seu negócio?"
+        description="Fale com a BauerLab. Explicamos exatamente como aplicaríamos esse processo no seu projeto."
       />
     </Layout>
   );

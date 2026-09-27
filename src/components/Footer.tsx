@@ -56,7 +56,7 @@ const Footer = () => {
                 {email}
               </a>
               <p className="text-xs text-muted-foreground mt-2 leading-relaxed">
-                R. Rio de Janeiro, 462 — Centro, Sala 2217<br />
+                R. Rio de Janeiro, 462, Centro, Sala 2217<br />
                 Belo Horizonte - MG, 30160-041
               </p>
               <p className="text-xs text-muted-foreground">CNPJ: 58.481.181/0001-03</p>

@@ -3,7 +3,7 @@ import JsonLd from "@/components/JsonLd";
 import { pageMetadata } from "@/lib/metadata";
 import { breadcrumbJsonLd, serviceJsonLd, faqJsonLd } from "@/lib/schema";
 
-const title = "Tráfego Pago & Performance — Resultados Reais";
+const title = "Tráfego Pago & Performance: Resultados Reais";
 const description =
   "Resultados reais de contas de anúncio que operamos: CTR, CPC, custo por lead e por conversa. Sem números inventados ou projeções genéricas.";
 
@@ -20,7 +20,7 @@ const service = serviceJsonLd({ name: "Tráfego Pago & Performance", description
 const faq = faqJsonLd([
   {
     question: "Vocês garantem resultado com anúncios pagos?",
-    answer: "Não fazemos promessa de resultado garantido — cada conta e nicho tem um comportamento diferente. Trabalhamos com dados reais e relatório recorrente de performance.",
+    answer: "Não fazemos promessa de resultado garantido, cada conta e nicho tem um comportamento diferente. Trabalhamos com dados reais e relatório recorrente de performance.",
   },
   {
     question: "Como sei se minha conta de anúncios está rastreando corretamente?",

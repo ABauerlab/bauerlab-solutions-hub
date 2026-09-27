@@ -11,7 +11,7 @@ import materiaisImg from "@/assets/materiais.webp";
 const items = [
   { title: "Cartões de visita premium", description: "Design profissional e impressão em alta qualidade. Acabamentos especiais como hot stamping, verniz localizado e papel texturizado. Seu cartão transmite a seriedade da sua marca antes mesmo de você abrir a boca." },
   { title: "Adesivos e etiquetas personalizadas", description: "Materiais que estendem a identidade visual para embalagens, produtos, vitrines e veículos. Cada adesivo é uma peça de comunicação da sua marca." },
-  { title: "Displays, banners e totens", description: "Materiais de ponto de venda, eventos e fachada com qualidade gráfica impecável. Displays que chamam atenção e comunicam com clareza — alinhados à identidade visual." },
+  { title: "Displays, banners e totens", description: "Materiais de ponto de venda, eventos e fachada com qualidade gráfica impecável. Displays que chamam atenção e comunicam com clareza, alinhados à identidade visual." },
   { title: "Folders, catálogos e apresentações", description: "Materiais impressos com design profissional para apresentações comerciais, feiras e reuniões. Cada peça é uma extensão da marca que reforça credibilidade." },
   { title: "Embalagens e papelaria institucional", description: "Envelopes, papel timbrado, pastas, etiquetas e embalagens personalizadas. Todo ponto de contato físico é uma oportunidade de reforçar a marca." },
   { title: "Produção com controle de qualidade", description: "Não é gráfica comum. Acompanhamos cada etapa da produção para garantir que cores, acabamentos e materiais estejam exatamente como aprovado no projeto." },
@@ -23,7 +23,7 @@ const MateriaisFisicos = () => {
       <PageHero
         tag="Materiais Físicos"
         title="Não é gráfica comum. É extensão da marca."
-        description="Produzimos materiais gráficos que mantêm a identidade visual, a qualidade e a coerência da sua marca em cada peça. Do cartão de visita ao display — tudo com o mesmo rigor e profissionalismo."
+        description="Produzimos materiais gráficos que mantêm a identidade visual, a qualidade e a coerência da sua marca em cada peça. Do cartão de visita ao display, tudo com o mesmo rigor e profissionalismo."
       />
 
       <section className="pb-12 md:pb-20">
@@ -66,13 +66,13 @@ const MateriaisFisicos = () => {
             <p className="text-muted-foreground leading-relaxed">
               Na BauerLab, cada peça é projetada dentro do sistema visual da marca. 
               Cores, tipografia, acabamento, papel. Tudo é escolhido com propósito. 
-              O resultado é um material que não vai para a gaveta. Vai para a mão do cliente — e fica na memória.
+              O resultado é um material que não vai para a gaveta. Vai para a mão do cliente, e fica na memória.
             </p>
           </div>
           <div className="space-y-6">
             {[
               { title: "Design alinhado à marca", desc: "Cada peça segue o manual de marca e mantém a coerência visual em todas as aplicações." },
-              { title: "Acabamentos especiais", desc: "Hot stamping, verniz, laminação, relevo seco — detalhes que fazem a diferença na percepção de qualidade." },
+              { title: "Acabamentos especiais", desc: "Hot stamping, verniz, laminação, relevo seco, detalhes que fazem a diferença na percepção de qualidade." },
               { title: "Materiais premium", desc: "Papéis, substratos e insumos selecionados para cada tipo de aplicação e objetivo." },
               { title: "Acompanhamento de produção", desc: "Garantimos que a peça impressa seja fiel ao projeto aprovado. Sem surpresas." },
             ].map((item, i) => (

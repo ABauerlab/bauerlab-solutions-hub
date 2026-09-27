@@ -22,7 +22,7 @@ const steps = [
   {
     icon: <Hammer size={22} />,
     title: "Produção",
-    description: "Execução com acompanhamento real durante todo o processo — nada de sumir depois de assinar o contrato.",
+    description: "Execução com acompanhamento real durante todo o processo, nada de sumir depois de assinar o contrato.",
   },
   {
     icon: <CheckCircle2 size={22} />,
@@ -47,7 +47,7 @@ const Metodologia = () => {
       <PageHero
         tag="Metodologia"
         title="Do briefing à entrega, com método."
-        description="Não trabalhamos por impulso criativo. Cada projeto segue um processo estruturado, replicável e transparente — do primeiro diagnóstico ao relatório de resultado."
+        description="Não trabalhamos por impulso criativo. Cada projeto segue um processo estruturado, replicável e transparente, do primeiro diagnóstico ao relatório de resultado."
       />
 
       <Section>
@@ -79,7 +79,7 @@ const Metodologia = () => {
           <h2 className="text-2xl md:text-3xl font-bold mb-4">Relatório periódico em prática</h2>
           <p className="text-muted-foreground leading-relaxed mb-4">
             Para clientes de tráfego pago, o acompanhamento não termina na entrega da campanha. Rodamos relatórios
-            recorrentes de performance — o mesmo modelo que já usamos hoje com clientes ativos.
+            recorrentes de performance, o mesmo modelo que já usamos hoje com clientes ativos.
           </p>
           <Link href="/servicos" className="inline-flex items-center gap-2 font-bold text-primary text-sm hover:gap-3 transition-all">
             Ver resultados reais de tráfego pago →

@@ -13,9 +13,6 @@ import Section from "@/components/Section";
 import CTASection from "@/components/CTASection";
 import LogoMarquee from "@/components/LogoMarquee";
 import heroBg from "@/assets/hero-bg.webp";
-import astroImg from "@/assets/projects/astrowebatlas.webp";
-import vistaKodaraImg from "@/assets/projects/vistakodara.webp";
-import contaLabImg from "@/assets/projects/contalab.webp";
 
 const stats = [
   { value: "20+", label: "Projetos entregues" },
@@ -84,9 +81,9 @@ const ecosystemPoints = [
 ];
 
 const proofShots = [
-  { image: astroImg.src, label: "Astroweb Atlas", note: "Sistema Node.js" },
-  { image: vistaKodaraImg.src, label: "Vista Kodara", note: "Marca do grupo" },
-  { image: contaLabImg.src, label: "ContaLab Digital", note: "5 subdomínios" },
+  { url: "astrowebatlas.com.br", label: "Astroweb Atlas", note: "Sistema Node.js" },
+  { url: "vistakodara.com.br", label: "Vista Kodara", note: "Marca do grupo" },
+  { url: "contalabdigital.com.br", label: "ContaLab Digital", note: "5 subdomínios" },
 ];
 
 const comparison = [
@@ -110,7 +107,7 @@ const Index = () => {
 
   return (
     <Layout>
-      {/* Hero editorial — assimétrico, não centralizado */}
+      {/* Hero editorial, assimétrico, não centralizado */}
       <section ref={heroRef} className="relative min-h-[90vh] md:min-h-screen flex items-center overflow-hidden bg-mesh">
         <motion.div className="absolute inset-0 z-0" style={{ y: heroY, opacity: heroOpacity }}>
           <img
@@ -133,7 +130,7 @@ const Index = () => {
               className="lg:col-span-7"
             >
               <span className="inline-flex items-center gap-2 glass px-3 py-1.5 rounded-full text-[10px] font-bold tracking-[0.2em] uppercase text-primary mb-6 glow">
-                <Cpu size={12} /> 01 — Infraestrutura de Marca
+                <Cpu size={12} /> 01. Infraestrutura de Marca
               </span>
 
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.05] mb-6 text-gradient text-left">
@@ -182,11 +179,11 @@ const Index = () => {
 
       <LogoMarquee />
 
-      {/* Pilares — bento assimétrico, sem carrossel */}
+      {/* Pilares, bento assimétrico, sem carrossel */}
       <section className="py-16 md:py-24 border-b border-border bg-card/30">
         <div className="container mx-auto px-4 md:px-8">
           <div className="max-w-xl mb-10 md:mb-14">
-            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary mb-3 block">02 — Pilares</span>
+            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary mb-3 block">02. Pilares</span>
             <h2 className="text-2xl md:text-4xl font-bold mb-2">O que entregamos</h2>
             <p className="text-xs md:text-sm text-muted-foreground">Soluções integradas que eliminam a fragmentação da sua marca.</p>
           </div>
@@ -238,7 +235,7 @@ const Index = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           <div className="order-2 lg:order-1">
             <div className="inline-flex items-center gap-2 text-primary font-bold text-[10px] uppercase tracking-widest mb-3">
-              <Camera size={14} /> 03 — Produção de Elite
+              <Camera size={14} /> 03. Produção de Elite
             </div>
             <h2 className="text-3xl md:text-5xl font-bold mb-4">Audiovisual Cinematográfico</h2>
             <p className="text-sm md:text-lg text-muted-foreground leading-relaxed mb-6">
@@ -261,13 +258,13 @@ const Index = () => {
         </div>
       </Section>
 
-      {/* Ecossistema — editorial, não mais grid de 4 caixas uniformes */}
+      {/* Ecossistema, editorial, não mais grid de 4 caixas uniformes */}
       <Section>
-        <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary mb-6 block">04 — Ecossistema</span>
+        <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary mb-6 block">04. Ecossistema</span>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
           <div className="lg:col-span-7">
             <p className="text-2xl md:text-4xl font-heading font-bold leading-tight">
-              Um só ecossistema. O fim da fragmentação — na BauerLab, <span className="text-gradient">tudo nasce do mesmo DNA estratégico.</span>
+              Um só ecossistema. O fim da fragmentação, na BauerLab, <span className="text-gradient">tudo nasce do mesmo DNA estratégico.</span>
             </p>
           </div>
           <div className="lg:col-span-5 flex flex-col gap-5 lg:pl-6 lg:border-l border-border">
@@ -284,34 +281,41 @@ const Index = () => {
         </div>
       </Section>
 
-      {/* Provas reais — fotos de projetos entregues, não ícones */}
+      {/* Provas reais, link direto pro site ao vivo, sem print que fica desatualizado */}
       <Section className="border-t border-border bg-card/30">
-        <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary mb-6 block">05 — Provas</span>
-        <h2 className="text-2xl md:text-4xl font-bold mb-10 max-w-xl">Resultado que dá pra ver, não só pra prometer.</h2>
+        <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary mb-6 block">05. Provas</span>
+        <h2 className="text-2xl md:text-4xl font-bold mb-10 max-w-xl">Resultado que dá pra visitar agora, não só pra prometer.</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {proofShots.map((shot, index) => (
-            <motion.div
+            <motion.a
               key={shot.label}
+              href={`https://${shot.url}`}
+              target="_blank"
+              rel="noopener noreferrer"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="relative aspect-[4/5] rounded-2xl overflow-hidden group"
+              className="group glass p-6 rounded-2xl glass-hover flex flex-col justify-between h-full"
             >
-              <img src={shot.image} alt={shot.label} className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700" loading="lazy" />
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/10 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-5">
-                <p className="font-heading font-bold text-white">{shot.label}</p>
-                <p className="text-xs text-white/70">{shot.note}</p>
+              <div className="flex items-center justify-between mb-6">
+                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-500">
+                  <ArrowUpRight size={18} />
+                </div>
               </div>
-            </motion.div>
+              <div>
+                <p className="font-heading font-bold text-lg group-hover:text-primary transition-colors">{shot.label}</p>
+                <p className="text-xs text-muted-foreground mt-1">{shot.note}</p>
+                <p className="text-xs text-muted-foreground/60 font-mono mt-3">{shot.url}</p>
+              </div>
+            </motion.a>
           ))}
         </div>
       </Section>
 
       {/* Comparação honesta */}
       <Section className="border-t border-border">
-        <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary mb-6 block">06 — Comparativo</span>
+        <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary mb-6 block">06. Comparativo</span>
         <h2 className="text-2xl md:text-4xl font-bold mb-10 max-w-xl">Contra o que você provavelmente já tentou.</h2>
         <div className="overflow-x-auto">
           <table className="w-full text-sm min-w-[600px]">

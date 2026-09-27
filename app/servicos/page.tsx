@@ -4,7 +4,7 @@ import { pageMetadata } from "@/lib/metadata";
 import { breadcrumbJsonLd } from "@/lib/schema";
 
 export const metadata = pageMetadata({
-  title: "Serviços — Soluções completas para sua marca",
+  title: "Serviços: Soluções completas para sua marca",
   description:
     "Cada área funciona de forma independente, mas integrada: branding, sistemas digitais, tráfego pago, audiovisual, ativação de marca e materiais físicos.",
   path: "/servicos",

@@ -21,7 +21,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `${SITE_NAME} — Estruturamos marcas para o próximo nível`,
+    default: `${SITE_NAME}: Estruturamos marcas para o próximo nível`,
     template: `%s | ${SITE_NAME}`,
   },
   description:
@@ -31,14 +31,14 @@ export const metadata: Metadata = {
     type: "website",
     siteName: SITE_NAME,
     url: SITE_URL,
-    title: `${SITE_NAME} — Estruturamos marcas para o próximo nível`,
+    title: `${SITE_NAME}: Estruturamos marcas para o próximo nível`,
     description:
       "Estratégia, tecnologia e audiovisual integrados em um ecossistema único para sua empresa escalar com autoridade e design de elite.",
     images: ["/logo-og.jpg"],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${SITE_NAME} — Estruturamos marcas para o próximo nível`,
+    title: `${SITE_NAME}: Estruturamos marcas para o próximo nível`,
     description:
       "Estratégia, tecnologia e audiovisual integrados em um ecossistema único para sua empresa escalar com autoridade e design de elite.",
     images: ["/logo-og.jpg"],

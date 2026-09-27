@@ -4,7 +4,7 @@ import { pageMetadata } from "@/lib/metadata";
 import { breadcrumbJsonLd } from "@/lib/schema";
 
 export const metadata = pageMetadata({
-  title: "Carreiras — Trabalhe na BauerLab",
+  title: "Carreiras: Trabalhe na BauerLab",
   description: "Banco de talentos da BauerLab. Sem vagas abertas no momento, mas sempre de olho em quem faz diferente.",
   path: "/carreiras",
 });

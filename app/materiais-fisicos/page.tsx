@@ -3,7 +3,7 @@ import JsonLd from "@/components/JsonLd";
 import { pageMetadata } from "@/lib/metadata";
 import { breadcrumbJsonLd, serviceJsonLd, faqJsonLd } from "@/lib/schema";
 
-const title = "Materiais Físicos — Extensão Premium da Marca";
+const title = "Materiais Físicos: Extensão Premium da Marca";
 const description =
   "Cartões de visita, adesivos, displays e materiais promocionais com qualidade premium e identidade visual consistente.";
 
@@ -28,7 +28,7 @@ const faq = faqJsonLd([
   },
   {
     question: "O material segue o manual de marca do cliente?",
-    answer: "Sim, cada peça é projetada dentro do sistema visual da marca — cores, tipografia e acabamento escolhidos com propósito.",
+    answer: "Sim, cada peça é projetada dentro do sistema visual da marca, cores, tipografia e acabamento escolhidos com propósito.",
   },
 ]);
 

@@ -3,7 +3,7 @@ import JsonLd from "@/components/JsonLd";
 import { pageMetadata } from "@/lib/metadata";
 import { breadcrumbJsonLd, serviceJsonLd, faqJsonLd } from "@/lib/schema";
 
-const title = "Ativação de Marca — Experiências Presenciais";
+const title = "Ativação de Marca: Experiências Presenciais";
 const description =
   "Criamos experiências presenciais que conectam pessoas à sua marca de forma real, tangível e memorável.";
 
@@ -20,7 +20,7 @@ const service = serviceJsonLd({ name: "Ativação de Marca", description, path: 
 const faq = faqJsonLd([
   {
     question: "O que é uma ativação de marca, na prática?",
-    answer: "É uma experiência presencial planejada — lançamento, inauguração, ação promocional ou evento — que conecta o público à marca fora da tela.",
+    answer: "É uma experiência presencial planejada, lançamento, inauguração, ação promocional ou evento, que conecta o público à marca fora da tela.",
   },
   {
     question: "Vocês cuidam da execução completa ou só do planejamento?",

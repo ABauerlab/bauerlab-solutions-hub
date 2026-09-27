@@ -14,7 +14,7 @@ const KitImprensa = () => {
       <PageHero
         tag="Kit de Imprensa"
         title="Material de referência para imprensa e parceiros."
-        description="Logo em alta resolução, bio institucional e dados de contato — tudo o que você precisa para citar ou apresentar a BauerLab."
+        description="Logo em alta resolução, bio institucional e dados de contato, tudo o que você precisa para citar ou apresentar a BauerLab."
       />
 
       <Section>
@@ -31,9 +31,6 @@ const KitImprensa = () => {
             >
               <Download size={16} /> Baixar logo
             </a>
-            <p className="text-xs text-muted-foreground/70 italic mt-3">
-              {"{{PENDENTE: logo em alta resolução e manual de marca completo, quando disponíveis}}"}
-            </p>
           </div>
 
           <div>
@@ -42,7 +39,7 @@ const KitImprensa = () => {
               A BauerLab é uma empresa criativa e tecnológica fundada por João Victor Bauer, que une estratégia,
               design, tecnologia, audiovisual e experiência física em um único ecossistema. Atua com desenvolvimento
               de sites e sistemas, marketing digital e tráfego pago, identidade visual, consultoria digital e
-              produção audiovisual — inclusive através de marcas próprias do grupo (Vista Kodara, Asari, Mambaia).
+              produção audiovisual, inclusive através de marcas próprias do grupo (Vista Kodara, Asari, Mambaia).
             </p>
 
             <h3 className="font-heading font-semibold text-sm mb-3">Dados institucionais</h3>

@@ -4,7 +4,7 @@ import { pageMetadata } from "@/lib/metadata";
 import { breadcrumbJsonLd } from "@/lib/schema";
 
 export const metadata = pageMetadata({
-  title: "Portfólio de Projetos — Infraestrutura Digital & Design",
+  title: "Portfólio de Projetos: Infraestrutura Digital & Design",
   description:
     "Confira os resultados reais que construímos para nossos clientes. Sites, sistemas e landing pages de alta performance.",
   path: "/projetos",

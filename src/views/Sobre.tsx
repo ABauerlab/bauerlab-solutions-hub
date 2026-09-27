@@ -9,9 +9,9 @@ import aboutImg from "@/assets/about.webp";
 
 const values = [
   { title: "Resolver", description: "Nosso trabalho começa no problema. Antes de criar qualquer coisa, entendemos o que precisa ser resolvido. Diagnóstico vem antes de execução." },
-  { title: "Estruturar", description: "Organização é a base de tudo que fazemos. Marca, comunicação, processo, entrega — tudo tem sistema, cronograma e padrão de qualidade." },
+  { title: "Estruturar", description: "Organização é a base de tudo que fazemos. Marca, comunicação, processo, entrega, tudo tem sistema, cronograma e padrão de qualidade." },
   { title: "Ativar", description: "Tiramos do papel e colocamos no mundo. No digital, no físico e na experiência. Marca que fica na gaveta não gera resultado." },
-  { title: "Evoluir", description: "Cada projeto é uma versão, não um produto final. Marcas evoluem, mercados mudam — e nós acompanhamos essa evolução com método." },
+  { title: "Evoluir", description: "Cada projeto é uma versão, não um produto final. Marcas evoluem, mercados mudam, e nós acompanhamos essa evolução com método." },
 ];
 
 const principles = [
@@ -29,7 +29,7 @@ const Sobre = () => {
       <PageHero
         tag="Sobre"
         title="Infraestrutura de marca. Não é agenciazinha de post."
-        description="A BauerLab une estratégia, tecnologia, audiovisual e experiência física num único ecossistema — fundada por João Victor Bauer para estruturar marcas e negócios que precisam operar como empresa de verdade, não como projeto pontual."
+        description="A BauerLab une estratégia, tecnologia, audiovisual e experiência física num único ecossistema, fundada por João Victor Bauer para estruturar marcas e negócios que precisam operar como empresa de verdade, não como projeto pontual."
       />
 
       <section className="pb-12 md:pb-20">
@@ -52,12 +52,12 @@ const Sobre = () => {
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
                 Marca forte não nasce de improviso, nasce de método. Cada decisão criativa na BauerLab passa
-                por uma lógica de negócio — estética sem estratégia é decoração, não comunicação, e decoração
+                por uma lógica de negócio, estética sem estratégia é decoração, não comunicação, e decoração
                 não vende.
               </p>
               <p>
-                Não vendemos pacote fechado de agência genérica. Operamos como um único ecossistema —
-                estratégia, tecnologia, audiovisual e presença física sob o mesmo teto — porque fragmentar
+                Não vendemos pacote fechado de agência genérica. Operamos como um único ecossistema:
+                estratégia, tecnologia, audiovisual e presença física sob o mesmo teto, porque fragmentar
                 a marca entre fornecedores diferentes é a forma mais rápida de perder coerência.
               </p>
               <p>
@@ -144,7 +144,7 @@ const Sobre = () => {
 
       <CTASection
         title="Quer conhecer a BauerLab de perto?"
-        description="Converse com a gente. Entendemos seu negócio e mostramos como podemos ajudar — sem compromisso."
+        description="Converse com a gente. Entendemos seu negócio e mostramos como podemos ajudar, sem compromisso."
       />
     </Layout>
   );

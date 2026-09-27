@@ -3,7 +3,7 @@ import JsonLd from "@/components/JsonLd";
 import { pageMetadata } from "@/lib/metadata";
 import { breadcrumbJsonLd, serviceJsonLd, faqJsonLd } from "@/lib/schema";
 
-const title = "Sistemas & Digital — Sites e Sistemas de Alta Performance";
+const title = "Sistemas & Digital: Sites e Sistemas de Alta Performance";
 const description =
   "Desenvolvemos sites institucionais, sistemas web e plataformas sob medida com foco em performance, usabilidade e conversão.";
 
@@ -20,7 +20,7 @@ const service = serviceJsonLd({ name: "Sistemas & Digital", description, path: "
 const faq = faqJsonLd([
   {
     question: "O site é feito em template ou sob medida?",
-    answer: "Sob medida. Não usamos templates prontos — cada site é projetado para o negócio específico do cliente.",
+    answer: "Sob medida. Não usamos templates prontos, cada site é projetado para o negócio específico do cliente.",
   },
   {
     question: "O sistema fica pronto para eu gerenciar sozinho?",

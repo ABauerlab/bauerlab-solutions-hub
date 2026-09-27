@@ -18,7 +18,7 @@ const companies = [
     name: "Asari",
     domain: "asari.com.br",
     url: "https://asari.com.br",
-    description: "E-commerce de peças artesanais — bolsas, miçanga e crochê — sediado em Belo Horizonte.",
+    description: "E-commerce de peças artesanais, bolsas, miçanga e crochê, sediado em Belo Horizonte.",
   },
   {
     name: "Mambaia",

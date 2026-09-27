@@ -21,7 +21,7 @@ const Services = () => {
       <PageHero
         tag="Serviços"
         title="Soluções completas para marcas que precisam de estrutura."
-        description="Cada área funciona de forma independente, mas integrada. Escolha o que sua marca precisa agora — e escale depois. Tudo com o mesmo padrão de qualidade, processo e profissionalismo."
+        description="Cada área funciona de forma independente, mas integrada. Escolha o que sua marca precisa agora, e escale depois. Tudo com o mesmo padrão de qualidade, processo e profissionalismo."
       />
       <Section>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -37,11 +37,11 @@ const Services = () => {
           <div className="space-y-4 text-muted-foreground leading-relaxed">
             <p>
               Você pode contratar um serviço isolado ou combinar vários. O processo é o mesmo: 
-              escutamos, planejamos, executamos e entregamos — com prazo, qualidade e acompanhamento profissional.
+              escutamos, planejamos, executamos e entregamos, com prazo, qualidade e acompanhamento profissional.
             </p>
             <p>
               Cada projeto começa com um diagnóstico gratuito. Entendemos o que sua marca precisa 
-              e apresentamos a solução ideal — sem enrolação e sem vendas agressivas.
+              e apresentamos a solução ideal, sem enrolação e sem vendas agressivas.
             </p>
             <p>
               Se você não sabe por onde começar, a gente ajuda. Muitos dos nossos clientes chegam 

@@ -3,7 +3,7 @@ import JsonLd from "@/components/JsonLd";
 import { pageMetadata } from "@/lib/metadata";
 import { breadcrumbJsonLd, serviceJsonLd, faqJsonLd } from "@/lib/schema";
 
-const title = "Posicionamento & Marca — Branding Estratégico";
+const title = "Posicionamento & Marca: Branding Estratégico";
 const description =
   "Construímos marcas que comunicam com clareza, transmitem confiança e se diferenciam no mercado. Branding, identidade visual e rebranding.";
 
@@ -20,7 +20,7 @@ const service = serviceJsonLd({ name: "Posicionamento & Marca", description, pat
 const faq = faqJsonLd([
   {
     question: "Vocês fazem só a logo ou a marca inteira?",
-    answer: "A marca inteira: posicionamento estratégico, identidade visual completa, manual de marca e aplicações — não entregamos só um logotipo isolado.",
+    answer: "A marca inteira: posicionamento estratégico, identidade visual completa, manual de marca e aplicações, não entregamos só um logotipo isolado.",
   },
   {
     question: "Preciso já ter uma marca para contratar rebranding?",

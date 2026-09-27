@@ -12,11 +12,11 @@ import { ExternalLink } from "lucide-react";
 import audiovisualImg from "@/assets/audiovisual.webp";
 
 const items = [
-  { title: "Fotografia profissional", description: "Imagens que comunicam a essência da sua marca com qualidade e intenção. Fotografia de produtos, ambientes, equipe e eventos — com direção de arte e pós-produção profissional." },
+  { title: "Fotografia profissional", description: "Imagens que comunicam a essência da sua marca com qualidade e intenção. Fotografia de produtos, ambientes, equipe e eventos, com direção de arte e pós-produção profissional." },
   { title: "Vídeos institucionais", description: "Apresente sua empresa com autoridade. Vídeos que contam a história da sua marca, mostram sua estrutura e transmitem confiança para clientes e parceiros." },
-  { title: "Conteúdo para redes sociais", description: "Criação visual e audiovisual estratégica para alimentar seus canais com consistência. Reels, stories, fotos, carrosséis — tudo alinhado ao posicionamento da marca." },
+  { title: "Conteúdo para redes sociais", description: "Criação visual e audiovisual estratégica para alimentar seus canais com consistência. Reels, stories, fotos, carrosséis, tudo alinhado ao posicionamento da marca." },
   { title: "Captação de eventos", description: "Registro profissional de eventos corporativos, lançamentos, inaugurações e ativações. Fotos e vídeos que documentam e valorizam cada momento." },
-  { title: "Vídeos promocionais", description: "Conteúdo com foco em conversão para campanhas e lançamentos. Vídeos curtos, diretos e impactantes que geram resultado — para anúncios, redes sociais e apresentações comerciais." },
+  { title: "Vídeos promocionais", description: "Conteúdo com foco em conversão para campanhas e lançamentos. Vídeos curtos, diretos e impactantes que geram resultado, para anúncios, redes sociais e apresentações comerciais." },
   { title: "Drone e captação aérea", description: "Imagens aéreas que mostram a dimensão do seu negócio. Ideal para empresas com sede física, eventos de grande porte e projetos arquitetônicos." },
 ];
 
@@ -65,7 +65,7 @@ const Audiovisual = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Produzido em parceria com a Mambaia.</h2>
             <p className="text-muted-foreground leading-relaxed mb-8">
               Nossa produção audiovisual é realizada em parceria com a <strong>Mambaia</strong>, estúdio fotográfico e de coworking criativo
-              na Praça Sete, em Belo Horizonte — marca do grupo BauerLab. Estrutura completa de estúdio, equipamento e equipe
+              na Praça Sete, em Belo Horizonte, marca do grupo BauerLab. Estrutura completa de estúdio, equipamento e equipe
               para garantir um padrão técnico e estético de nível internacional.
             </p>
             <a
@@ -106,7 +106,7 @@ const Audiovisual = () => {
 
       <CTASection
         title="Sua marca precisa de conteúdo visual profissional?"
-        description="Converse com a BauerLab. Planejamos e executamos toda a produção audiovisual que sua marca precisa — com estratégia e qualidade."
+        description="Converse com a BauerLab. Planejamos e executamos toda a produção audiovisual que sua marca precisa, com estratégia e qualidade."
       />
     </Layout>
   );

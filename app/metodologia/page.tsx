@@ -4,7 +4,7 @@ import { pageMetadata } from "@/lib/metadata";
 import { breadcrumbJsonLd } from "@/lib/schema";
 
 export const metadata = pageMetadata({
-  title: "Metodologia — Do briefing à entrega",
+  title: "Metodologia: Do briefing à entrega",
   description:
     "Conheça o processo de trabalho da BauerLab: diagnóstico, proposta, produção, validação, entrega e relatório periódico.",
   path: "/metodologia",

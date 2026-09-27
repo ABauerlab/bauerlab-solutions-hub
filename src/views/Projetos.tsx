@@ -9,19 +9,6 @@ import { motion } from "framer-motion";
 import { ArrowUpRight, ExternalLink, Globe, Monitor, ShoppingBag, Layers, Rocket } from "lucide-react";
 import Link from "next/link";
 
-import jbnEmpreendimentosImg from "@/assets/projects/jbnempreendimentos.webp";
-import jbnConsultoriaImg from "@/assets/projects/jbnconsultoria.webp";
-import deiSolucoesImg from "@/assets/projects/Deisolucoes.webp";
-import gfProdImg from "@/assets/projects/GFPROD.webp";
-import carDreamsImg from "@/assets/projects/cardreams.webp";
-import recantoImg from "@/assets/projects/recantodafloresta.webp";
-import astroImg from "@/assets/projects/astrowebatlas.webp";
-import contaLabImg from "@/assets/projects/contalab.webp";
-import soulGuettoImg from "@/assets/projects/soulguetto.webp";
-import misterBarbosaImg from "@/assets/projects/misterbarbosa.webp";
-import elizeteTavaresImg from "@/assets/projects/elizetetavares.webp";
-import vistaKodaraImg from "@/assets/projects/vistakodara.webp";
-
 type Category = "Sites & Sistemas" | "E-commerce" | "Tráfego Pago" | "Produto Próprio";
 
 interface Project {
@@ -29,19 +16,17 @@ interface Project {
   category: Category;
   url: string;
   icon: React.ReactNode;
-  image?: string;
   tier: "destaque" | "produto" | "volume";
   note?: string;
 }
 
 const projects: Project[] = [
-  // Destaques — cases com contexto mais completo
+  // Destaques, cases com contexto mais completo
   {
     title: "Vista Kodara",
     category: "E-commerce",
     url: "vistakodara.com.br",
     icon: <ShoppingBag size={18} />,
-    image: vistaKodaraImg.src,
     tier: "destaque",
     note: "Marca do grupo BauerLab",
   },
@@ -66,7 +51,6 @@ const projects: Project[] = [
     category: "Sites & Sistemas",
     url: "astrowebatlas.com.br",
     icon: <Monitor size={18} />,
-    image: astroImg.src,
     tier: "destaque",
     note: "Projeto Node.js",
   },
@@ -83,7 +67,6 @@ const projects: Project[] = [
     category: "Sites & Sistemas",
     url: "contalabdigital.com.br",
     icon: <Globe size={18} />,
-    image: contaLabImg.src,
     tier: "destaque",
     note: "Arquitetura com 5 subdomínios de conversão",
   },
@@ -96,7 +79,7 @@ const projects: Project[] = [
     note: "Qualificação de lead para tráfego pago",
   },
 
-  // Produtos próprios — sistemas construídos e operados pela BauerLab
+  // Produtos próprios, sistemas construídos e operados pela BauerLab
   {
     title: "Sua Loja",
     category: "Produto Próprio",
@@ -114,16 +97,16 @@ const projects: Project[] = [
     note: "Produto próprio BauerLab",
   },
 
-  // Volume — grid simples
-  { title: "JBN Empreendimentos", category: "Sites & Sistemas", url: "jbnempreendimentos.com.br", icon: <Globe size={18} />, image: jbnEmpreendimentosImg.src, tier: "volume" },
-  { title: "JBN Consultoria", category: "Sites & Sistemas", url: "jbnconsultoria.com.br", icon: <Globe size={18} />, image: jbnConsultoriaImg.src, tier: "volume" },
-  { title: "DEI Soluções", category: "Sites & Sistemas", url: "deisolucoes.com.br", icon: <Globe size={18} />, image: deiSolucoesImg.src, tier: "volume" },
-  { title: "GF Prod", category: "Sites & Sistemas", url: "gfprod.me", icon: <Globe size={18} />, image: gfProdImg.src, tier: "volume" },
-  { title: "Car Dreams Pampulha", category: "Sites & Sistemas", url: "cardreamspampulha.com.br", icon: <Globe size={18} />, image: carDreamsImg.src, tier: "volume" },
-  { title: "O Recanto da Floresta", category: "Sites & Sistemas", url: "orecantodafloresta.com.br", icon: <Globe size={18} />, image: recantoImg.src, tier: "volume" },
-  { title: "Grupo Soul Guetto", category: "Sites & Sistemas", url: "gruposoulguetto.com.br", icon: <Globe size={18} />, image: soulGuettoImg.src, tier: "volume" },
-  { title: "Mister Barbosa", category: "Sites & Sistemas", url: "misterbarbosa.com.br", icon: <Globe size={18} />, image: misterBarbosaImg.src, tier: "volume" },
-  { title: "Espacio Elizete Tavares", category: "Sites & Sistemas", url: "espacioelizetetavares.com", icon: <Globe size={18} />, image: elizeteTavaresImg.src, tier: "volume" },
+  // Volume, grid simples
+  { title: "JBN Empreendimentos", category: "Sites & Sistemas", url: "jbnempreendimentos.com.br", icon: <Globe size={18} />, tier: "volume" },
+  { title: "JBN Consultoria", category: "Sites & Sistemas", url: "jbnconsultoria.com.br", icon: <Globe size={18} />, tier: "volume" },
+  { title: "DEI Soluções", category: "Sites & Sistemas", url: "deisolucoes.com.br", icon: <Globe size={18} />, tier: "volume" },
+  { title: "GF Prod", category: "Sites & Sistemas", url: "gfprod.me", icon: <Globe size={18} />, tier: "volume" },
+  { title: "Car Dreams Pampulha", category: "Sites & Sistemas", url: "cardreamspampulha.com.br", icon: <Globe size={18} />, tier: "volume" },
+  { title: "O Recanto da Floresta", category: "Sites & Sistemas", url: "orecantodafloresta.com.br", icon: <Globe size={18} />, tier: "volume" },
+  { title: "Grupo Soul Guetto", category: "Sites & Sistemas", url: "gruposoulguetto.com.br", icon: <Globe size={18} />, tier: "volume" },
+  { title: "Mister Barbosa", category: "Sites & Sistemas", url: "misterbarbosa.com.br", icon: <Globe size={18} />, tier: "volume" },
+  { title: "Espacio Elizete Tavares", category: "Sites & Sistemas", url: "espacioelizetetavares.com", icon: <Globe size={18} />, tier: "volume" },
   { title: "Parapente Arraial da Ajuda", category: "Sites & Sistemas", url: "parapentearraialdajuda.com.br", icon: <Globe size={18} />, tier: "volume" },
   { title: "Oftalmomed", category: "Sites & Sistemas", url: "oftalmomed2.com.br", icon: <Globe size={18} />, tier: "volume" },
 ];
@@ -144,40 +127,22 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
       rel="noopener noreferrer"
       className="block glass rounded-2xl overflow-hidden glass-hover transition-all duration-500 h-full flex flex-col"
     >
-      <div className="relative aspect-[16/10] overflow-hidden bg-muted">
-        {project.image ? (
-          <img
-            src={project.image}
-            alt={project.title}
-            className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
-            loading="lazy"
-          />
-        ) : (
-          <div className="w-full h-full flex items-center justify-center bg-primary/5">
-            <div className="text-primary/20">{project.icon}</div>
-          </div>
-        )}
-        <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-60" />
-        <div className="absolute top-4 right-4 w-10 h-10 rounded-full glass flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-          <ExternalLink size={18} />
-        </div>
-        {project.note && (
-          <div className="absolute bottom-0 left-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
-            <span className="text-xs text-white/90 bg-black/40 backdrop-blur-sm px-3 py-1.5 rounded-full">
-              {project.note}
-            </span>
-          </div>
-        )}
-      </div>
       <div className="p-6 md:p-8 flex-1 flex flex-col justify-between">
         <div>
+          <div className="flex items-center justify-between mb-4">
+            <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-500">
+              {project.icon}
+            </div>
+            <ExternalLink size={16} className="text-primary opacity-0 group-hover:opacity-100 transition-opacity" />
+          </div>
           <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary">
             {project.category}
           </span>
           <h3 className="font-heading font-bold text-xl md:text-2xl group-hover:text-primary transition-colors mb-1 mt-2">
             {project.title}
           </h3>
-          <p className="text-sm text-muted-foreground font-mono tracking-tight">{project.url}</p>
+          <p className="text-sm text-muted-foreground font-mono tracking-tight mb-2">{project.url}</p>
+          {project.note && <p className="text-xs text-muted-foreground/70">{project.note}</p>}
         </div>
       </div>
     </a>
@@ -248,7 +213,7 @@ const Projetos = () => {
               <h2 className="text-sm font-bold uppercase tracking-[0.2em]">Produtos próprios BauerLab</h2>
             </div>
             <p className="text-sm text-muted-foreground mb-6 max-w-2xl">
-              Sistemas que não são cliente — são construídos e operados pela própria agência.
+              Sistemas que não são cliente, são construídos e operados pela própria agência.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
               {produtos.map((project, index) => (

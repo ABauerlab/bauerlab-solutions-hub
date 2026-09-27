@@ -12,12 +12,12 @@ import bauerlabBanner from "@/assets/design-grafico/bauerlab-banner.webp";
 const pieces = [
   {
     image: bauerlabPost.src,
-    title: "Post institucional — BauerLab",
+    title: "Post institucional, BauerLab",
     caption: "Criado para a própria BauerLab, objetivo: comunicar o posicionamento de infraestrutura de marca em post de Instagram.",
   },
   {
     image: bauerlabBanner.src,
-    title: "Banner de campanha — BauerLab",
+    title: "Banner de campanha, BauerLab",
     caption: "Criado para a BauerLab, objetivo: banner de campanha institucional em formato widescreen para site e mídia paga.",
   },
 ];
@@ -28,7 +28,7 @@ const DesignGrafico = () => {
       <PageHero
         tag="Design & Gráfico"
         title="Peças que sustentam a identidade da marca."
-        description="Posts, banners de campanha, identidade visual aplicada e mockups — cada peça acompanhada do contexto real em que foi criada."
+        description="Posts, banners de campanha, identidade visual aplicada e mockups, cada peça acompanhada do contexto real em que foi criada."
       />
 
       <Section>
@@ -60,7 +60,7 @@ const DesignGrafico = () => {
 
         <p className="text-xs text-muted-foreground/70 italic mt-10 max-w-2xl">
           Peças geradas com ferramentas de design (Recraft) a partir da identidade real de cada marca. Galeria em
-          expansão contínua — novas peças entram conforme novos projetos são produzidos.
+          expansão contínua, novas peças entram conforme novos projetos são produzidos.
         </p>
       </Section>
 

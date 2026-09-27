@@ -4,7 +4,7 @@ import { pageMetadata } from "@/lib/metadata";
 import { breadcrumbJsonLd } from "@/lib/schema";
 
 export const metadata = pageMetadata({
-  title: "Blog — Insights sobre marca, tecnologia e performance",
+  title: "Blog: Insights sobre marca, tecnologia e performance",
   description:
     "Conteúdo autoral da BauerLab sobre estratégia digital, branding, audiovisual e tráfego pago.",
   path: "/blog",

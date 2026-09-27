@@ -9,12 +9,12 @@ import { motion } from "framer-motion";
 import digitalImg from "@/assets/digital.webp";
 
 const items = [
-  { title: "Sites institucionais", description: "Sua empresa precisa de uma presença digital profissional. Criamos sites que transmitem credibilidade, são otimizados para conversão e funcionam perfeitamente em qualquer dispositivo. Nada de templates — tudo sob medida para o seu negócio." },
-  { title: "Desenvolvimento de sistemas web", description: "Plataformas funcionais que resolvem problemas reais da sua operação. Gestão interna, controle de estoque, agendamento, painéis administrativos — desenvolvemos o sistema que a sua empresa precisa." },
+  { title: "Sites institucionais", description: "Sua empresa precisa de uma presença digital profissional. Criamos sites que transmitem credibilidade, são otimizados para conversão e funcionam perfeitamente em qualquer dispositivo. Nada de templates, tudo sob medida para o seu negócio." },
+  { title: "Desenvolvimento de sistemas web", description: "Plataformas funcionais que resolvem problemas reais da sua operação. Gestão interna, controle de estoque, agendamento, painéis administrativos, desenvolvemos o sistema que a sua empresa precisa." },
   { title: "Plataformas sob medida", description: "Quando nenhuma solução do mercado resolve, nós criamos a sua. Plataformas personalizadas que se encaixam perfeitamente no fluxo do seu negócio, com interface intuitiva e tecnologia moderna." },
   { title: "Google Meu Negócio", description: "Configuração e otimização completa do seu perfil no Google. Sua empresa aparece nas buscas locais com informações corretas, fotos profissionais e avaliações organizadas. Visibilidade local sem custo de anúncio." },
   { title: "Automações básicas", description: "Automatize tarefas repetitivas que tomam tempo da sua equipe. Respostas automáticas, notificações, integração entre sistemas e fluxos inteligentes que economizam horas de trabalho manual." },
-  { title: "Estruturação digital completa", description: "Do domínio ao e-mail profissional, do site ao sistema, das redes sociais ao Google — organizamos toda a presença digital da sua empresa para que tudo funcione de forma integrada e profissional." },
+  { title: "Estruturação digital completa", description: "Do domínio ao e-mail profissional, do site ao sistema, das redes sociais ao Google, organizamos toda a presença digital da sua empresa para que tudo funcione de forma integrada e profissional." },
   { title: "Serviços de contabilidade", description: "Através da ContaLab Digital, oferecemos soluções contábeis completas e integradas à sua estrutura digital. Regularização, fiscal, contábil e MEI com foco em agilidade e tecnologia.", link: "http://contalabdigital.com.br/" },
 ];
 
@@ -24,7 +24,7 @@ const SistemasDigital = () => {
       <PageHero
         tag="Sistemas & Digital"
         title="Não é site bonito. É sistema funcional que gera resultado."
-        description="Desenvolvemos soluções digitais que funcionam de verdade. Sites, sistemas, platforms e automações que estruturam o seu negócio no digital — com foco em performance, usabilidade e conversão."
+        description="Desenvolvemos soluções digitais que funcionam de verdade. Sites, sistemas, platforms e automações que estruturam o seu negócio no digital, com foco em performance, usabilidade e conversão."
       />
 
       {/* Imagem de impacto */}
