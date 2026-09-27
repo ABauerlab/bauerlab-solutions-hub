@@ -248,9 +248,15 @@ const Index = () => {
               Conhecer produção <ArrowRight size={16} />
             </Link>
           </div>
-          <div className="order-1 lg:order-2 relative aspect-video glass rounded-2xl overflow-hidden flex items-center justify-center group">
-             <div className="absolute inset-0 bg-primary/10 group-hover:bg-primary/20 transition-colors" />
-             <Video size={40} className="text-primary opacity-40 group-hover:scale-110 transition-transform" />
+          <div className="order-1 lg:order-2 relative aspect-video glass rounded-2xl overflow-hidden">
+            <iframe
+              src="https://www.youtube.com/embed/ktxhpmlbPvo?autoplay=1&mute=1&loop=1&playlist=ktxhpmlbPvo&controls=0&modestbranding=1&rel=0&playsinline=1&vq=hd1080"
+              title="Produção audiovisual BauerLab"
+              className="absolute inset-0 w-full h-full"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              loading="lazy"
+            />
           </div>
         </div>
       </Section>
