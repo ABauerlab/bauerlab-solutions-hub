@@ -6,7 +6,7 @@ import Link from "next/link";
 import {
   ArrowRight, ArrowUpRight, Monitor, Palette, Video, Sparkles, Package,
   Zap, Target, ShieldCheck, TrendingUp, Check, X,
-  Cpu, Camera, Calculator, ClipboardCheck
+  Cpu, Camera, ClipboardCheck
 } from "lucide-react";
 import Layout from "@/components/Layout";
 import Section from "@/components/Section";
@@ -22,6 +22,13 @@ const stats = [
 ];
 
 const services = [
+  {
+    title: "Tráfego Pago & Performance",
+    description: "Campanhas de aquisição com método antes de métrica: auditoria de rastreamento, teste estruturado de criativo e leitura de funil completo até o custo por resultado real.",
+    path: "/trafego-pago",
+    icon: <Target size={20} />,
+    span: "lg:col-span-6",
+  },
   {
     title: "Branding",
     description: "Estratégia e identidade visual para marcas que buscam liderança e percepção de valor.",
@@ -63,13 +70,6 @@ const services = [
     path: "/materiais-fisicos",
     icon: <Package size={20} />,
     span: "lg:col-span-3",
-  },
-  {
-    title: "Contabilidade",
-    description: "Soluções contábeis integradas através da ContaLab Digital.",
-    path: "http://contalabdigital.com.br/",
-    icon: <Calculator size={20} />,
-    span: "lg:col-span-6",
   },
 ];
 
@@ -137,7 +137,7 @@ const Index = () => {
                 Estruturamos marcas para o próximo nível.
               </h1>
 
-              <p className="text-sm md:text-lg text-muted-foreground max-w-xl mb-10 leading-relaxed text-left">
+              <p className="text-sm md:text-lg text-muted-foreground max-w-xl mb-6 md:mb-10 leading-relaxed text-left">
                 Estratégia, tecnologia e audiovisual integrados em um ecossistema único para sua empresa escalar
                 com autoridade.
               </p>
@@ -180,9 +180,9 @@ const Index = () => {
       <LogoMarquee />
 
       {/* Pilares, bento assimétrico, sem carrossel */}
-      <section className="py-16 md:py-24 border-b border-border bg-card/30">
+      <section className="py-10 md:py-24 border-b border-border bg-card/30">
         <div className="container mx-auto px-4 md:px-8">
-          <div className="max-w-xl mb-10 md:mb-14">
+          <div className="max-w-xl mb-6 md:mb-14">
             <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary mb-3 block">02. Pilares</span>
             <h2 className="text-2xl md:text-4xl font-bold mb-2">O que entregamos</h2>
             <p className="text-xs md:text-sm text-muted-foreground">Soluções integradas que eliminam a fragmentação da sua marca.</p>
@@ -232,7 +232,7 @@ const Index = () => {
 
       {/* Audiovisual */}
       <Section className="bg-primary/5">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10 items-center">
           <div className="order-2 lg:order-1">
             <div className="inline-flex items-center gap-2 text-primary font-bold text-[10px] uppercase tracking-widest mb-3">
               <Camera size={14} /> 03. Produção de Elite
@@ -261,7 +261,7 @@ const Index = () => {
       {/* Ecossistema, editorial, não mais grid de 4 caixas uniformes */}
       <Section>
         <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary mb-6 block">04. Ecossistema</span>
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-10 items-start">
           <div className="lg:col-span-7">
             <p className="text-2xl md:text-4xl font-heading font-bold leading-tight">
               Um só ecossistema. O fim da fragmentação, na BauerLab, <span className="text-gradient">tudo nasce do mesmo DNA estratégico.</span>
@@ -284,7 +284,7 @@ const Index = () => {
       {/* Provas reais, link direto pro site ao vivo, sem print que fica desatualizado */}
       <Section className="border-t border-border bg-card/30">
         <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary mb-6 block">05. Provas</span>
-        <h2 className="text-2xl md:text-4xl font-bold mb-10 max-w-xl">Resultado que dá pra visitar agora, não só pra prometer.</h2>
+        <h2 className="text-xl md:text-4xl font-bold mb-6 md:mb-10 max-w-xl">Resultado que dá pra visitar agora, não só pra prometer.</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {proofShots.map((shot, index) => (
             <motion.a
@@ -316,7 +316,7 @@ const Index = () => {
       {/* Comparação honesta */}
       <Section className="border-t border-border">
         <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary mb-6 block">06. Comparativo</span>
-        <h2 className="text-2xl md:text-4xl font-bold mb-10 max-w-xl">Contra o que você provavelmente já tentou.</h2>
+        <h2 className="text-xl md:text-4xl font-bold mb-6 md:mb-10 max-w-xl">Contra o que você provavelmente já tentou.</h2>
         <div className="overflow-x-auto">
           <table className="w-full text-sm min-w-[600px]">
             <thead>

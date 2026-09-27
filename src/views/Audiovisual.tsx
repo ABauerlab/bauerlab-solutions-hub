@@ -43,7 +43,7 @@ const Audiovisual = () => {
       </section>
 
       <Section>
-        <div className="mb-12">
+        <div className="mb-6 md:mb-12">
           <h2 className="text-2xl md:text-3xl font-bold mb-4">O que entregamos</h2>
           <p className="text-muted-foreground max-w-2xl leading-relaxed">
             Nosso audiovisual não é genérico. É planejado com base no posicionamento da marca e nos objetivos de comunicação do negócio.
@@ -62,8 +62,8 @@ const Audiovisual = () => {
             viewport={{ once: true }}
           >
             <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary mb-3 block">Estúdio Parceiro</span>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Produzido em parceria com a Mambaia.</h2>
-            <p className="text-muted-foreground leading-relaxed mb-8">
+            <h2 className="text-2xl md:text-4xl font-bold mb-4 md:mb-6">Produzido em parceria com a Mambaia.</h2>
+            <p className="text-muted-foreground leading-relaxed mb-5 md:mb-8">
               Nossa produção audiovisual é realizada em parceria com a <strong>Mambaia</strong>, estúdio fotográfico e de coworking criativo
               na Praça Sete, em Belo Horizonte, marca do grupo BauerLab. Estrutura completa de estúdio, equipamento e equipe
               para garantir um padrão técnico e estético de nível internacional.
@@ -72,7 +72,7 @@ const Audiovisual = () => {
               href="https://mambaiabh.com.br"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-md font-heading font-bold text-base hover:bg-primary/90 transition-all hover:scale-105"
+              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 md:px-8 py-3 md:py-4 rounded-md font-heading font-bold text-sm md:text-base hover:bg-primary/90 transition-all hover:scale-105"
             >
               Conhecer a Mambaia <ExternalLink size={18} />
             </a>
@@ -82,9 +82,9 @@ const Audiovisual = () => {
 
       {/* Seção de Preços */}
       <Section className="border-t border-border bg-primary/5">
-        <div className="mb-12 text-center">
+        <div className="mb-6 md:mb-12 text-center">
           <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary mb-3 block">Investimento</span>
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">Pacotes de Produção</h2>
+          <h2 className="text-2xl md:text-5xl font-bold mb-3 md:mb-4">Pacotes de Produção</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Estrutura completa de conteúdo para sua marca manter consistência e autoridade no digital.
           </p>
@@ -94,9 +94,9 @@ const Audiovisual = () => {
 
       {/* Seção Técnica */}
       <Section className="border-t border-border">
-        <div className="mb-12">
+        <div className="mb-6 md:mb-12">
           <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary mb-3 block">Infraestrutura Técnica</span>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Equipamento e Processo</h2>
+          <h2 className="text-2xl md:text-4xl font-bold mb-3 md:mb-4">Equipamento e Processo</h2>
           <p className="text-muted-foreground max-w-2xl">
             Utilizamos o que há de mais moderno em tecnologia de imagem e som para garantir que sua marca seja vista com a máxima qualidade possível.
           </p>
