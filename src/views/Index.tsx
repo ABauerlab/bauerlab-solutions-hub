@@ -5,7 +5,7 @@ import { useRef } from "react";
 import Link from "next/link";
 import {
   ArrowRight, ArrowUpRight, Monitor, Palette, Video, Sparkles, Package,
-  Zap, Target, ShieldCheck, TrendingUp,
+  Zap, Target, ShieldCheck, TrendingUp, Check, X,
   Cpu, Camera, Calculator, ClipboardCheck
 } from "lucide-react";
 import Layout from "@/components/Layout";
@@ -13,6 +13,9 @@ import Section from "@/components/Section";
 import CTASection from "@/components/CTASection";
 import LogoMarquee from "@/components/LogoMarquee";
 import heroBg from "@/assets/hero-bg.webp";
+import astroImg from "@/assets/projects/astrowebatlas.webp";
+import vistaKodaraImg from "@/assets/projects/vistakodara.webp";
+import contaLabImg from "@/assets/projects/contalab.webp";
 
 const stats = [
   { value: "20+", label: "Projetos entregues" },
@@ -80,6 +83,20 @@ const ecosystemPoints = [
   { icon: <TrendingUp size={18} />, title: "Escala", desc: "Pronto para crescer." },
 ];
 
+const proofShots = [
+  { image: astroImg.src, label: "Astroweb Atlas", note: "Sistema Node.js" },
+  { image: vistaKodaraImg.src, label: "Vista Kodara", note: "Marca do grupo" },
+  { image: contaLabImg.src, label: "ContaLab Digital", note: "5 subdomínios" },
+];
+
+const comparison = [
+  { item: "Estratégia antes de execução", solo: false, generic: false, bauerlab: true },
+  { item: "Design + tecnologia + audiovisual no mesmo time", solo: false, generic: false, bauerlab: true },
+  { item: "Números reais de campanha, sem projeção genérica", solo: false, generic: false, bauerlab: true },
+  { item: "Acompanhamento pós-entrega", solo: false, generic: true, bauerlab: true },
+  { item: "Prazo e escopo definidos antes de começar", solo: true, generic: true, bauerlab: true },
+];
+
 const Index = () => {
   const heroRef = useRef<HTMLDivElement>(null);
 
@@ -116,7 +133,7 @@ const Index = () => {
               className="lg:col-span-7"
             >
               <span className="inline-flex items-center gap-2 glass px-3 py-1.5 rounded-full text-[10px] font-bold tracking-[0.2em] uppercase text-primary mb-6 glow">
-                <Cpu size={12} /> Infraestrutura de Marca
+                <Cpu size={12} /> 01 — Infraestrutura de Marca
               </span>
 
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.05] mb-6 text-gradient text-left">
@@ -169,6 +186,7 @@ const Index = () => {
       <section className="py-16 md:py-24 border-b border-border bg-card/30">
         <div className="container mx-auto px-4 md:px-8">
           <div className="max-w-xl mb-10 md:mb-14">
+            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary mb-3 block">02 — Pilares</span>
             <h2 className="text-2xl md:text-4xl font-bold mb-2">O que entregamos</h2>
             <p className="text-xs md:text-sm text-muted-foreground">Soluções integradas que eliminam a fragmentação da sua marca.</p>
           </div>
@@ -220,7 +238,7 @@ const Index = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           <div className="order-2 lg:order-1">
             <div className="inline-flex items-center gap-2 text-primary font-bold text-[10px] uppercase tracking-widest mb-3">
-              <Camera size={14} /> Produção de Elite
+              <Camera size={14} /> 03 — Produção de Elite
             </div>
             <h2 className="text-3xl md:text-5xl font-bold mb-4">Audiovisual Cinematográfico</h2>
             <p className="text-sm md:text-lg text-muted-foreground leading-relaxed mb-6">
@@ -239,6 +257,7 @@ const Index = () => {
 
       {/* Ecossistema — editorial, não mais grid de 4 caixas uniformes */}
       <Section>
+        <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary mb-6 block">04 — Ecossistema</span>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
           <div className="lg:col-span-7">
             <p className="text-2xl md:text-4xl font-heading font-bold leading-tight">
@@ -256,6 +275,65 @@ const Index = () => {
               </div>
             ))}
           </div>
+        </div>
+      </Section>
+
+      {/* Provas reais — fotos de projetos entregues, não ícones */}
+      <Section className="border-t border-border bg-card/30">
+        <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary mb-6 block">05 — Provas</span>
+        <h2 className="text-2xl md:text-4xl font-bold mb-10 max-w-xl">Resultado que dá pra ver, não só pra prometer.</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          {proofShots.map((shot, index) => (
+            <motion.div
+              key={shot.label}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="relative aspect-[4/5] rounded-2xl overflow-hidden group"
+            >
+              <img src={shot.image} alt={shot.label} className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/10 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-5">
+                <p className="font-heading font-bold text-white">{shot.label}</p>
+                <p className="text-xs text-white/70">{shot.note}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </Section>
+
+      {/* Comparação honesta */}
+      <Section className="border-t border-border">
+        <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary mb-6 block">06 — Comparativo</span>
+        <h2 className="text-2xl md:text-4xl font-bold mb-10 max-w-xl">Contra o que você provavelmente já tentou.</h2>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm min-w-[600px]">
+            <thead>
+              <tr className="border-b border-border text-left">
+                <th className="py-4 pr-4 text-muted-foreground font-normal">O que você recebe</th>
+                <th className="py-4 px-4 text-muted-foreground font-normal text-center">Freelancer avulso</th>
+                <th className="py-4 px-4 text-muted-foreground font-normal text-center">Agência genérica</th>
+                <th className="py-4 pl-4 text-primary font-bold text-center">BauerLab</th>
+              </tr>
+            </thead>
+            <tbody>
+              {comparison.map((row) => (
+                <tr key={row.item} className="border-b border-border/50">
+                  <td className="py-4 pr-4">{row.item}</td>
+                  <td className="py-4 px-4 text-center">
+                    {row.solo ? <Check size={16} className="text-primary mx-auto" /> : <X size={16} className="text-muted-foreground/30 mx-auto" />}
+                  </td>
+                  <td className="py-4 px-4 text-center">
+                    {row.generic ? <Check size={16} className="text-primary mx-auto" /> : <X size={16} className="text-muted-foreground/30 mx-auto" />}
+                  </td>
+                  <td className="py-4 pl-4 text-center bg-primary/5">
+                    {row.bauerlab ? <Check size={16} className="text-primary mx-auto" /> : <X size={16} className="text-muted-foreground/30 mx-auto" />}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </Section>
 
