@@ -108,7 +108,7 @@ const Index = () => {
   return (
     <Layout>
       {/* Hero editorial, assimétrico, não centralizado */}
-      <section ref={heroRef} className="relative min-h-[90vh] md:min-h-screen flex items-center overflow-hidden bg-mesh">
+      <section ref={heroRef} className="relative min-h-0 md:min-h-screen flex items-center overflow-hidden bg-mesh">
         <motion.div className="absolute inset-0 z-0" style={{ y: heroY, opacity: heroOpacity }}>
           <img
             src={heroBg.src}
@@ -121,7 +121,7 @@ const Index = () => {
           <div className="absolute inset-0 bg-background/90 backdrop-blur-[1px]" />
         </motion.div>
 
-        <div className="container mx-auto px-4 md:px-8 relative z-10 pt-28 pb-16 md:py-0">
+        <div className="container mx-auto px-4 md:px-8 relative z-10 pt-24 pb-10 md:py-0">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-6 items-center">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -188,7 +188,7 @@ const Index = () => {
             <p className="text-xs md:text-sm text-muted-foreground">Soluções integradas que eliminam a fragmentação da sua marca.</p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-6 gap-4">
+          <div className="grid grid-cols-2 lg:grid-cols-6 gap-3 md:gap-4">
             {services.map((service, index) => {
               const isExternal = service.path.startsWith("http");
               const CardBody = (
@@ -197,7 +197,7 @@ const Index = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: index * 0.05 }}
                   viewport={{ once: true }}
-                  className={`group relative glass p-6 md:p-8 rounded-2xl glass-hover h-full overflow-hidden ${service.span}`}
+                  className={`group relative glass p-4 md:p-8 rounded-2xl glass-hover h-full overflow-hidden ${service.span}`}
                 >
                   <div className="absolute top-5 right-5 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-x-2 group-hover:translate-x-0">
                     <ArrowUpRight className="text-primary" size={20} />

@@ -12,7 +12,7 @@ interface PageHeroProps {
 
 const PageHero = ({ tag, title, description, children }: PageHeroProps) => {
   return (
-    <section className="pt-32 pb-16 md:pt-40 md:pb-24">
+    <section className="pt-24 pb-10 md:pt-40 md:pb-24">
       <div className="container mx-auto px-4 md:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
