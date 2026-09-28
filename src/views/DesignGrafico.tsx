@@ -14,11 +14,13 @@ const pieces = [
     image: bauerlabPost.src,
     title: "Post institucional, BauerLab",
     caption: "Criado para a própria BauerLab, objetivo: comunicar o posicionamento de infraestrutura de marca em post de Instagram.",
+    aspect: "aspect-square",
   },
   {
     image: bauerlabBanner.src,
     title: "Banner de campanha, BauerLab",
     caption: "Criado para a BauerLab, objetivo: banner de campanha institucional em formato widescreen para site e mídia paga.",
+    aspect: "aspect-video",
   },
 ];
 
@@ -42,7 +44,7 @@ const DesignGrafico = () => {
               viewport={{ once: true }}
               className="border border-border bg-card/40 rounded-2xl overflow-hidden hover:border-primary/40 transition-colors duration-500"
             >
-              <div className="aspect-square overflow-hidden bg-muted">
+              <div className={`${piece.aspect} overflow-hidden bg-muted`}>
                 <img
                   src={piece.image}
                   alt={piece.title}
