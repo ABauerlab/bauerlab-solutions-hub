@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { ReactNode } from "react";
 
@@ -13,7 +15,7 @@ const Section = ({ children, className = "" }: SectionProps) => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       viewport={{ once: true, margin: "-50px" }}
-      className={`py-12 md:py-24 ${className}`}
+      className={`py-8 md:py-24 ${className}`}
     >
       <div className="container mx-auto px-4 md:px-8">{children}</div>
     </motion.section>

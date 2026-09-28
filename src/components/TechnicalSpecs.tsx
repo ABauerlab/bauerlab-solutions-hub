@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { Cpu, Camera, Mic, Sun, Layers, Clock } from "lucide-react";
 
@@ -26,8 +28,8 @@ const TechnicalSpecs = () => {
   ];
 
   return (
-    <div className="space-y-12">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div className="space-y-6 md:space-y-12">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
         {specs.map((spec, index) => (
           <motion.div
             key={spec.title}
@@ -35,11 +37,11 @@ const TechnicalSpecs = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
             viewport={{ once: true }}
-            className="p-6 glass rounded-2xl"
+            className="p-4 md:p-6 border border-border rounded-xl"
           >
-            <div className="text-primary mb-4">{spec.icon}</div>
-            <h4 className="font-bold text-sm mb-3 uppercase tracking-wider">{spec.title}</h4>
-            <ul className="space-y-2">
+            <div className="text-primary mb-3 md:mb-4">{spec.icon}</div>
+            <h4 className="font-bold text-xs md:text-sm mb-2 md:mb-3 uppercase tracking-wider">{spec.title}</h4>
+            <ul className="space-y-1.5 md:space-y-2">
               {spec.items.map((item) => (
                 <li key={item} className="text-xs text-muted-foreground flex items-center gap-2">
                   <div className="w-1 h-1 rounded-full bg-primary/40" />
@@ -54,7 +56,7 @@ const TechnicalSpecs = () => {
       <motion.div 
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        className="p-8 border border-border rounded-2xl bg-card/50 flex flex-col md:flex-row gap-8 items-center justify-between"
+        className="p-5 md:p-8 border border-border rounded-2xl bg-card/50 flex flex-col md:flex-row gap-4 md:gap-8 items-center justify-between"
       >
         <div className="flex items-center gap-4">
           <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
@@ -66,7 +68,7 @@ const TechnicalSpecs = () => {
           </div>
         </div>
         <div className="text-xs text-muted-foreground max-w-md text-center md:text-right">
-          Toda a produção é realizada pela <strong>14:02 Produções</strong>, dirigida por <strong>Ed Faria</strong>, garantindo máxima fidelidade de cor e execução técnica.
+          Toda a produção é realizada em parceria com o estúdio <strong>Mambaia</strong>, garantindo máxima fidelidade de cor e execução técnica.
         </div>
       </motion.div>
     </div>

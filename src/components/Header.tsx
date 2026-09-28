@@ -1,5 +1,8 @@
+"use client";
+
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X, MessageCircle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { getWhatsAppUrl } from "@/lib/contact";
@@ -16,7 +19,7 @@ const navItems = [
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const location = useLocation();
+  const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 20);
@@ -26,7 +29,7 @@ const Header = () => {
 
   useEffect(() => {
     setMobileOpen(false);
-  }, [location]);
+  }, [pathname]);
 
   return (
     <header
@@ -35,11 +38,11 @@ const Header = () => {
       }`}
     >
       <div className="container mx-auto flex items-center justify-between px-4 md:px-8">
-        <Link to="/" className="flex items-center gap-2 font-heading text-xl md:text-2xl font-bold tracking-tight">
-          <img 
-            src={logo} 
-            alt="BauerLab" 
-            className="w-8 h-8 md:w-9 md:h-9 rounded-md object-cover" 
+        <Link href="/" className="flex items-center gap-2 font-heading text-xl md:text-2xl font-bold tracking-tight">
+          <img
+            src={logo.src}
+            alt="BauerLab"
+            className="w-8 h-8 md:w-9 md:h-9 rounded-md object-cover"
             loading="eager"
             fetchPriority="high"
           />
@@ -51,9 +54,9 @@ const Header = () => {
           {navItems.map((item) => (
             <Link
               key={item.path}
-              to={item.path}
+              href={item.path}
               className={`text-sm font-bold transition-colors ${
-                location.pathname === item.path ? "text-primary" : "text-muted-foreground hover:text-foreground"
+                pathname === item.path ? "text-primary" : "text-muted-foreground hover:text-foreground"
               }`}
             >
               {item.label}
@@ -93,9 +96,9 @@ const Header = () => {
               {navItems.map((item) => (
                 <Link
                   key={item.path}
-                  to={item.path}
+                  href={item.path}
                   className={`text-2xl font-bold ${
-                    location.pathname === item.path ? "text-primary" : "text-foreground"
+                    pathname === item.path ? "text-primary" : "text-foreground"
                   }`}
                 >
                   {item.label}

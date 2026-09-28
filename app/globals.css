@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 259 84% 63%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 259 84% 63%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 259 84% 63%;
+    --radius: 0.75rem;
+    --lime: 84 92% 58%;
+    --lime-foreground: 240 10% 3.9%;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  body { @apply bg-background text-foreground font-body antialiased selection:bg-primary/30 overflow-x-hidden; }
+  h1, h2, h3, h4, h5, h6 { @apply font-heading tracking-tight; }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/[0.03] backdrop-blur-xl border border-white/[0.08];
+  }
+  
+  .glass-hover {
+    @apply hover:bg-white/[0.06] hover:border-white/[0.15] transition-all duration-500;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-br from-white via-white to-primary/50;
+  }
+
+  .bg-mesh {
+    background-image: 
+      radial-gradient(at 0% 0%, hsla(259, 84%, 63%, 0.15) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, hsla(259, 84%, 63%, 0.1) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, hsla(259, 84%, 63%, 0.05) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, hsla(259, 84%, 63%, 0.1) 0px, transparent 50%);
+  }
+
+  .glow {
+    box-shadow: 0 0 50px -12px hsl(var(--primary) / 0.3);
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 32s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: hsl(var(--background)); }
+::-webkit-scrollbar-thumb { 
+  background: hsl(var(--muted)); 
+  border-radius: 10px;
+}
+
+html { scroll-behavior: smooth; }
