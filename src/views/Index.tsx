@@ -14,7 +14,7 @@ import AnimatedNumber from "@/components/AnimatedNumber";
 import Section from "@/components/Section";
 import CTASection from "@/components/CTASection";
 import LogoMarquee from "@/components/LogoMarquee";
-import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
 import { projects, projectImages } from "@/lib/projects";
 import heroBg from "@/assets/hero-bg.webp";
 
@@ -190,6 +190,8 @@ const Index = () => {
           </div>
 
           <Carousel opts={{ align: "start", loop: false, dragFree: true }} className="-mx-4 px-4 md:mx-0 md:px-0">
+            <CarouselPrevious className="hidden md:flex -left-4 lg:-left-6" />
+            <CarouselNext className="hidden md:flex -right-4 lg:-right-6" />
             <CarouselContent>
               {services.map((service, index) => {
                 const isExternal = service.path.startsWith("http");
@@ -314,6 +316,8 @@ const Index = () => {
         <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary mb-6 block">05. Provas</span>
         <h2 className="text-xl md:text-4xl font-bold mb-6 md:mb-10 max-w-xl">Resultado que dá pra visitar agora, não só pra prometer.</h2>
         <Carousel opts={{ align: "start", loop: false, dragFree: true }} className="-mx-4 px-4 md:mx-0 md:px-0">
+          <CarouselPrevious className="hidden md:flex -left-4 lg:-left-6" />
+          <CarouselNext className="hidden md:flex -right-4 lg:-right-6" />
           <CarouselContent>
             {projects.map((project, index) => {
               const image = projectImages[project.url];
