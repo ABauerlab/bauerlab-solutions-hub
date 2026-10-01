@@ -8,11 +8,14 @@ import {
   Zap, Target, ShieldCheck, TrendingUp, Check, X,
   Camera, ClipboardCheck
 } from "lucide-react";
+import Image from "next/image";
 import Layout from "@/components/Layout";
 import AnimatedNumber from "@/components/AnimatedNumber";
 import Section from "@/components/Section";
 import CTASection from "@/components/CTASection";
 import LogoMarquee from "@/components/LogoMarquee";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+import { projects, projectImages } from "@/lib/projects";
 import heroBg from "@/assets/hero-bg.webp";
 
 const stats = [
@@ -81,12 +84,6 @@ const ecosystemPoints = [
   { icon: <Target size={18} />, title: "ROI", desc: "Foco em conversão." },
   { icon: <ShieldCheck size={18} />, title: "Premium", desc: "Padrão internacional." },
   { icon: <TrendingUp size={18} />, title: "Escala", desc: "Pronto para crescer." },
-];
-
-const proofShots = [
-  { url: "astrowebatlas.com.br", label: "Astroweb Atlas", note: "Sistema Node.js" },
-  { url: "vistakodara.com.br", label: "Vista Kodara", note: "Marca do grupo" },
-  { url: "contalabdigital.com.br", label: "ContaLab Digital", note: "5 subdomínios" },
 ];
 
 const comparison = [
@@ -183,75 +180,81 @@ const Index = () => {
 
       <LogoMarquee />
 
-      {/* Pilares, bento assimétrico, sem carrossel */}
+      {/* Pilares, carrossel compacto pra não estender a rolagem no mobile */}
       <section className="py-10 md:py-24 border-b border-border bg-card/30">
         <div className="container mx-auto px-4 md:px-8">
           <div className="max-w-xl mb-6 md:mb-14">
             <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary mb-3 block">02. Pilares</span>
             <h2 className="text-2xl md:text-4xl font-bold mb-2">O que entregamos</h2>
-            <p className="text-xs md:text-sm text-muted-foreground">Soluções integradas que eliminam a fragmentação da sua marca.</p>
+            <p className="text-xs md:text-sm text-muted-foreground">Soluções integradas que eliminam a fragmentação da sua marca. Arraste para ver todas.</p>
           </div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-6 gap-3 md:gap-4">
-            {services.map((service, index) => {
-              const isExternal = service.path.startsWith("http");
-              const tone = (service as { tone?: "primary" | "lime" }).tone;
-              const toneClasses =
-                tone === "primary"
-                  ? "bg-primary border-transparent"
-                  : tone === "lime"
-                  ? "bg-lime border-transparent"
-                  : "border border-border bg-card/40 hover:border-primary/40";
-              const textClasses =
-                tone === "primary"
-                  ? "text-primary-foreground"
-                  : tone === "lime"
-                  ? "text-lime-foreground"
-                  : "";
-              const mutedClasses =
-                tone === "primary" ? "text-primary-foreground/70" : tone === "lime" ? "text-lime-foreground/70" : "text-muted-foreground";
-              const iconWrapClasses =
-                tone === "primary"
-                  ? "bg-primary-foreground/15 text-primary-foreground"
-                  : tone === "lime"
-                  ? "bg-lime-foreground/10 text-lime-foreground"
-                  : "bg-primary/10 text-primary";
-              const CardBody = (
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: index * 0.05 }}
-                  viewport={{ once: true }}
-                  className={`group relative p-4 md:p-8 rounded-2xl transition-colors duration-500 h-full overflow-hidden ${toneClasses} ${service.span}`}
-                >
-                  <div className="absolute top-5 right-5 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-x-2 group-hover:translate-x-0">
-                    <ArrowUpRight className={tone ? textClasses : "text-primary"} size={20} />
-                  </div>
-                  <div className="relative z-10">
-                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-500 ${iconWrapClasses}`}>
-                      {service.icon}
+          <Carousel opts={{ align: "start", loop: false, dragFree: true }} className="-mx-4 px-4 md:mx-0 md:px-0">
+            <CarouselContent>
+              {services.map((service, index) => {
+                const isExternal = service.path.startsWith("http");
+                const tone = (service as { tone?: "primary" | "lime" }).tone;
+                const toneClasses =
+                  tone === "primary"
+                    ? "bg-primary border-transparent"
+                    : tone === "lime"
+                    ? "bg-lime border-transparent"
+                    : "border border-border bg-card/40 hover:border-primary/40";
+                const textClasses =
+                  tone === "primary"
+                    ? "text-primary-foreground"
+                    : tone === "lime"
+                    ? "text-lime-foreground"
+                    : "";
+                const mutedClasses =
+                  tone === "primary" ? "text-primary-foreground/70" : tone === "lime" ? "text-lime-foreground/70" : "text-muted-foreground";
+                const iconWrapClasses =
+                  tone === "primary"
+                    ? "bg-primary-foreground/15 text-primary-foreground"
+                    : tone === "lime"
+                    ? "bg-lime-foreground/10 text-lime-foreground"
+                    : "bg-primary/10 text-primary";
+                const CardBody = (
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4, delay: index * 0.05 }}
+                    viewport={{ once: true }}
+                    className={`group relative p-5 md:p-8 rounded-2xl transition-colors duration-500 h-full overflow-hidden ${toneClasses}`}
+                  >
+                    <div className="absolute top-5 right-5 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-x-2 group-hover:translate-x-0">
+                      <ArrowUpRight className={tone ? textClasses : "text-primary"} size={20} />
                     </div>
-                    <h3 className={`text-lg font-bold mb-2 transition-colors duration-300 ${textClasses || "group-hover:text-primary"}`}>
-                      {service.title}
-                    </h3>
-                    <p className={`leading-relaxed text-xs md:text-sm max-w-md ${mutedClasses}`}>
-                      {service.description}
-                    </p>
-                  </div>
-                </motion.div>
-              );
+                    <div className="relative z-10">
+                      <div className={`w-10 h-10 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-500 ${iconWrapClasses}`}>
+                        {service.icon}
+                      </div>
+                      <h3 className={`text-lg font-bold mb-2 transition-colors duration-300 ${textClasses || "group-hover:text-primary"}`}>
+                        {service.title}
+                      </h3>
+                      <p className={`leading-relaxed text-xs md:text-sm max-w-md ${mutedClasses}`}>
+                        {service.description}
+                      </p>
+                    </div>
+                  </motion.div>
+                );
 
-              return isExternal ? (
-                <a key={service.title} href={service.path} target="_blank" rel="noopener noreferrer" className={service.span}>
-                  {CardBody}
-                </a>
-              ) : (
-                <Link key={service.title} href={service.path} className={service.span}>
-                  {CardBody}
-                </Link>
-              );
-            })}
-          </div>
+                return (
+                  <CarouselItem key={service.title} className="basis-[78%] sm:basis-[45%] lg:basis-[30%]">
+                    {isExternal ? (
+                      <a href={service.path} target="_blank" rel="noopener noreferrer" className="block h-full">
+                        {CardBody}
+                      </a>
+                    ) : (
+                      <Link href={service.path} className="block h-full">
+                        {CardBody}
+                      </Link>
+                    )}
+                  </CarouselItem>
+                );
+              })}
+            </CarouselContent>
+          </Carousel>
         </div>
       </section>
 
@@ -306,36 +309,64 @@ const Index = () => {
         </div>
       </Section>
 
-      {/* Provas reais, link direto pro site ao vivo, sem print que fica desatualizado */}
+      {/* Provas reais, todos os cases, link direto pro site ao vivo */}
       <Section className="border-t border-border bg-card/30">
         <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary mb-6 block">05. Provas</span>
         <h2 className="text-xl md:text-4xl font-bold mb-6 md:mb-10 max-w-xl">Resultado que dá pra visitar agora, não só pra prometer.</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          {proofShots.map((shot, index) => (
-            <motion.a
-              key={shot.label}
-              href={`https://${shot.url}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="group border border-border bg-card/40 p-6 rounded-2xl hover:border-primary/40 transition-colors duration-500 flex flex-col justify-between h-full"
-            >
-              <div className="flex items-center justify-between mb-6">
-                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-500">
-                  <ArrowUpRight size={18} />
-                </div>
-              </div>
-              <div>
-                <p className="font-heading font-bold text-lg group-hover:text-primary transition-colors">{shot.label}</p>
-                <p className="text-xs text-muted-foreground mt-1">{shot.note}</p>
-                <p className="text-xs text-muted-foreground/60 font-mono mt-3">{shot.url}</p>
-              </div>
-            </motion.a>
-          ))}
-        </div>
+        <Carousel opts={{ align: "start", loop: false, dragFree: true }} className="-mx-4 px-4 md:mx-0 md:px-0">
+          <CarouselContent>
+            {projects.map((project, index) => {
+              const image = projectImages[project.url];
+              return (
+                <CarouselItem key={project.title} className="basis-[72%] sm:basis-[40%] lg:basis-[23%]">
+                  <motion.a
+                    href={`https://${project.url}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4, delay: Math.min(index, 8) * 0.05 }}
+                    viewport={{ once: true }}
+                    className="group border border-border bg-card/40 rounded-2xl overflow-hidden hover:border-primary/40 transition-colors duration-500 flex flex-col h-full"
+                  >
+                    {image && (
+                      <div className="relative aspect-[4/3] overflow-hidden border-b border-border">
+                        <Image
+                          src={image}
+                          alt={`Captura de tela do site ${project.title}`}
+                          fill
+                          className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                          loading="lazy"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
+                      </div>
+                    )}
+                    <div className="p-5 flex-1 flex flex-col justify-between">
+                      <div className="flex items-center justify-between mb-4">
+                        <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-500">
+                          {project.icon}
+                        </div>
+                        <ArrowUpRight size={16} className="text-primary opacity-0 group-hover:opacity-100 transition-opacity" />
+                      </div>
+                      <div>
+                        <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-primary/70">{project.category}</span>
+                        <p className="font-heading font-bold text-lg group-hover:text-primary transition-colors mt-1">{project.title}</p>
+                        {project.note && <p className="text-xs text-muted-foreground mt-1">{project.note}</p>}
+                        <p className="text-xs text-muted-foreground/60 font-mono mt-3">{project.url}</p>
+                      </div>
+                    </div>
+                  </motion.a>
+                </CarouselItem>
+              );
+            })}
+          </CarouselContent>
+        </Carousel>
+        <Link
+          href="/projetos"
+          className="inline-flex items-center gap-2 font-bold text-primary text-sm hover:gap-3 transition-all mt-8"
+        >
+          Ver portfólio completo <ArrowRight size={16} />
+        </Link>
       </Section>
 
       {/* Comparação honesta */}
