@@ -19,6 +19,7 @@ import imgSoulGuetto from "@/assets/portfolio/gruposoulguetto-com-br.webp";
 import imgMisterBarbosa from "@/assets/portfolio/misterbarbosa-com-br.webp";
 import imgEspacioElizete from "@/assets/portfolio/espacioelizetetavares-com.webp";
 import imgParapente from "@/assets/portfolio/parapentearraialdajuda-com-br.webp";
+import imgOphtalmed from "@/assets/portfolio/ophtalmed2-com-br.webp";
 
 export const projectImages: Record<string, StaticImageData> = {
   "vistakodara.com.br": imgVistaKodara,
@@ -40,6 +41,7 @@ export const projectImages: Record<string, StaticImageData> = {
   "misterbarbosa.com.br": imgMisterBarbosa,
   "espacioelizetetavares.com": imgEspacioElizete,
   "parapentearraialdajuda.com.br": imgParapente,
+  "ophtalmed2.com.br": imgOphtalmed,
 };
 
 export type Category = "Sites & Sistemas" | "E-commerce" | "Tráfego Pago" | "Produto Próprio";
@@ -62,14 +64,6 @@ export const projects: Project[] = [
     icon: <ShoppingBag size={18} />,
     tier: "destaque",
     note: "Marca do grupo BauerLab",
-  },
-  {
-    title: "Lucena Parquet",
-    category: "Sites & Sistemas",
-    url: "lucenaparquetarima.com",
-    icon: <Globe size={18} />,
-    tier: "destaque",
-    note: "Cliente internacional (Espanha)",
   },
   {
     title: "Mindra Performance",
@@ -141,7 +135,15 @@ export const projects: Project[] = [
   { title: "Mister Barbosa", category: "Sites & Sistemas", url: "misterbarbosa.com.br", icon: <Globe size={18} />, tier: "volume" },
   { title: "Espacio Elizete Tavares", category: "Sites & Sistemas", url: "espacioelizetetavares.com", icon: <Globe size={18} />, tier: "volume" },
   { title: "Parapente Arraial da Ajuda", category: "Sites & Sistemas", url: "parapentearraialdajuda.com.br", icon: <Globe size={18} />, tier: "volume" },
-  { title: "Oftalmomed", category: "Sites & Sistemas", url: "oftalmomed2.com.br", icon: <Globe size={18} />, tier: "volume" },
+  { title: "Ophtalmed", category: "Sites & Sistemas", url: "ophtalmed2.com.br", icon: <Globe size={18} />, tier: "volume" },
+  {
+    title: "Lucena Parquet",
+    category: "Sites & Sistemas",
+    url: "lucenaparquetarima.com",
+    icon: <Globe size={18} />,
+    tier: "destaque",
+    note: "Cliente internacional (Espanha)",
+  },
 ];
 
 export const categories: Category[] = ["Sites & Sistemas", "E-commerce", "Tráfego Pago", "Produto Próprio"];
